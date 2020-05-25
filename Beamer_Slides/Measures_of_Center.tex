@@ -3,7 +3,7 @@
 \setbeamertemplate{headline}{} % remove toc from headers
 \beamertemplatenavigationsymbolsempty
 
-\usepackage{amsmath, tikz, bm, pgfplots, tcolorbox}
+\usepackage{amsmath, tikz, bm, pgfplots, tcolorbox, graphicx}
 \pgfplotsset{compat = 1.16}
 
 \title{Measures of Center}
@@ -209,6 +209,59 @@ When data is presented in its grouped form, we lose out on knowing the individua
 This means our measures of center, such as mean, can only be our best educated guess.	\newline\\	\pause
 
 We will use similar techniques like we did in finding the weighted mean, however we will have to use the class midpoints as our observed values.
+\end{frame}
+
+\begin{frame}{Example 6}
+(I swear this is a true story) On one very hungry day of mine, I ordered and consumed 19 sushi rolls from an all-you-can-eat sushi restaurant. This, as you might guess, is not typical (at least for me). The table below indicates the frequencies of sushi rolls I typically eat.	\newline\\
+\begin{center}
+\begin{tabular}{|c|c|}
+\textbf{Number of Rolls} & \textbf{Frequency} \\ \hline
+1 -- 5		&	4	\\
+6 -- 10		&	17	\\
+11 -- 15	&	12	\\
+\end{tabular}
+\end{center} 
+
+Estimate the mean number of rolls consumed.
+\end{frame}
+
+\begin{frame}{Example 6}
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\textbf{Class Midpoint} & \textbf{Frequency}	&	\textbf{TOTALS} \\ \hline
+3		&	4	&	12	\\
+8		&	17	&	136	\\
+13		&	12	&	156 \\	\hline
+		&	33	&	304	\\
+\end{tabular}
+\end{center} 
+\vspace{8pt}
+\onslide<2->{Mean: $304/33 \approx 9.2$ rolls per visit.}
+\end{frame}
+
+\section{Determine if a dataset appears skewed left, skewed right, or normal}
+
+\begin{frame}{Skewness}
+When normally distributed (bell-shaped), the mean, median, and mode are (roughly) equal. However, some data sets my be \emph{skewed} (remember, skewness refers to the tail).	\newline\\	\pause
+
+If the mean is (significantly) less than the median, the data is \textbf{skewed left} (or \textbf{negatively skewed}).	
+\begin{center}
+\includegraphics[scale=0.5]{../Images/left_skewed.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Skewness}
+If the mean is (approximately) equal to the median, the data is \textbf{normal} (no skewness)
+\begin{center}
+\includegraphics[scale=0.5]{../Images/normal.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Skewness}
+If the mean is (significantly) greater than the median, the data is \textbf{skewed right} (or \textbf{positively skewed}).
+\begin{center}
+\includegraphics[scale=0.5]{../Images/right_skewed.png}
+\end{center}
 \end{frame}
 
 \end{document}
