@@ -150,17 +150,19 @@ Sample variance is similar to population variance \emph{except} instead of divid
 
 Remember, the sum of the deviations from the mean must always equal 0. \newline\\	\pause
 
-In a data set with 4 entries, the first 3 entries can be any number we want (note that 4 - 1 = 3). The last entry \underline{must} make it so that the sum of the deviations from the mean equals 0.	\newline\\	\pause
+In a data set with 4 entries, the first 3 entries can be any number we want (note that $4 - 1 = 3$). The last entry \underline{must} make it so that the sum of the deviations from the mean equals 0.	
+\end{frame}
 
-Thus, in a data set with $n$ elements, the first $n-1$ elements can be whatever they want, but that last *n*-th element is forced to cause the deviation from the mean to equal 0.	\newline\\	\pause
+\begin{frame}{Population Variance vs. Sample Variance}
+Thus, in a data set with $n$ elements, the first $n-1$ elements can be whatever they want, but that last $n$\textsuperscript{th} element is forced to cause the deviation from the mean to equal 0.	\newline\\	\pause
 
-Another way to describe this difference in denominators is that dividing by $n-1$ does a better job at targeting the actual population variance then dividing by $n$ does when many samples of the population are taken.
+Another way to describe this difference in denominators is that dividing by $n-1$ does a better job at targeting the actual population variance then dividing by $n$ does when many samples of the population are taken. (Dividing by $n$ under-estimates the population variance).	\newline\\	\pause
+
+Because of this, we say that the sample variance is an {\color{blue}\textbf{unbiased estimator}} of the population variance (that is, the difference between the expected value and the actual value is 0).
 \end{frame}
 
 
-\begin{frame}{Population Variance vs. Sample Variance}
-Because of this, we say that the sample variance is an {color{blue}\textbf{unbiased estimator}} of the population variance (that is, the difference between the expected value and the actual value is 0).	\newline\\	\pause
-
+\begin{frame}{Formulas for Population Variance and Sample Variance}
 The formulas for population variance and sample variance are below:	\newline\\
 
 \begin{center}
