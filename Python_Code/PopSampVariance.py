@@ -15,7 +15,7 @@ sample2 = []
 sample3 = []
 
 for _ in range(10000): # do the following 10,000 times
-    sample = rd.sample(population, 350) # Take a sample of 350 values from the population
+    sample = rd.sample(population, 50) # Take a sample of 50 values from the population
     sample1.append(np.var(sample)) # variance with n in denominator
     sample2.append(np.var(sample, ddof=1)) # variance with n-1 in denominator
     sample3.append(np.var(sample, ddof=2)) # Using n-2 in denominator 
