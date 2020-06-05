@@ -51,6 +51,31 @@ If $P(A)$ is the probability of event $A$ occurring, and $P(B)$ is the probabili
 \end{tcolorbox}
 \end{frame}
 
+\begin{frame}{Tree Diagram}
+\begin{center}
+\tikzstyle{level 1} = [level distance = 3cm, sibling distance = 10cm]
+\tikzstyle{level 2} = [level distance = 3cm, sibling distance = 1.25cm]
+\begin{tikzpicture}[scale=0.5]
+\node {}
+	child {node {H}
+		child {node {1}}
+		child {node {2}}
+		child {node {3}}
+		child {node {4}}
+		child {node {5}}
+		child {node {6}}}
+	child {node {T}{
+		child {node {1}}
+		child {node {2}}
+		child {node {3}}
+		child {node {4}}
+		child {node {5}}
+		child {node {6}} }
+		};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 \begin{frame}{Venn Diagram -- AND}
 \begin{center}
 \begin{tikzpicture}
@@ -77,9 +102,9 @@ If $P(A)$ is the probability of event $A$ occurring, and $P(B)$ is the probabili
 \def\circleB{(4,2) circle [radius = 1.5cm]} 
 \draw (0,0) rectangle (6,4) node [below left] {$\mathcal{S}$};
 \draw \circleA;
-\node at (1.25,3) {coin};
+\node at (1.25,3) {\textbf{coin}};
 \draw \circleB;
-\node at (4.75,3) {die};
+\node at (4.75,3) {\textbf{die}};
 \node at (1.25,1.5) {T};
 \node at (3,2.25) {H};
 \node at (3,1.75) {5};
@@ -92,35 +117,119 @@ If $P(A)$ is the probability of event $A$ occurring, and $P(B)$ is the probabili
 \end{center}
 \end{frame}
 
-\begin{frame}{Tree Diagram}
-\begin{center}
-\tikzstyle{level 1} = [level distance = 3cm, sibling distance = 10cm]
-\tikzstyle{level 2} = [level distance = 3cm, sibling distance = 1.25cm]
-\begin{tikzpicture}[scale=0.5]
-\node {}
-	child {node {H}
-		child {node {1}}
-		child {node {2}}
-		child {node {3}}
-		child {node {4}}
-		child {node {5}}
-		child {node {6}}}
-	child {node {T}{
-		child {node {1}}
-		child {node {2}}
-		child {node {3}}
-		child {node {4}}
-		child {node {5}}
-		child {node {6}} }
-		};
-\end{tikzpicture}
-\end{center}
+
+\begin{frame}{Mutually Exclusive Events}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Mutually Exclusive Events}]
+Two events are \textbf{mutually exclusive} if they can not happen together. In other words,
+\[P(A\text{ and } B) = 0\]
+\end{tcolorbox}
 \end{frame}
 
-% Multiplication Rule
-% Tree Diagram
-% Mutually Exclusive Events
-% Independent vs. Dependent Events
-% Conditional Probability
+
+\section{Find probabilities of independent events}
+
+
+\begin{frame}{Independent Events}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Independent Events}]
+Two events are \textbf{independent} if the outcome of the second is not affected by the first happening.
+\end{tcolorbox}
+\vspace{8pt} 
+
+\onslide<2->{\[P(A \text{ and } B) = P(A) \times P(B)\]}
+
+\onslide<3->{When selecting items from a collection, independent events often contain selections made \alert{\underline{with replacement}}.}
+\end{frame}
+
+\begin{frame}{Example 2}
+A jar contains 10 blue, 12 black, and 15 red marbles.	\newline\\
+(a)	\quad What is the probability of selecting a black marble, putting it back, and then selecting a blue marble?
+\begin{align*}
+	\onslide<2->{P(\text{black and blue}) &= \frac{12}{37} \times \frac{10}{37}} \\[8pt]
+	\onslide<3->{&= \frac{120}{1,369}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 2}
+
+A jar contains 10 blue, 12 black, and 15 red marbles.	\newline\\
+(b)	\quad What is the probability of selecting a red marble, putting it back, and then selecting another red marble?
+\begin{align*}
+	\onslide<2->{P(\text{red and red}) &= \frac{15}{37} \times \frac{15}{37}} \\[8pt]
+	\onslide<3->{&= \frac{225}{1,369}}
+\end{align*}
+\end{frame}
+
+\section{Find conditional probabilities}
+
+\begin{frame}{Conditional Probability}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Conditional Probability}]
+\textbf{Conditional probability} is found by determining a probability \emph{based on a previous event happening}.
+\end{tcolorbox}
+\vspace{8pt} 
+
+\onslide<2->{The notation for the probability that event $B$ occurs given that event $A$ has occurred is
+\[ P(B \mid A)\]}
+\onslide<3->{With conditional probability, the denominator will often by the total of something that follows the words ``if", ``suppose that", or ``given that".}
+\end{frame}
+
+\begin{frame}{Example 3}
+The table below lists the types and numbers of cars sold at Lemon Autos along with their ages. Find each probability.	\newline\\
+\begin{center}
+\begin{tabular}{c|ccccc}
+					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
+\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
+\textbf{Total}   	& 72 & 44 & 23 & 61 & 200
+\end{tabular}
+\end{center}
+(a) If a domestic car is randomly selected, what is the probability that it is 6--10 years old?	
+\begin{align*}
+\onslide<2->{P(\text{6--10 years old given that it is a domestic car}) &= \frac{12}{100}}	\\[8pt]
+\onslide<3->{&= \frac{3}{25}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{center}
+\begin{tabular}{c|ccccc}
+					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
+\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
+\textbf{Total}   	& 72 & 44 & 23 & 61 & 200
+\end{tabular}
+\end{center}
+(b) What is the probability of selecting a domestic car given that the car is 6--10 years old?	
+\begin{align*}
+\onslide<2->{P(\text{domestic car given that it is 6--10 years old}) &= \frac{11}{23}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+\begin{center}
+\begin{tabular}{c|ccccc}
+					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
+\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
+\textbf{Total}   	& 72 & 44 & 23 & 61 & 200
+\end{tabular}
+\end{center}
+(c) Suppose that a new car is selected, what is the probability that it is a foreign car?	
+\begin{align*}
+\onslide<2->{P(\text{foreign car given that it is 0--2 years old}) &= \frac{37}{72}}
+\end{align*}
+\end{frame}
+
+\section{Find probabilities of dependent events}
+
+\begin{frame}{Dependent Events}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Dependent Events}]
+Two events are \textbf{dependent} if the outcome of the second is affected by the first happening.
+\end{tcolorbox}
+\vspace{8pt}	\pause
+
+When selecting items from a collection, dependent events often contain selections made \alert{\underline{without replacement}}.
+\end{frame}
+
+% Dependent Events
 
 \end{document}
