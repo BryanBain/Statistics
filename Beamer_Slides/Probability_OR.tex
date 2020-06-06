@@ -189,7 +189,80 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \end{frame}
 \section{Calculate the complement of an event}
 
-\section{Calculate "at least" probabilities}
+\begin{frame}{Complements}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Complements}]
+The \textbf{complement} of an event is the probability the event does \emph{not} happen.
+\end{tcolorbox}
+\vspace{10pt} \pause
+
+Event: $P(A)$ \newline\\ 
+Complement: $P(A')$
+\begin{align*}
+\onslide<3->{P(A) + P(A') &= 1} \\[8pt]
+\onslide<4->{P(A') &= 1 - P(A)}
+\end{align*}
+\end{frame}
+
+
+\section{Calculate "at least one" probabilities}
+
+
+\begin{frame}{``At Least One" Probability}
+\begin{center}
+\begin{tikzpicture}
+\draw (0,0) circle [radius = 2cm];
+\foreach \x in {36,72,...,360}
+\draw (0,0) -- (\x:2);
+\onslide<2->{\fill[yellow!80] (0,0) -- (36:2) arc (36:72:2) -- cycle;}
+\onslide<3->{\fill[red!80] (0,0) -- (72:2) arc (72:108:2) -- cycle;}
+\onslide<4->{\fill[blue!80] (0,0) -- (108:2) arc (108:144:2) -- cycle;}
+\onslide<5->{\fill[green!80] (0,0) -- (144:2) arc (144:180:2) -- cycle;
+\fill[yellow!80] (0,0) -- (180:2) arc (180:216:2) -- cycle;
+\fill[red!80] (0,0) -- (216:2) arc (216:252:2) -- cycle;
+\fill[blue!80] (0,0) -- (252:2) arc (252:288:2) -- cycle;
+\fill[green!80] (0,0) -- (288:2) arc (288:324:2) -- cycle;
+\fill[yellow!80] (0,0) -- (324:2) arc (324:360:2) -- cycle;
+\fill[red!80] (0,0) -- (2,0) arc (0:36:2) -- cycle;
+}
+\end{tikzpicture}
+\newline\\
+\onslide<2->{At least 1 is 1, \onslide<3->{or 2,} \onslide<4->{or 3,} \onslide<5->{$\dots$ or more.}}	\newline\\
+\onslide<6->{The complement of \textit{at least one} is {\color{blue}\textbf{none}}.}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Example 4}
+Two dice are rolled. What is the probability of rolling a sum of at least 4?
+\begin{center}
+\begin{tabular}{c|cccccc}
+			&	\textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} \\ \hline
+\textbf{1}	& 2 & 3 & 4 & 5 & 6 & 7 \\
+\textbf{2}	& 3 & 4 & 5 & 6 & 7 & 8 \\
+\textbf{3}	& 4 & 5 & 6 & 7 & 8 & 9 \\
+\textbf{4}	& 5 & 6 & 7 & 8 & 9 & 10 \\
+\textbf{5}	& 6 & 7 & 8 & 9 & 10 & 11 \\
+\textbf{6}	& 7 & 8 & 9 & 10 & 11 & 12
+\end{tabular}
+\end{center}
+\begin{align*}
+\onslide<2->{P(\text{at least 4}) &= 1 - P({\text{less than } 4})} \\
+\onslide<3->{&= 1 - P(2\text{ or } 3)} \\
+\onslide<4->{&= 1 - \frac{3}{36}}
+\onslide<5->{= \frac{33}{36}} \onslide<6->{ = \frac{11}{12}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 5}
+A certain blood test can determine the presence of a bloodborne pathogen 97\% of the time (that is, if 100 people have the pathogen, the test will confirm true for 97 of them). If 4 people with the pathogen are given the test, find the probability that the test is accurate for at least one of them.	
+\begin{align*}
+\onslide<2->{P(\text{at least 1 accurate}) &= 1 - P(\text{none are accurate})} \\
+\onslide<3->{&= 1 - P(\text{1st inaccurate})\times P(\text{2nd inaccurate}) \cdots} \\
+\onslide<4->{&= 1 - (0.03)^4} \\
+\onslide<5->{&= 0.99999919}
+\end{align*}
+\end{frame}
+
 
 \section{Calculate the odds of an event}
 
