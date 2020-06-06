@@ -144,6 +144,49 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \end{center}
 \end{frame}
 
+\begin{frame}{Venn Diagram of Example 2b}
+\begin{center}
+\begin{tabular}{c|ccccc}
+					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
+\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
+\textbf{Total}   	& 72 & 44 & 23 & 61 & 200
+\end{tabular}
+\\[12pt]
+\begin{venndiagram2sets}[labelA = \textbf{3--5}, labelB = \textbf{Dom}]
+\onslide<2->{\node at (2.5,1.75) {23};}
+\onslide<3->{\node at (1.5,1.75) {21};}
+\onslide<4->{\node at (3.5,1.75) {77};}
+\end{venndiagram2sets}
+\end{center}
+\onslide<5->{\[23 + 21 + 77 = 121\]}
+\end{frame}
+
+\begin{frame}{Example 3}
+(a) If a single card is drawn from a standard deck, what is the probability of selecting a 3 or a club?	\newline\\
+\onslide<2->{Number of 3s: 4} \newline
+\onslide<3->{Number of clubs: 13}	\newline
+\onslide<4->{Number of cards that are 3 and clubs: 1} 
+\begin{align*}
+\onslide<5->{P(3\text{ or club}) &= P(3) + P(\text{club}) - P(3\text{ and club})} \\[6pt]
+\onslide<6->{&= \frac{4}{52} + \frac{13}{52} - \frac{1}{52}} \\[6pt]
+\onslide<7->{&= \frac{16}{52}} \\[6pt]
+\onslide<8->{&= \frac{4}{13}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+(b) What is the probability of drawing a face card or a red card?	\newline\\
+\onslide<2->{Number of face cards: 12} \newline
+\onslide<3->{Number of red cards: 26} \newline
+\onslide<4->{Number of face cards that are also red: 6}
+\begin{align*}
+\onslide<5->{P(\text{face or red}) &= P(\text{face card}) + P(\text{red card}) - P(\text{face card and red})} \\[6pt]
+\onslide<6->{&= \frac{12}{52} + \frac{26}{52} - \frac{6}{52}} \\[6pt]
+\onslide<7->{&= \frac{32}{52}} \\[6pt]
+\onslide<8->{&= \frac{8}{13}}
+\end{align*}
+\end{frame}
 \section{Calculate the complement of an event}
 
 \section{Calculate "at least" probabilities}
