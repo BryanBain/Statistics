@@ -1,0 +1,105 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{trees}
+
+\title{Data Types}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\section{Distinguish between qualitative and quantitative data}
+
+\begin{frame}{Qualitative Data}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Qualitative Data}]
+\textbf{Qualitative data} (a.k.a. \textit{categorical data}) is data that is based on some quality or characteristic.
+\end{tcolorbox}
+\vspace{6pt} 
+For instance:
+\begin{itemize}
+	\item<2->{Your name}
+	\item<3->{Blood type}
+	\item<4->{Zip code}
+\end{itemize} 
+\end{frame}
+
+\begin{frame}{Quantitative Data}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Quantitative Data}]
+\textbf{Quantitative data} is data that is based on some \emph{\underline{measurable}} numeric value.
+\end{tcolorbox}
+\vspace{6pt} \pause
+Not all numeric data is quantitative.	\newline\\	\pause
+
+If two data values can be added together (or subtracted) to produce {\color{blue}\textbf{meaningful}} results, then the data is quantitative. Else, it is qualitative.
+\end{frame}
+
+\begin{frame}{Example 1}
+Determine if each of the following represents qualitative or quantitative data.	\newline\\
+(a) \quad The amount of water a household uses in a month. \newline\\	\pause
+If we add (or subtract) two households' water usage, we obtain meaningful results; this data is quantitative.	\newline\\	\pause
+(b) \quad Each student's favorite color in a statistics class. \newline\\ \pause
+Favorite color is a qualitative data value. 
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad Social security numbers.	\newline\\
+If we add (or subtract) two Social Security numbers, we do not produce meaningful results. Thus, SSNs are qualitative.	\newline\\	\pause
+
+(d) \quad How much money you have on you right now. \newline\\	\pause
+If we add (or subtract) two of these data values, we get meaningful results; this data is quantitative.
+\end{frame}
+
+\section{Determine if data is discrete or continuous}
+
+\begin{frame}{Subgroups of Quantitative Data}
+Within the realm of quantitative data, there are two types: discrete and continuous.	\newline\\	\pause
+\begin{center}
+\tikzstyle{level 1} = [level distance = 3cm, sibling distance = 10cm]
+\tikzstyle{level 2} = [level distance = 3cm, sibling distance = 1.25cm]
+\begin{tikzpicture}[scale=0.5]
+	\node {\textbf{Quantitative Data}}
+		child {node {\color{blue}\textbf{Discrete}}
+			child {node {\color{blue}Countable}}}
+		child {node {\color{red}\textbf{Continuous}}
+			child {node {\color{red}Measurable}}};
+\end{tikzpicture}
+\end{center}
+Continuous 
+\end{frame}
+
+\begin{frame}{Example 2}
+Determine whether each quantiative variable is discrete or continuous.	\newline\\	
+(a)	\quad Number of free throws made.	\quad	\pause
+Discrete \newline\\ \pause
+(b) \quad Time it takes to finish a book. \quad \pause
+Continuous \newline\\ \pause
+(c) \quad Water pressure from a fire hose. \quad \pause
+Continuous \newline\\ \pause
+(d) \quad The amount of money in a retirement account. \quad \pause Discrete
+\end{frame}
+
+\section{Classify data by its level of measurement}
+
+% Qualitative vs. Quantitative
+% Discrete vs. Continuous
+% Levels of Measurement
+
+\end{document}
