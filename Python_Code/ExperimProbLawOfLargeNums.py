@@ -1,3 +1,11 @@
+"""
+Purpose: Illustrate how several experiments leads the experimental probability
+of an event to approach the theoretical probability.
+Author: Bryan Bain
+Date: June 5, 2020
+File: ExperimProbLawOfLargeNums.py
+"""
+
 import random as rd
 
 possibilities = ['H', 'T'] 
