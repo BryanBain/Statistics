@@ -13,4 +13,5 @@
   <li>Intro to Probability</li>
   <li>Probability: AND</li>
   <li>Probability: OR</li>
+  <li>Speed Counting</li>
 </ol>
