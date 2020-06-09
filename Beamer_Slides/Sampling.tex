@@ -1,0 +1,221 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{trees}
+
+\title{Sampling}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\section{Classify a data collection method as an observational study or an experiment}
+
+\begin{frame}{Observational Study}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Observational Study}]
+An \textbf{observational study} is a method to obtain data in which the collector (researcher) does not get involved.
+\end{tcolorbox}
+\vspace{8pt} \pause
+
+Observational studies try to take as much of a \textit{hands-off approach} as possible. \newline\\	\pause
+
+In other words, the researcher observes behaviors and takes notes, but does not interject themselves into the study. 
+\end{frame}
+
+\begin{frame}{Experiment}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Experiment}]
+In an \textbf{experiment}, the researcher divides the subjects into groups, applies a treatment to one group, and notes the effects (if any) between the groups.
+\end{tcolorbox}
+\vspace{8pt}	\pause
+Typically divided into 2 groups:
+\begin{itemize}
+	\item \textbf{Experimental}: group that receives the treatment.	\pause
+	\item \textbf{Control}: group that either does not receive treatment or receives a ``fake" treatment (such as a \textit{placebo}).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 1}
+Classify each as either an observational study or an experiment.	\newline\\	\pause
+(a)	\quad A survey of 1,000 people is conducted to determine the best dog breeed. \newline\\	\pause
+Observational study \newline\\ \pause
+(b)	\quad 83 patients are given a new anxiety medication and 75 patients are given a sugar pill.	\newline\\	\pause
+Experiment
+\end{frame}
+
+\section{Examine various sampling methods}
+
+\begin{frame}{Sampling Methods}
+There are various ways in which to take samples, and depending on the research, one might be more appropriate than another.	\newline\\	\pause
+
+However, keep in mind that {\color{blue}\textbf{good sampling incorporates randomness into the process.}}
+\end{frame}
+
+\begin{frame}{Sampling Methods}
+\begin{itemize}
+	\item<+-> \textbf{Simple random sampling}
+	\begin{itemize}
+		\item<+-> Each member of the population has an equal chance of being selected.
+	\end{itemize}	\vspace{10pt}
+	\item<+-> \textbf{Stratified sampling}
+	\begin{itemize}
+		\item<+-> Divide the population into non-overlapping groups (\textit{strata}).
+		\item<+-> Randomly sample from each group.
+		\item<+-> (Some from all)
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sampling Methods}
+\begin{itemize}
+	\item<+-> \textbf{Cluster sampling}
+	\begin{itemize}
+		\item<+-> Divide the population into non-overlapping groups.
+		\item<+-> Randomly pick groups and obtain information from everyone in those groups.
+		\item<+-> (All from some)
+	\end{itemize}	\vspace{10pt}
+	\item<+-> \textbf{Systematic sampling}
+	\begin{itemize}
+		\item<+-> Subjects are placed in some order.
+		\item<+-> Pick a random starting value ($n$).
+		\item<+-> Pick a random value to count by ($k$).
+		\item<+-> Starting at $n$, take every $k$\textsuperscript{th} subject thereafter.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sampling Methods}
+\begin{itemize}
+	\item<+-> \textbf{Convenience sampling}
+	\begin{itemize}
+		\item<+-> Subjects select themselves.
+		\item<+-> Results are easily obtained.
+		\item<+-> Least effective and desirable method.
+		\item<+-> Also known as a \textit{volunary response sample}.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 2}
+Classify each by the sampling method used.	\newline\\
+(a) \quad An achievement test is given to all 9\textsuperscript{th} and 12\textsuperscript{th} grade students at a local high school.	\quad	\pause
+\alert{Cluster sampling} \newline\\	\pause
+(b) \quad A radio station asks listeners to call in with their opinion on a political issue.	\quad	\pause
+\alert{Convenience sampling} \newline\\ \pause
+(c) \quad A quality control manager selects the 5\textsuperscript{th} circuit board on an assembly line and then selects every 14\textsuperscript{th} chip after that.	\quad	\pause
+\alert{Systematic sampling} 
+\end{frame}
+
+\begin{frame}{Example 2}
+(d) \quad 10 seniors, 12 juniors, 13 sophomores, and 10 freshmen are asked to name their favorite food. \quad \pause
+\alert{Stratified sampling} \newline\\ \pause
+(e) \quad 10 names are drawn out of a hat containing 50 names. \quad \pause
+\alert{Simple random sampling}
+\end{frame}
+
+\section{Examine various types of observational studies and experiments}
+
+\begin{frame}{Types of Observational Studies}
+\begin{itemize}
+	\item Cross-Sectional
+		\begin{itemize}
+		\item<+-> Data is collected and observed at one point in time. 
+		\end{itemize}
+	\item<+-> Retrospecitve
+		\begin{itemize}
+		\item<+-> Collecting data from past events 
+		\end{itemize}
+	\item<+-> Longitudinal
+		\begin{itemize}
+		\item<+-> Collect future data from groups with common factors.
+		\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Types of Experiments}
+\begin{itemize}
+	\item Blind
+	\begin{itemize}
+		\item<+-> Researcher knows what group (experimental vs. control) the subject is in, but the subject doesn't.
+	\end{itemize}
+	\item Double-blind
+	\begin{itemize}
+		\item<+-> Neither the researcher nor the subject knows which group the subject is in; a third party knows but does not reveal. 
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Designing an Experiment}
+Good experiments will take the following into consideration:
+\begin{itemize}
+	\item<+-> Subjects are assigned to different groups through random selection.
+	\item<+-> Experiments are performed on more than one subject (known as \textit{replication}).
+	\item<+-> The sample size is large enough to see the true nature of the effects.
+	\item<+-> Researchers will control the effects of the variables using such techinques as blinding.
+\end{itemize}
+\end{frame}
+
+\section{Examine errors and other issues in sampling}
+
+\begin{frame}{Errors}
+No matter how well-designed a study or experiment can be, there is always room for error.
+\begin{itemize}
+	\item<+-> \textbf{Sampling error}
+	\begin{itemize}
+		\item<+-> The difference between the sample result and the true population result.
+	\end{itemize}
+	\item<+-> \textbf{Nonsampling error}
+	\begin{itemize}
+		\item<+-> Sample data isn't collected, recorded, or analyzed correctly.
+	\end{itemize}
+	\item<+-> \textbf{Not using randomness}
+	\begin{itemize}
+		\item<+-> Avoid (or take with healthy dose of skepticism) sample data that does not have some component of randomness to it, such as a convenience sample.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Issues}
+\begin{itemize}
+	\item<+-> \textbf{Small sample sizes}
+	\begin{itemize}
+		\item<+-> Make sure the sample size is large enough to include a variety of data regarding the population.
+		\item<+-> More info on this later in the course.
+	\end{itemize}
+	\item<+-> \textbf{Non-responses}
+	\begin{itemize}
+		\item<+-> When someone refuses to respond to a question or is unavailable.
+		\item<+-> How are missing values handled? As n/a? As 0?
+	\end{itemize}
+	\item<+-> \textbf{Loaded question}
+	\begin{itemize}
+		\item<+-> A question worded in order to mislead or elicit a desired response.
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 3}
+Which of the following is a loaded question?	\newline\\
+(1) \quad ``Should the fire department receive additional funding for new equipment?"	\newline\\
+(2) \quad ``Should taxpayers be responsible for new fire department equipment?"			\newline\\ \pause
+
+Statement (2) is a loaded question.
+\end{frame}
+
+\end{document}
