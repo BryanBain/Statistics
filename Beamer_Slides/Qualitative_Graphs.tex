@@ -62,7 +62,7 @@ symbolic x coords = {Mon, Tue, Wed, Thur, Fri}, xtick=data
 \begin{frame}{Bar Graphs}
 Bar graphs can be clustered:	\newline\\
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
 ybar, axis on top, title={Hours Worked Each Day}, bar width = 0.5cm, grid,
 ymin = 0, ymax = 12, ylabel = {Hours}, legend entries = {Week 1, Week 2},
@@ -82,7 +82,7 @@ symbolic x coords = {Mon, Tue, Wed, Thur, Fri}, xtick=data
 \begin{frame}{Bar Graphs}
 Bar graphs can be stacked:	\newline\\
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
 ybar stacked, axis on top, title={Hours Worked Each Day}, bar width = 0.5cm, grid,
 ymin = 0, ymax = 20, ylabel = {Hours}, legend entries = {Week 1, Week 2},
@@ -102,7 +102,7 @@ symbolic x coords = {Mon, Tue, Wed, Thur, Fri}, xtick=data
 \begin{frame}{Bar Graphs}
 Bar graphs can be horizontal:	\newline\\
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
 xbar, axis on top, title={Hours Worked Each Day}, bar width = 0.75cm, grid,
 xmin = 0, xmax = 12, xlabel = {Hours},
@@ -119,10 +119,10 @@ symbolic y coords = {Mon, Tue, Wed, Thur, Fri}, ytick=data
 \begin{frame}{Bar Graphs}
 Bar graphs can show relative frequency (percent of total):	\newline\\
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.85]
 \begin{axis}[
 ybar, axis on top, title={Hours Worked Each Day}, bar width = 0.75cm, grid,
-ymin = 0, ymax = 30, ylabel = {Percent},
+ymin = 0, ymax = 30, ylabel = {Percent}, minor y tick num = 4,
 symbolic x coords = {Mon, Tue, Wed, Thur, Fri}, xtick=data
 ]
 \addplot [draw=none, fill=yellow] coordinates{
@@ -136,7 +136,17 @@ symbolic x coords = {Mon, Tue, Wed, Thur, Fri}, xtick=data
 \begin{frame}{Creating a Bar Graph}
 To create a bar graph, it helps to get a frequency chart of the information. \newline\\	\pause
 
-A frequency chart displays the count of each observation, which can also be used to create a relative frequency chart.
+A frequency chart displays the count of each observation, which can also be used to create a relative frequency chart.	\newline\\	\pause
+\begin{center}
+\begin{tabular}{c|c|c}
+\textbf{Day} & \textbf{Hours Worked} & \textbf{Percent Total} \\ \hline
+Monday 		& 	5	&	14.29\%	\\
+Tuesday 	& 	8	&	22.86\%	\\
+Wednesday	&	7	&	20.00\%	\\
+Thursday	&	6	&	17.14\%	\\
+Friday		&	9	&	25.71\%	\\
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{Example 1}
