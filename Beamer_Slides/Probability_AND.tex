@@ -187,15 +187,14 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
 \end{center}
 (a) If a domestic car is randomly selected, what is the probability that it is 6--10 years old?	
 \begin{align*}
-\onslide<2->{P(\text{6--10 years old given that it is a domestic car}) &= \frac{12}{100}}	\\[8pt]
-\onslide<3->{&= \frac{3}{25}}
+\onslide<2->{P(\text{6--10 years old $|$ it is a domestic car}) &= \frac{11}{100}}	
 \end{align*}
 \end{frame}
 
@@ -203,14 +202,14 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
 \end{center}
 (b) What is the probability of selecting a domestic car given that the car is 6--10 years old?	
 \begin{align*}
-\onslide<2->{P(\text{domestic car given that it is 6--10 years old}) &= \frac{11}{23}}
+\onslide<2->{P(\text{domestic car $|$ it is 6--10 years old}) &= \frac{11}{23}}
 \end{align*}
 \end{frame}
 
@@ -218,14 +217,14 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
 \end{center}
-(c) Suppose a new car is selected, what is the probability that it is a foreign car?	
+(c) Suppose a new car is selected, what is the probability that it is an import?	
 \begin{align*}
-\onslide<2->{P(\text{foreign car given that it is 0--2 years old}) &= \frac{37}{72}}
+\onslide<2->{P(\text{import $|$ it is 0--2 years old}) &= \frac{37}{72}}
 \end{align*}
 \end{frame}
 
@@ -246,7 +245,7 @@ Two events are \textbf{dependent} if the outcome of the second is affected by th
 You are dealt a card from a standard deck and then you are dealt another (without replacement). Find the probability that	\newline\\
 (a)	\quad	The first card is an ace and the second card is a ten.
 \begin{align*}
-	\onslide<2->{P(\text{ace and ten}) &= P(\text{ace}) \times P(\text{ten})} \\[8pt]
+	\onslide<2->{P(\text{ace and ten}) &= P(\text{ace}) \times P(\text{ten }|\text{ ace})} \\[8pt]
 	\onslide<3->{&= \frac{4}{52} \times \frac{4}{51}}	\\[8pt]
 	\onslide<4->{&= \frac{4}{663} \\[8pt]
 	&\approx 0.603\% }
@@ -256,7 +255,7 @@ You are dealt a card from a standard deck and then you are dealt another (withou
 \begin{frame}{Example 5}
 (b) \quad The first card is an ace and the second card is an ace.
 \begin{align*}
-	\onslide<2->{P(\text{ace and ace}) &= P(\text{ace}) \times P(\text{ace})} \\[8pt]
+	\onslide<2->{P(\text{ace and ace}) &= P(\text{ace}) \times P(\text{ace }|\text{ ace})} \\[8pt]
 	\onslide<3->{&= \frac{4}{52} \times \frac{3}{51}}	\\[8pt]
 	\onslide<4->{&= \frac{1}{221} \\[8pt]
 	&\approx 0.452\% }
@@ -281,12 +280,12 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
 \end{center}
-(a) If a car is randomly selected, what is the probability that it is a 6--10 year old foreign car?	
+(a) If a car is randomly selected, what is the probability that it is a 6--10 year old import?	
 \begin{align*}
 \onslide<2->{P(\text{6--10 years old and foreign}) &= \frac{12}{200}}	\\[8pt]
 \onslide<3->{&= \frac{3}{50}}
@@ -296,7 +295,7 @@ The table below lists the types and numbers of cars sold at Lemon Autos along wi
 \begin{frame}{Example 6}
 The reasoning behind our answer for Example 6a:
 \begin{align*}
-P(\text{6--10 and foreign}) &= P(\text{6--10}) \times P(\text{foreign} \mid \text{6--10 years old}) \\
+P(\text{6--10 and import}) &= P(\text{6--10}) \times P(\text{import} \mid \text{6--10 years old}) \\
 \onslide<2->{&= \frac{23}{200} \times \frac{12}{23}} \\[8pt]
 \onslide<3->{&= \frac{12}{200}} \\[8pt]
 \onslide<4->{&= \frac{3}{50}}
@@ -307,7 +306,7 @@ P(\text{6--10 and foreign}) &= P(\text{6--10}) \times P(\text{foreign} \mid \tex
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
@@ -323,7 +322,7 @@ P(\text{6--10 and foreign}) &= P(\text{6--10}) \times P(\text{foreign} \mid \tex
 \begin{center}
 \begin{tabular}{c|ccccc}
 					&	\textbf{0--2} & \textbf{3--5} & \textbf{6--10} & \textbf{Over 10} & \textbf{Total} \\ \hline
-\textbf{Foreign} 	& 37 & 21 & 12 & 30 & 100 \\
+\textbf{Import} 	& 37 & 21 & 12 & 30 & 100 \\
 \textbf{Domestic} 	& 35 & 23 & 11 & 31 & 100 \\ \hline
 \textbf{Total}   	& 72 & 44 & 23 & 61 & 200
 \end{tabular}
@@ -334,6 +333,6 @@ P(\text{6--10 and foreign}) &= P(\text{6--10}) \times P(\text{foreign} \mid \tex
 \onslide<3->{&= 0}
 \end{align*}
 \end{frame}
-% Dependent Events
+
 
 \end{document}
