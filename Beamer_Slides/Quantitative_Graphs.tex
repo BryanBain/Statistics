@@ -26,6 +26,8 @@
 \maketitle
 \end{frame}
 
+\section{Create a frequency distribution for quantitative data}
+
 \begin{frame}{Frequency Distribution for Quantitative Data}
 The weights (in pounds) of 25 husky dogs are shown below:
 \begin{center}
@@ -66,6 +68,37 @@ Let's create a frequency distribution for the dog weights using a class width of
 60 -- 64 & 1 \\
 \end{tabular}
 \end{center}
+\pause
+In the above table, we are only considering integer weight values.	\newline\\	\pause
+
+However, any dog that weighs more than 39.5 pounds, but less than 44.5 pounds, would have to go into the 40 -- 44 pound class. \newline\\	\pause
+
+Going a half of another decimal place below the lower class limit and above the upper class limits give us the {\color{blue}\textbf{class boundaries}}.
+\end{frame}
+
+\section{Create and interpret histograms}
+
+\begin{frame}{Histograms of Quantitative Data}
+We can use class limits to create a histogram of the data.	\newline\\	\pause
+
+A histogram is like a bar graph in which there are no gaps between classes.		\pause
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\begin{axis}[
+ymin = 0, ymax = 10, area style
+]
+\addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {(35,2) (40,4) (45,9) (50,8) (55,1) (60,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\pause We can also use class midpoints when graphing histograms. \pause \newline\\
+
+To find the class midpoint, add the lower class limit and upper class limit. Then divide by two.
+\end{frame}
+
+\begin{frame}{Example 1}
+Given the histogram below, 
 \end{frame}
 
 \end{document}
