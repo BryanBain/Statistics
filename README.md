@@ -5,7 +5,7 @@
   <li>Data Types</li>
   <li>Sampling</li>
   <li>Qualitative Graphs</li>
-  <li>Quantitative Graphs</li>
+  <li>Histograms</li>
   <li>Other Graphs and Misleading Graphs</li>
   <li>Measures of Center</li>
   <li>Measures of Spread</li>
