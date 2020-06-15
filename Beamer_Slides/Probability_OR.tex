@@ -210,27 +210,21 @@ Complement: $P(A')$
 \begin{frame}{``At Least One" Probability}
 \begin{center}
 \begin{tikzpicture}
-\draw (0,0) circle [radius = 2cm];
-\foreach \x in {36,72,...,360}
-\draw (0,0) -- (\x:2);
-\onslide<2->{\fill[yellow!80] (0,0) -- (36:2) arc (36:72:2) -- cycle;}
-\onslide<3->{\fill[red!80] (0,0) -- (72:2) arc (72:108:2) -- cycle;}
-\onslide<4->{\fill[blue!80] (0,0) -- (108:2) arc (108:144:2) -- cycle;}
-\onslide<5->{\fill[green!80] (0,0) -- (144:2) arc (144:180:2) -- cycle;
-\fill[yellow!80] (0,0) -- (180:2) arc (180:216:2) -- cycle;
-\fill[red!80] (0,0) -- (216:2) arc (216:252:2) -- cycle;
-\fill[blue!80] (0,0) -- (252:2) arc (252:288:2) -- cycle;
-\fill[green!80] (0,0) -- (288:2) arc (288:324:2) -- cycle;
-\fill[yellow!80] (0,0) -- (324:2) arc (324:360:2) -- cycle;
-\fill[red!80] (0,0) -- (2,0) arc (0:36:2) -- cycle;
+\draw[ultra thick, ->, >=stealth] (0,0) -- (10,0);
+\foreach \x in {0,1,...,9}
+\draw [fill=black] (\x,0) circle [radius = 4pt] node [below, yshift=-0.1cm] {$\x$};
+\onslide<2->{
+	\foreach \x in {1,2,...,9}
+	\draw[color=red,fill=red] (\x,0) circle [radius = 4pt];
 }
+\onslide<4->{\draw[color=yellow,fill=yellow] (0,0) circle [radius = 4pt];}
 \end{tikzpicture}
-\newline\\
-\onslide<2->{At least 1 is 1, \onslide<3->{or 2,} \onslide<4->{or 3,} \onslide<5->{$\dots$ or more.}}	\newline\\
-\onslide<6->{The complement of \textit{at least one} is {\color{blue}\textbf{none}}.}
 \end{center}
+\onslide<2->{\emph{At least one} means 1 or 2 or 3 or 4 or ...} \newline\\
+\onslide<3->{Rather than add all of the probabilities of those events up, we can instead find the \alert{complement} of \emph{at least one}}.	\newline\\
+\onslide<4->{The complement of \emph{at least one} is {\color{blue}\textbf{none}}.}	\newline\\
+\onslide<5->{In general, the complement of \emph{at least n events} is \alert{$n-1$ events or less.}}
 \end{frame}
-
 
 \begin{frame}{Example 4}
 Two dice are rolled. What is the probability of rolling a sum of at least 4?
@@ -299,10 +293,5 @@ A jar contains red and yellow marbles. The odds against selecting a red marble a
 \end{align*}
 \end{frame}
 
-% Addition Rule
-% General Addition Rule
-% Complement Rule
-% At least n
-% Odds
 
 \end{document}
