@@ -28,11 +28,115 @@
 
 \section{Use the Fundamental Counting Rule}
 
+\begin{frame}{Example 1}
+For a special at a restaurant, you can choose between 3 appetizers, 4 entrees, and 2 desserts. If you select one item from each category (appetizer, entree, and dessert), how many different meals can you create?	\newline\\	\pause
 
+Let's call the appetizers A, B, and C. \newline \pause
+Let's call the entrees D, E, F, and G. \newline \pause
+Let's call the desserts H and I.	\newline\\	\pause
+
+With appetizer A: ADH, ADI, AEH, AEI, AFH, AFI, AGH, AGI \newline \pause
+With appetizer B: BDH, BDI, BEH, BEI, BFH, BFI, BGH, BGI \newline \pause
+With appetizer C: CDH, CDI, CEH, CEI, CFH, CFI, CGH, CGI \newline\\ \pause
+
+For a total of 24 possible different meals.
+\end{frame}
+
+\begin{frame}{Fundamental Counting Rule}
+If event $A$ can occur in $a$ different ways and event $B$ can occur in $b$ different ways, then the total number of ways both events can occur is $ab$ ways.	\newline\\	\pause
+
+This can be generalized to multiple events, such as those in example 1: $3 \times 4 \times 2 = 24$
+\end{frame}
 
 
 \section{Understand factorial notation}
+
+\begin{frame}{Example 2}
+A baseball lineup consists of 9 players. How many different lineups using all 9 players on a team exist?	\newline\\	\pause
+
+Using the Fundamental Counting Rule with 9 positions:	\newline\\	\pause
+
+
+\begin{tabular}{|c|c|c|c|c|c|c|}
+1st pos. &	2nd pos. &	3rd pos. &	$\dots$ & 7th pos.	&	8th pos. &	9th pos.  \\ \hline
+\onslide<4->{9} & \onslide<5->{8} & \onslide<6->{7} & \onslide<7->{$\dots$} & \onslide<8->{3} &\onslide<9->{2} & \onslide<10->{1} \\
+\end{tabular}
+\vspace{10pt}
+\onslide<11->{\[9 \times 8 \times 7 \times \cdots \times 2 \times 1 \onslide<12->{= 362,880 \text{ unique lineups}}\]}
+
+\end{frame}
+
+\begin{frame}{Factorial Notation}
+Rather than write out all the numbers from 9 to 1 and then multiplying them, mathematicians created {\color{blue}\textbf{factorial notation}} to expedite the process.	
+
+\onslide<2->{\[9! = 9 \times 8 \times 7 \times \cdots \times 3 \times 2 \times 1 = 362,880\]}
+
+\onslide<3->{In general, for a positive integer $n$, \[n! = n(n-1)(n-2) \cdot \cdots \cdot 3(2)(1)\]}
+\onslide<4->{with $0! = 1$}
+\end{frame}
+
+\begin{frame}{Factorial Growth}
+Factorial values grow very quickly:
+\begin{align*}
+2! &= 2(1) &= 2 \\
+3! &= 3(2)(1) &=6 \\
+4! &= 4(3)(2)(1) &= 24 \\
+5! &= 5(4)(3)(2)(1) &= 120 \\
+6! &= 6(5)(4)(3)(2)(1) &= 720	\\
+7! &= 7(6)(5)(4)(3)(2)(1) &= 5,040
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3}
+How many ways are there to arrange 5 books on a shelf?
+\onslide<2->{\[5! = 120 \text{ different arrangements}\]}
+\end{frame}
+
 \section{Find permutations of objects}
+
+\begin{frame}{Example 4}
+Five people are competing for three prizes: \$1,000, \$500, and \$100. How many different ways can the prizes be awarded?	\newline\\
+\begin{center}
+\onslide<2->{
+	\begin{tabular}{|c|c|c|}
+	\$1,000 		&		\$500			&	\$100			\\	\hline
+	\onslide<3->{5}	&	\onslide<4->{4}		&	\onslide<5->{3}	\\
+	\end{tabular}
+}
+\end{center}
+\onslide<6->{Using the Fundamental Counting Rule:
+			\[ 5 \times 4 \times 3 = 60\text{ different ways}\]}
+\end{frame}
+
+\begin{frame}{Takeaways from Example 4}
+We had more contestants available to win prizes than we had prizes available. We could have had an equal number of contestants and prizes, but we can't have more prizes available than contestants. \newline\\	\pause
+
+If we had 10,000 contestants and 75 prizes, we would have a lot of multiplying to do.	\newline\\	\pause
+
+So is there an easy way to do this if that's the case?	\newline\\	\pause
+
+Yes, and that is where {\color{blue}\textbf{permutations}} come into play.
+\end{frame}
+
+\begin{frame}{Example 5}
+How many ways are there to award gold, silver, and bronze medals to 8 contestants?	\newline\\
+\begin{center}
+\onslide<2->{
+	\begin{tabular}{|c|c|c|}
+	Gold 		&		Silver			&	Bronze			\\	\hline
+	\onslide<3->{8}	&	\onslide<4->{7}		&	\onslide<5->{6}	\\
+	\end{tabular}
+}
+\end{center}
+\onslide<6->{Using the Fundamental Counting Rule:
+			\[ 8 \times 7 \times 6 = 336\text{ different ways}\]}
+\end{frame}
+
+\begin{frame}{Example 5}
+
+\end{frame}
+
+
 \section{Find combinations of objects}
 \section{Find probabilities using counting techniques}
 
