@@ -26,76 +26,65 @@
 \maketitle
 \end{frame}
 
-\section{Create a frequency distribution for quantitative data}
-
-\begin{frame}{Frequency Distribution for Quantitative Data}
-The weights (in pounds) of 25 husky dogs are shown below:
-\begin{center}
-\begin{tabular}{ccccc}
-53 & 46 & 44 & 47 & 50 \\
-49 & 47 & 44 & 61 & 44 \\
-35 & 46 & 49 & 51 & 48 \\
-50 & 52 & 44 & 50 & 47 \\
-58 & 47 & 52 & 37 & 54 \\
-\end{tabular}
-\end{center}
-Suppose we want to create a frequency distribution for the weights of these awesome dogs. \newline\\	\pause
-
-Since this data is quantitative, we are going to have to decide what each of our ranges of weights in our classes is going to be. 
-\end{frame}
-
-\begin{frame}{Definitions for Quantitative Data}
-The smallest value (weight in our case) in each class (table row) is called the {\color{blue}\textbf{lower class limit}}. \newline\\	\pause
-
-The largest value in each class is the {\color{blue}\textbf{upper class limit}}. \newline\\ \pause 
-
-Typically, the closer the lower and upper class limits are in value, the more classes we will need. \newline\\	\pause
-
-The difference between two consecutive lower class limits is called the {\color{blue}\textbf{class width}}.	\newline\\	\pause
-
-Let's create a frequency distribution for the dog weights using a class width of 5 pounds.
-\end{frame}
-
-\begin{frame}{Frequency Distribution of the Weights of Adorable Huskies}
-\begin{center}
-\begin{tabular}{c|c}
-\textbf{Weight} & \textbf{Frequency} \\ \hline
-35 -- 39 & 2 \\
-40 -- 44 & 4 \\
-45 -- 49 & 9 \\
-50 -- 54 & 8 \\
-55 -- 59 & 1 \\
-60 -- 64 & 1 \\
-\end{tabular}
-\end{center}
-\pause
-In the above table, we are only considering integer weight values.	\newline\\	\pause
-
-However, any dog that weighs at or above 39.5 pounds, but less than 44.5 pounds, would have to go into the 40 -- 44 pound class. \newline\\	\pause
-
-Going a half of another decimal place below the lower class limit and above the upper class limits give us the {\color{blue}\textbf{class boundaries}}.
-\end{frame}
 
 \section{Create and interpret histograms}
 
 \begin{frame}{Histograms of Quantitative Data}
-We can use class limits to create a histogram of the data.	\newline\\	\pause
 
-A histogram is like a bar graph in which there are no gaps between classes.		\pause
+A histogram is like a bar graph but without any gaps between consecutive bars.   \pause
 
 \begin{center}
-\begin{tikzpicture}[scale=0.5]
+\begin{tikzpicture}[scale=0.6]
 \begin{axis}[
-ymin = 0, ymax = 10, area style
+ymin = 0, ymax = 10, area style, xlabel = {Dog Weights}, ylabel = {Frequency},
 ]
-\addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {(35,2) (40,4) (45,9) (50,8) (55,1) (60,1)};
+\addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {(35,2) (40,4) (45,9) (50,8) (55,1) (60,1) (65,1)};
 \end{axis}
 \end{tikzpicture}
 \end{center}
-\pause We can also use class midpoints when graphing histograms. \pause \newline\\
+\pause 
 
-To find the class midpoint, add the lower class limit and upper class limit. Then divide by two.
+Each bar is called a {\color{blue}\textbf{class}}, and in the histogram above, the class width is 5.
 \end{frame}
+
+\begin{frame}{Histograms of Quantitative Data}
+\begin{minipage}{0.35\textwidth}
+\begin{tikzpicture}[scale=0.5]
+\begin{axis}[
+ymin = 0, ymax = 10, area style, xlabel = {Dog Weights}, ylabel = {Frequency},
+]
+\addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {(35,2) (40,4) (45,9) (50,8) (55,1) (60,1) (65,1)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hspace{5pt}
+\begin{minipage}{0.55\textwidth}
+\scalebox{0.9}{
+\begin{tabular}{c|c|c}
+\textbf{Class} & \textbf{Frequency} & \textbf{Class Midpoint} \\ \hline
+$35 \leq x < 40$ & 2 & 37.5 \\
+$40 \leq x < 45$ & 4 & 42.5 \\
+$45 \leq x < 50$ & 9 & 47.5 \\
+$50 \leq x < 55$ & 8 & 52.5 \\
+$55 \leq x < 60$ & 1 & 57.5 \\
+$60 \leq x < 65$ & 1 & 62.5 
+\end{tabular}}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Histogram with Class Midpoints}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+ymin = 0, ymax = 10, area style, xlabel = {Dog Weights}, ylabel = {Frequency},
+xtick = {37.5,42.5,47.5,52.5,57.5,62.5}
+]
+\addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {(35,2) (40,4) (45,9) (50,8) (55,1) (60,1) (65,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 
 \begin{frame}{Relative Frequency Histogram}
 We can even make a relative frequency histogram of a data set.	\newline\\	\pause
@@ -138,7 +127,7 @@ Answer each given the histogram below.
 \end{frame}
 
 \begin{frame}{Example 1}
-(c) What are the class boundaries of the second class?	\newline \onslide<2->{59.5 and 70.5}
+(c) What is the relative frequency of the 5th class?	\quad \onslide<2->{11/42}	
 \begin{center}
 \begin{tikzpicture}[scale=0.75]
 \begin{axis}[
@@ -147,28 +136,11 @@ Answer each given the histogram below.
     area style, grid=both, title=Test Scores
     ]
 \addplot+[ybar interval,mark=no,fill=green!70] plot coordinates { (50, 3) (60, 2) (70, 12) (80, 14) (90, 11) (100, 9)};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\end{frame}
-
-\begin{frame}{Example 1}
-(d) What is the relative frequency of the 5th class?	\quad \onslide<3->{11/42}	
-\begin{center}
-\begin{tikzpicture}[scale=0.75]
-\begin{axis}[
-    ymin=0, ymax=18,
-    minor y tick num = 4,
-    area style, grid=both, title=Test Scores
-    ]
-\addplot+[ybar interval,mark=no,fill=green!70] plot coordinates { (50, 3) (60, 2) (70, 12) (80, 14) (90, 11) (100, 9)};
-\onslide<2->{
 \node at (55,3.66) {3};
 \node at (65,2.66) {2};
 \node at (75,12.66) {12};
 \node at (85,14.66) {14};
 \node at (95,11.66) {11};
-}
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -198,13 +170,11 @@ Create a histogram from the measurements below. Use the minimum value as the low
     area style, grid=both, 
     ]
 \addplot+[ybar interval,mark=no,fill=blue!70] plot coordinates { (1,7) (3,5) (5,5) (7,3) (9,5) (11,5)};
-\onslide<2->{
 \node at (2,7.55) {7};
 \node at (4,5.55) {5};
 \node at (6,5.55) {5};
 \node at (8,3.55) {3};
 \node at (10,5.55) {5};
-}
 \end{axis}
 \end{tikzpicture}
 \end{center}
@@ -268,7 +238,7 @@ Left (a.k.a. negatively) skewed
 \end{center}
 \end{frame}
 
-\begin{frame}{Cumulative Histogram Distributions}
+\begin{frame}{Cumulative Histograms}
 The cumulative relative frequency histogram below shows a running total of relative frequencies of scores for a mathemathics test.
 \begin{center}
 \includegraphics[scale=0.6]{../Images/cumulative_hist.png}
