@@ -146,7 +146,7 @@ How many ways are there to award gold, silver, and bronze medals to 8 contestant
 
 \begin{frame}{Permutations}
 If there are $n$ items available and we take $r$ at a time, then the total number of permutations is given by 
-\[\frac{n!}{(n-r)!}\]
+\[_nP_r = \frac{n!}{(n-r)!}\]
 
 with $n \geq r$	\newline\\
 
@@ -159,15 +159,120 @@ Permutations
 	\item<+-> Offering various prizes
 	\item<+-> Running a race
 	\item<+-> Assigning officer positions
+	\item<+-> Combination locks and passwords
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Example 6}
-
+How many ways are there of selecting a president, vice president, secretary, and treasurer out of a pool of 10 candidates?	\newline\\	\pause
+Order matters.	\newline	\pause
+We have $n = 10$ items to choose from.	\newline	\pause
+We are filling $r = 4$ positions at a time.	\newline	
+\begin{align*}
+\onslide<5->{_{10}P_4 &= \frac{10!}{(10-4)!}} \\[8pt]
+\onslide<6->{&= \frac{10!}{6!}} \\[8pt]
+\onslide<7->{&= 5,040}
+\end{align*}
 \end{frame}
 
-
 \section{Find combinations of objects}
+
+\begin{frame}{Combinations}
+With permutations, order selection mattered, so 
+\begin{center}
+ABC, ACB, BAC, BCA, CAB, and CBA
+\end{center}
+were all different.	\newline\\	\pause
+
+With combinations, selection order does not matter, so there is no distinction among the orderings above. So,
+\begin{center}
+ABC, ACB, BAC, BCA, CAB, and CBA
+\end{center}
+are all the same.
+\end{frame}
+
+\begin{frame}{Combinations}
+Notice that there are 6, or $3!$, arrangements of the letters A, B, and C. \newline\\	\pause
+
+This can help us develop the formula for finding the number of combinations of $n$ items taken $r$ at a time.
+\end{frame}
+
+\begin{frame}{Example 7}
+Five people are competing for three equal prizes. How many ways can the prizes be awarded?	\newline\\
+
+If order mattered, there would be $_5P_3 = 60$ different possibilities:
+\begin{center}
+\begin{tabular}{ccccccc}
+ABC & ABD & ABE & ACB & ACD & ACE & $\dots$ \\
+BAC & BAD & BAE & BCA & BCD & BCE & $\dots$ \\
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\dots$ 
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 7}
+Since ABC is the same as ACB, BAC, BCA, CAB, and CBA in the eyes of combinations, we can divide our permutation result of 60 by 3! to get \alert{10 combinations}:
+
+\begin{center}
+\begin{tabular}{ccccc}
+ABC & ABD & ABE & ACD & ACE \\
+ADE & BCD & BCE & BDE & CDE \\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Combinations}
+If we have $n$ items available and we take $r$ at a time {\color{blue}\textbf{without regard to order of selection}}, then the total number of possible combinations are
+
+\onslide<2->{\[_nC_r = \frac{n!}{r!(n-r)!} \onslide<3->{= \binom{n}{r}}\]}
+
+\onslide<4->{
+	Combinations
+	\begin{itemize}
+		\item<5-> Awarding equal prizes
+		\item<6-> Combinations (not the lock though)
+		\item<7-> Committees
+	\end{itemize}
+}
+\end{frame}
+
+\begin{frame}{Example 8}
+A committee of 5 is to be formed from a pool of 12 potential candidates. How many committees are possible?	\newline\\	
+\onslide<2->{We have $n=12$ candidates to choose from} \newline
+\onslide<3->{We are selecting $r=5$ at a time}
+\begin{align*}
+\onslide<4->{_{12}C_5 &= \frac{12!}{5!(12-5)!}}	\\[10pt]
+\onslide<5->{&= 792}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 9}
+A committee of 5 is to be formed from a pool of 12 potential candidates. The committee is to be made up of 3 managers and 2 accountants. If there are 8 managers and 4 accountants available, how many committees can be formed?	\newline\\
+\onslide<2->{We need to make sure 3 of the positions are managers and 2 of the positions are accountants.} \newline\\
+\onslide<3->{Thus, we must blend the Fundamental Counting Rule with combinations.}	
+\end{frame}
+
+\begin{frame}{Example 9}
+\begin{center}
+\setlength{\extrarowheight}{6pt}
+\begin{tabular}{ccc}
+Select 3 managers from 8 & $\times$ & Select 2 accountants from 4 \\ \hline
+\onslide<2->{$_8C_3$} & $\times$ & \onslide<3->{$_4C_2$} \\
+\onslide<4->{56} & $\times$ & \onslide<5->{6} \\
+\end{tabular}
+\end{center}
+\onslide<6->{There are 336 ways to do this.}
+\end{frame}
+
+\begin{frame}{Example 10}
+Starting at point $A$ and only moving right or up, how many paths are there to get to point $B$?	
+\begin{center}
+\begin{tikzpicture}
+
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 \section{Find probabilities using counting techniques}
 
 \end{document}
