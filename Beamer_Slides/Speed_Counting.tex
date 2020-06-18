@@ -267,12 +267,62 @@ Select 3 managers from 8 & $\times$ & Select 2 accountants from 4 \\ \hline
 \begin{frame}{Example 10}
 Starting at point $A$ and only moving right or up, how many paths are there to get to point $B$?	
 \begin{center}
-\begin{tikzpicture}
-
+\begin{tikzpicture}[scale=0.6]
+\draw (0,0) grid (5,4);
+\draw [fill=black] (0,0) circle [radius=2.5pt] node [left] {$A$};
+\draw [fill=black] (5,4) circle [radius=2.5pt] node [right] {$B$};
 \end{tikzpicture}
 \end{center}
+\onslide<2->{You have to go right a total of 5 spaces and up a total of 4 spaces.} \newline\\
+\onslide<3->{One example of such a path is UURURRRUR}
+\end{frame}
+
+\begin{frame}{Example 10}
+Out of the 9 letters, we need 5 Rs and 4 Us. This can be solved using the Fundamental Counting Rule and combinations.	\pause
+\begin{center}
+\setlength{\extrarowheight}{6pt}
+\begin{tabular}{ccc}
+Pick 5 Rs from 9 letters & $\times$ & Pick 4 Us from \alert{the remaining} 4 letters	\\	\hline
+\onslide<3->{$_9C_5$} & $\times$ & \onslide<4->{$_4C_4$} \\
+\onslide<5->{126} & $\times$ & \onslide<6->{1} \\
+\end{tabular}
+\end{center}
+\onslide<7->{There are 126 ways to do this.}
+\end{frame}
+
+\begin{frame}{Example 11}
+How many ways can 20 people on a youth center basketball team be grouped into 6 centers, 4 shooting guards, 3 small forwards, 2 power forwards, and 5 point guards be assigned? \newline\\	\pause
+
+\begin{center}
+\begin{tabular}{cc}
+For the centers, we have $n=20$ and $r=6$	&	$_{20}C_6$ 	\\ \pause
+Shooting guards: $n=14$ and $r=4$:			&	$_{14}C_4$ 	\\ \pause
+Small forwards: $n=10$ and $r=3$:			& 	$_{10}C_3$ 	\\ \pause
+Power forwards: $n=7$ and $r = 2$: 			&	$_7C_2$    	\\ \pause
+Point guards: $n=5$ and $r=5$: 				&	$_5C_5$		\\ \pause
+\end{tabular}
+\end{center}
+\[_{20}C_6 \cdot _{14}C_4 \cdot _{10}C_3 \cdot _7C_2 \cdot _5C_5 = 97,772,875,200\]
+\end{frame}
+
+\begin{frame}{Example 11: Alternative Approach}
+We can use the following formula to make quicker work of a problem like the previous example.	\newline\\	\pause
+
+\[ \frac{n!}{r_1!r_2!r_3!\dots r_k!} \]	\bigskip
+
+where $r_1 + r_2 + r_3 + \cdots + r_k = n$	\newline\\	\pause
+
+\[\frac{20!}{6! \cdot 4! \cdot 3! \cdot 2! \cdot 5!} = 97,772,875,200\]
 \end{frame}
 
 \section{Find probabilities using counting techniques}
+
+\begin{frame}{Counting and Probability}
+We can use counting techniques to find the total number of outcomes we want to happen (numerator) and also to find the total number of possible outcomes (denominator)
+\end{frame}
+
+\begin{frame}{Example 12}
+
+\end{frame}
 
 \end{document}
