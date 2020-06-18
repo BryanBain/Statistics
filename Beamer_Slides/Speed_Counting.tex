@@ -198,7 +198,7 @@ This can help us develop the formula for finding the number of combinations of $
 \end{frame}
 
 \begin{frame}{Example 7}
-Five people are competing for three equal prizes. How many ways can the prizes be awarded?	\newline\\
+Five people are competing for three equal prizes. How many ways can the prizes be awarded?	\newline\\	\pause
 
 If order mattered, there would be $_5P_3 = 60$ different possibilities:
 \begin{center}
@@ -322,7 +322,64 @@ We can use counting techniques to find the total number of outcomes we want to h
 \end{frame}
 
 \begin{frame}{Example 12}
+(a) \quad A combination lock has 3 dials with 10 digits each. What is the probability of guessing the combination on the first attempt?	\newline\\	\pause
 
+Total number of possible outcomes (denominator): $10 \cdot 10 \cdot 10$	\newline\\	\pause
+Total number of outcomes we want (numerator): 1	\newline\\	\pause
+
+\[P(\text{guess correctly}) = \frac{1}{1,000}\]
+\end{frame}
+
+\begin{frame}{Example 12}
+(b) \quad What is the probability of the previous example if each of the digits must be unique?	\newline\\	\pause
+
+Total number of possible outcomes (denominator): $_{10}P_3$	\newline\\	\pause
+Total number of outcomes we want (numerator): 1	\newline\\	\pause
+
+\[P(\text{guess correctly}) = \frac{1}{720}\]
+\end{frame}
+
+\begin{frame}{Example 13}
+In a state lottery, you pick 6 numbers from a possible 49 numbers and win a prize if you match at least 4 of the 6 numbers.	\newline\\
+
+(a) \quad What is the probability of matching 4 out of the 6 numbers?	\newline\\ \pause
+Total number of possible outcomes (denominator): $_{49}C_6$ \newline\\	\pause
+Total number of outcomes we want (numerator): 
+\begin{center}
+\setlength{\extrarowheight}{6pt}
+\begin{tabular}{ccc}
+Select 4 winning nos. from 6 & $\times$ & Select 2 losing nos. from 43 \\ \hline
+\onslide<4->{$_{6}C_4$} & $\times$ & \onslide<5->{$_{43}C_2$} \\
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 13a}
+
+\[\frac{_{6}C_4 \times _{43}C_2}{_{49}C_6}\]	\pause
+\[\approx 0.097\%\]
+
+
+\end{frame}
+
+\begin{frame}{Example 13}
+(b) \quad What is the probability of getting a losing lottery ticket?	\newline\\	\pause
+You have a losing ticket if you matched 3 numbers or less.	\newline\\	\pause
+Since we already calculated the probability of getting 4 matches, we can continue up to 6 matches and then use the {\color{blue}\textbf{Complement Rule}}:	\newline\\	\pause
+
+\begin{align*}
+P(\text{losing ticket}) &= 1 - P(\text{winning ticket})	\\
+\onslide<3->{&= 1 - P(\text{4 matches OR 5 matches OR 6 matches})} \\
+\onslide<4->{&= 1 - \left(P(\text{4 matches})+ P(\text{5 matches}) + P(\text{6 matches})\right)}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 13b}
+$P(4) = \dfrac{_{6}C_4 \times _{43}C_2}{_{49}C_6}$	\\[18pt]	\pause
+$P(5) = \dfrac{_{6}C_5 \times _{43}C_1}{_{49}C_6}$	\\[18pt]	\pause
+$P(6) = \dfrac{_{6}C_6 \times _{43}C_0}{_{49}C_6}$	\\[18pt]	\pause
+$1-\left(P(4) + P(5) + P(6)\right)$					\\[18pt]	\pause
+$99.90\%$ chance of purchasing a losing ticket.
 \end{frame}
 
 \end{document}
