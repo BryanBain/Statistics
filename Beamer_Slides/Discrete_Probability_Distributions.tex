@@ -213,4 +213,38 @@ What is the expected number of dogs per household?	\newline\\
 \end{frame}
 
 \section{Determine the variance and standard deviation of a probability distribution}
+
+\begin{frame}{Variance and Standard Deviation}
+Previously, we saw that variance, which was the average squared deviation the data values are from the mean, was
+\[\frac{\sum \left(x-\mu\right)^2}{n}\]
+\pause
+
+Similarly, the variance for probability distributions is given as
+\[\sigma^2 = \sum\left((x-\mu)^2 \cdot P(x)\right)\]	\pause
+from which the {\color{blue}\textbf{standard deviation}} is 
+\[\sigma = \sqrt{\sum\left((x-\mu)^2 \cdot P(x)\right)}\]
+\end{frame}
+
+\begin{frame}{Variance and Standard Deviation Alternate Definition}
+\[\sigma^2 = \sum\left((x-E(x))^2 \cdot P(x)\right)\]	\pause
+and
+\[\sigma = \sqrt{\sum\left((x-E(x))^2 \cdot P(x)\right)}\]
+\end{frame}
+
+
+\begin{frame}{Example 5}
+What is the standard deviation of rolling two dice?	\newline\\	\pause
+
+From a previous example, we have $\mu = E(x) = 7$.	\newline\\	\pause
+
+2: \quad $(2-7)^2 \cdot \frac{1}{36} = \frac{25}{36}$	\newline\\	\pause
+3: \quad $(3-7)^2 \cdot \frac{1}{18} = \frac{8}{9}$ \newline\\ \pause
+$\vdots$ \newline\\ \pause
+12: \quad $(12-7)^2 \cdot \frac{1}{36} = \frac{25}{36}$
+\end{frame}
+
+\begin{frame}{Example 5}
+Adding up all of the results and then taking the square root, we get
+\[\sigma \approx 2.415\]
+\end{frame}
 \end{document}
