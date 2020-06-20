@@ -43,12 +43,58 @@ Number of heads when flipping a coin 3 times:
 \setlength{\extrarowheight}{4pt}
 \begin{tabular}{c|c|c}
 $\bm{x}$ & Outcomes &$\bm{P(X=x)}$ \\ \hline
-0 & TTT &\onslide<4->{1/8} \\[4pt]
-1 & HTT THT TTH &\onslide<5->{1/4} \\[4pt]
-2 & HHT HTH THH &\onslide<6->{1/4} \\[4pt]
-3 & &\onslide<7->{1/8}
+0 & TTT & 1/8 \\[4pt]
+1 & HTT THT TTH & 3/8 \\[4pt]
+2 & HHT HTH THH & 3/8 \\[4pt]
+3 & HHH & 1/8	\\[8pt]
 \end{tabular}
 \end{center}
+\onslide<2->{In the outcome for 2 heads, HHT, HTH, and THH are all considered equal.}	\newline\\
+\onslide<3->{Thus, combinations play a role in binomial probability distributions.}
+\end{frame}
+
+\begin{frame}{Flipping a Coin}
+Also note that if two heads are obtained when flipping a coin 3 times, then the remaining flips (1 in this case) must be tails. \newline\\	\pause
+
+Heads has a probability of $\frac{1}{2}$ of occurring and tails has a probability of $1 - \frac{1}{2}$ of occurring.	\newline\\	\pause
+
+Combining the idea of combinations, the number of successes of each event, and the probability of success and failure, we get the formula for calculating probabilities for binomial distributions:	\pause
+\begin{align*}
+\onslide<4->{P(X=x) &= \binom{n}{x} \cdot p^x \cdot (1-p)^{n-x}}	\\[5pt]
+\onslide<5->{&= \frac{n!}{x!(n-x)!} \cdot p^x \cdot (1-p)^{n-x}}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 1}
+Which is more likely when flipping a coin: obtaining 4 out of 5 tails or obtaining 8 out of 10 tails?	\newline\\	\pause
+4 out of 5:	\pause
+\[\frac{5!}{4!(5-4)!}\left(\frac{1}{2}\right)^4 \left(\frac{1}{2}\right)^1 \onslide<3->{= 0.15625}\] 	
+
+\onslide<4->{8 out of 10:} 
+\onslide<5->{\[\frac{10!}{8!(10-8)!}\left(\frac{1}{2}\right)^8 \left(\frac{1}{2}\right)^2 \onslide<6->{\approx 0.04395}\]}
+\onslide<7->{It is more likely you will obtain 4 heads from 5 flips than 8 heads from 10 flips.}
+\end{frame}
+
+\begin{frame}{Example 2}
+(a) \quad A multiple choice test consists of 10 questions with 5 answer choices per question. What is the probability that a student guesses correctly on 6 questions?	
+
+\onslide<2->{
+	\begin{align*}
+	P(X=6) &= \frac{10!}{6!(10-6)!}\left(\frac{1}{5}\right)^6 \left(\frac{4}{5}\right)^4 \\[12pt]
+	\onslide<3->{&\approx 0.00551}
+	\end{align*}
+}
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad What is the probability a student guesses \emph{at least} 6 out of 10 questions correctly?	\newline\\
+
+\onslide<2->{We can either add the probabilities from $x = 6$ to $x = 10$, or use a cumulative binomial calculation with the {\color{blue}\textbf{complement rule}} to achieve this as well.}
+
+\begin{align*}
+\onslide<3->{P(x \geq 6) &= 1 - P(x < 6)} \\[6pt]
+\onslide<4->{& \approx 0.00637}
+\end{align*}
 \end{frame}
 
 \section{Calculate the mean, variance, and standard deviation of a binomial distribution}
