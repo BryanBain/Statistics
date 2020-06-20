@@ -1,0 +1,63 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Binomial Probability Distributions}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\section{Calculate probabilities of binomial distributions}
+
+\begin{frame}{Binomial Probability Experiment}
+A {\color{blue}\textbf{binomial probability experiment}} is an experiment with the following conditions:
+	\begin{itemize}
+		\item<2-> There are a fixed number of $n$ repeated independent trials
+		\item<3-> Each trial's outcome is either a success or failure
+		\item<4-> The probability of success, $p$, never changes
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Flipping a Coin}
+Number of heads when flipping a coin 3 times:
+\begin{center}
+\setlength{\extrarowheight}{4pt}
+\begin{tabular}{c|c|c}
+$\bm{x}$ & Outcomes &$\bm{P(X=x)}$ \\ \hline
+0 & TTT &\onslide<4->{1/8} \\[4pt]
+1 & HTT THT TTH &\onslide<5->{1/4} \\[4pt]
+2 & HHT HTH THH &\onslide<6->{1/4} \\[4pt]
+3 & &\onslide<7->{1/8}
+\end{tabular}
+\end{center}
+\end{frame}
+
+\section{Calculate the mean, variance, and standard deviation of a binomial distribution}
+
+% Fixed number of independent trials
+% Each trial = success or failure
+% p never changes
+% nCr * p^x * (1-p)^(n-k)
+
+% Mean Var & SD
+
+\end{document}

@@ -105,8 +105,8 @@ The sample space is HHH, HHT, HTH, HTT, THH, THT, TTH, and TTT	\pause
 \begin{tabular}{c|c}
 $\bm{x}$ & $\bm{P(X=x)}$ \\ \hline
 0 & \onslide<4->{1/8} \\[4pt]
-1 & \onslide<5->{1/4} \\[4pt]
-2 & \onslide<6->{1/4} \\[4pt]
+1 & \onslide<5->{3/8} \\[4pt]
+2 & \onslide<6->{3/8} \\[4pt]
 3 & \onslide<7->{1/8}
 \end{tabular}
 \end{center}
@@ -118,11 +118,11 @@ $\bm{x}$ & $\bm{P(X=x)}$ \\ \hline
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \begin{axis}[
-ymin = 0, ymax = 0.3, area style, xlabel = {Number of Heads}, ylabel = {Probability},
+ymin = 0, ymax = 0.4, area style, xlabel = {Number of Heads}, ylabel = {Probability},
 xtick = {0,1,2,3}
 ]
 \addplot[ybar interval, fill=blue!60, mark=no] plot coordinates {
-	(-0.5,1/8) (0.5,1/4) (1.5,1/4) (2.5,1/8) (3.5,1/8)
+	(-0.5,1/8) (0.5,3/8) (1.5,3/8) (2.5,1/8) (3.5,1/8)
 };
 \end{axis}
 \end{tikzpicture}
