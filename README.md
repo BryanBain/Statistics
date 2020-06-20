@@ -14,4 +14,7 @@
   <li>Probability: AND</li>
   <li>Probability: OR</li>
   <li>Speed Counting</li>
+  <li>Discrete Probability Distributions</li>
+  <li>Binomial Distributions</li>
+  <li>Other Distributions</li>
 </ol>
