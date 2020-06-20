@@ -99,11 +99,52 @@ Which is more likely when flipping a coin: obtaining 4 out of 5 tails or obtaini
 
 \section{Calculate the mean, variance, and standard deviation of a binomial distribution}
 
-% Fixed number of independent trials
-% Each trial = success or failure
-% p never changes
-% nCr * p^x * (1-p)^(n-k)
+\begin{frame}{Mean of a Binomial Distribution}
+Recall that the expected value, $E(x)$, of a probability distribution is the mean, $\mu$, of a that distribution.	\newline\\	\pause
 
-% Mean Var & SD
+In other words, it is the value that we will get closer and closer to if we perform the experiment indefinitely.	\newline\\	\pause
+
+In a binomial probability distribution, the mean, $\mu$, can be found by multplying the number of trials by the probability of success:	\pause
+
+\[\mu = E(x) = np\]
+\end{frame}
+
+\begin{frame}{Variance and Standard Deviation of a Binomial Distribution}
+For binomial distributions, the variance can be found by multiplying the mean by the probability of failure:	\pause
+\[\sigma^2 = np(1-p)\]	\pause
+
+As usual, standard deviation is the square root of variance:	\pause
+\[\sigma = \sqrt{np(1-p)}\]
+\end{frame}
+
+\begin{frame}{Example 3}
+(a) \quad A multiple choice test consists of 10 questions with 5 answer choices per question. What is the expected number of correct answers a student will get by guessing alone?	
+
+\begin{align*}
+\onslide<2->{\text{Mean } &= np} \\[6pt]
+\onslide<3->{&= 10\left(\frac{1}{5}\right)} \\[6pt]
+\onslide<4->{&= 2} \\[6pt]
+\end{align*}
+
+\onslide<5->{The student can expect to get 2 questions correct out of 10}
+\end{frame}
+
+\begin{frame}{Example 3}
+(b) \quad What is the standard deviation of the number of correct questions via guessing?
+
+\begin{align*}
+\onslide<2->{\sigma &= \sqrt{np(1-p)}} \\[8pt]
+\onslide<3->{&= \sqrt{10\left(\frac{1}{5}\right)\left(\frac{4}{5}\right)}} \\[8pt]
+\onslide<4->{& \approx 1.265}
+\end{align*}
+
+\onslide<5->{The standard deviation is about 1.265 questions.}
+\end{frame}
+
+\begin{frame}{Standard Deviation Interpretation}
+If we perform this same experiment several times, around 95\% of the time, the number of correct guesses will be within 2 standard deviations of the mean (expected value).	\newline\\	\pause
+
+So, around 95\% of the time, the student will guess between 0 and around 4.5 questions correctly.
+\end{frame}
 
 \end{document}
