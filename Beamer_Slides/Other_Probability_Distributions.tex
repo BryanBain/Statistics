@@ -69,10 +69,47 @@ P(X = 4) &= (1-0.2)^4 (0.2)	\\
 \end{frame}
 
 \begin{frame}{Mean and Standard Deviation of Geometric Distributions}
+The mean (expected value) of a geometric distribution is the {\color{blue}\textbf{reciprocal of the probability of success}}:
+
+\[E(X) = \frac{1}{p}\]
+
+\pause
+The variance for a geometric distribution is the probability of failure divided by the square of the probability of success, given as 
+\[\sigma^2 = \frac{1-p}{p^2}\]
+\pause
+
+From which the standard deviation, $\sigma$ is
+\[\sigma = \sqrt{\frac{1-p}{p^2}} = \frac{\sqrt{1-p}}{p}\]
 
 \end{frame}
 
-% Geometric Distributions
+\begin{frame}{Example 2}
+(a)	\quad A student is given a 10-question multiple choice test in which each question has 5 possible answers. What is the expected number of answers a student can guess before getting one right?	\newline\\	\pause
+
+The expected value is the reciprocal of the probability of success:
+\begin{align*}
+\onslide<3->{E(X) &= \frac{1}{0.2}} \\[10pt]
+\onslide<4->{&= 5} 
+\end{align*}
+
+\onslide<5->{We would expect the student to answer 5 questions before guessing one correctly.}
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad What is the standard deviation of the number of questions needed before the student guesses correctly?	\newline\\	\pause
+
+The standard deviation is the square root of the probability of failue divided by the probability of success:
+\begin{align*}
+\onslide<3->{\sigma &= \frac{\sqrt{1-0.2}}{0.2}} \\[8pt]
+\onslide<4->{& \approx 4.47}
+\end{align*}
+
+\onslide<5->{The standard deviation is about 4.47 questions.}
+\end{frame}
+
+\section{Solve problems involving hypergeometric probability distributions}
+
+
 % Hypergeometric Distributions
 % Poisson Distributions
 
