@@ -30,179 +30,299 @@
 \maketitle
 \end{frame}
 
-\section{Find the area under a normal curve given z score(s)}
+% \section{Find the area under a normal curve given z score(s)}
 
-\begin{frame}{Continuous Distributions}
-\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Continuous Probability Distribution}]
-A \textbf{continuous probability distribution} is a probability distribution in which the observations are continuous variables.
-\end{tcolorbox}
-\bigskip	\pause
+% \begin{frame}{Continuous Distributions}
+% \begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Continuous Probability Distribution}]
+% A \textbf{continuous probability distribution} is a probability distribution in which the observations are continuous variables.
+% \end{tcolorbox}
+% \bigskip	\pause
 
-In this section, we are going to discuss the {\color{blue}\textbf{standard normal distribution}}, whose histogram resembles a bell-shaped curve.
-\end{frame}
+% In this section, we are going to discuss the {\color{blue}\textbf{standard normal distribution}}, whose histogram resembles a bell-shaped curve.
+% \end{frame}
 
-\begin{frame}{Equation and Graph of Standard Normal Distribution}
-\[f(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2} \]	\smallskip
-\begin{center}
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\end{frame}
+% \begin{frame}{Equation and Graph of Standard Normal Distribution}
+% \[f(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2} \]	\smallskip
+% \begin{center}
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% \end{center}
+% \end{frame}
 
-\begin{frame}{Properties of the Standard Normal Distribution}
-\begin{itemize}
-	\item<+-> The mean is 0 and the standard deviation is 1
-	\item<+-> The graph is symmetric about the mean
-	\item<+-> The area under the curve represents the probability of obtaining a z score in that area.
-	\item<+-> The total area under the curve equals 1
-\end{itemize}
-\end{frame}
+% \begin{frame}{Properties of the Standard Normal Distribution}
+% \begin{itemize}
+% 	\item<+-> The mean is 0 and the standard deviation is 1
+% 	\item<+-> The graph is symmetric about the mean
+% 	\item<+-> \textbf{The area under the curve represents the probability of obtaining a z score in that area.}
+% 	\item<+-> The total area under the curve equals 1
+% \end{itemize}
+% \end{frame}
 
-\begin{frame}{Example 1}
-Find the area under the curve to the left of each of the following z scores.	\newline\\	
-(a)	\quad	$z = 0$	\newline\\
-\begin{minipage}{0.5\textwidth}
-\onslide<2->{
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -3.5:0] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}}
-\end{minipage}
-\hspace{0.75cm}
-\begin{minipage}{0.25\textwidth}
-\onslide<3->{0.5}	\newline\\
-\onslide<4->{\[P(z \leq 0) = 0.5\]}
-\end{minipage}
-\end{frame}
+% \begin{frame}{Example 1}
+% Find the area under the curve to the left of each of the following z scores.	\newline\\	
+% (a)	\quad	$z = 0$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:0] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}}
+% \end{minipage}
+% \hspace{0.75cm}
+% \begin{minipage}{0.25\textwidth}
+% \onslide<3->{0.5}	\newline\\
+% \onslide<4->{\[P(z \leq 0) = 0.5\]}
+% \end{minipage}
+% \end{frame}
 
-\begin{frame}{Example 1}
-(b)	\quad	$z = -1$	\newline\\
-\begin{minipage}{0.5\textwidth}
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -3.5:-1] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}
-\end{minipage}
-\hspace{0.75cm}
-\begin{minipage}{0.25\textwidth}
-\onslide<2->{0.1587}	\newline\\
-\onslide<3->{$P(z \leq -1) = 0.1587$}
-\end{minipage}
-\end{frame}
+% \begin{frame}{Example 1}
+% (b)	\quad	$z = -1$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:-1] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% \end{minipage}
+% \hspace{0.75cm}
+% \begin{minipage}{0.25\textwidth}
+% \onslide<2->{0.1587}	\newline\\
+% \onslide<3->{$P(z \leq -1) = 0.1587$}
+% \end{minipage}
+% \end{frame}
 
-\begin{frame}{Example 1}
-(c)	\quad	$z = 1.75$	\newline\\
-\begin{minipage}{0.5\textwidth}
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -3.5:1.75] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}
-\end{minipage}
-\hspace{0.75cm}
-\begin{minipage}{0.25\textwidth}
-\onslide<2->{0.9599}	\newline\\
-\onslide<3->{$P(z \leq 1.75) = 0.9599$}
-\end{minipage}
-\end{frame}
+% \begin{frame}{Example 1}
+% (c)	\quad	$z = 1.75$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:1.75] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% \end{minipage}
+% \hspace{0.75cm}
+% \begin{minipage}{0.25\textwidth}
+% \onslide<2->{0.9599}	\newline\\
+% \onslide<3->{$P(z \leq 1.75) = 0.9599$}
+% \end{minipage}
+% \end{frame}
 
-\begin{frame}{Example 2}
-Find the area under the curve to the right of each of the following z scores.	\newline\\	
-(a)	\quad	$z = -0.25$	\newline\\
-\begin{minipage}{0.5\textwidth}
-\onslide<2->{
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -0.25:3.5] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}}
-\end{minipage}
-\hspace{0.75cm}
-\begin{minipage}{0.25\textwidth}
-\onslide<3->{0.5987}	\newline\\
-\onslide<4->{$P(z \geq -0.25) = 0.5987$}
-\end{minipage}
-\end{frame}
+% \begin{frame}{Example 2}
+% Find the area under the curve to the right of each of the following z scores.	\newline\\	
+% (a)	\quad	$z = -0.25$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -0.25:3.5] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}}
+% \end{minipage}
+% \hspace{0.75cm}
+% \begin{minipage}{0.25\textwidth}
+% \onslide<3->{0.5987}	\newline\\
+% \onslide<4->{$P(z \geq -0.25) = 0.5987$}
+% \end{minipage}
+% \end{frame}
 
-\begin{frame}{Example 2}
-(b)	\quad	$z = 2$	\newline\\
-\begin{minipage}{0.5\textwidth}
-\onslide<2->{
-\begin{tikzpicture}[scale=0.7]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = 2:3.5] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}}
-\end{minipage}
-\hspace{0.75cm}
-\begin{minipage}{0.25\textwidth}
-\onslide<3->{0.0228}	\newline\\
-\onslide<4->{$P(z \geq 2) = 0.0228$}
-\end{minipage}
-\end{frame}
+% \begin{frame}{Example 2}
+% (b)	\quad	$z = 2$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.7]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = 2:3.5] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}}
+% \end{minipage}
+% \hspace{0.75cm}
+% \begin{minipage}{0.25\textwidth}
+% \onslide<3->{0.0228}	\newline\\
+% \onslide<4->{$P(z \geq 2) = 0.0228$}
+% \end{minipage}
+% \end{frame}
 
-\begin{frame}[c]{Finding the Area Between Two z Scores}
-\begin{center}
-\scalebox{0.5}{
-\begin{tikzpicture}[scale=0.8]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -3.5:2] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}
-\hspace{0.2cm} \raisebox{2.5cm}{\Huge{$-$}} \hspace{0.2cm}
-\begin{tikzpicture}[scale=0.8]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -3.5:-2] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}
-\hspace{0.2cm} \raisebox{2.5cm}{\Huge{$=$}} \hspace{0.2cm}
-\begin{tikzpicture}[scale=0.8]
-\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
-xlabel = {z score}, ylabel = {Probability}
-]
-\addplot [draw = none, fill = green, domain = -2:2] {gauss(0,1)} \closedcycle;
-\addplot [very thick, color=blue] {gauss(0,1)};
-\end{axis}
-\end{tikzpicture}}
-\end{center}
-\end{frame}
+% \begin{frame}[c]{Finding the Area Between Two z Scores}
+% \begin{center}
+% \scalebox{0.5}{
+% \begin{tikzpicture}[scale=0.8]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:2] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% \hspace{0.2cm} \raisebox{2.5cm}{\Huge{$-$}} \hspace{0.2cm}
+% \begin{tikzpicture}[scale=0.8]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:-2] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% \hspace{0.2cm} \raisebox{2.5cm}{\Huge{$=$}} \hspace{0.2cm}
+% \begin{tikzpicture}[scale=0.8]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -2:2] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}}
+% \end{center}
+% \end{frame}
 
-% Standard Normal Distribution
-%  - Equation and Graph
-%  - Mean & SD
-%  - Properties
-%  - Finding area under curve
-%    * Left/Right/Between/Outside
+% \begin{frame}{Example 3}
+% Find the area under the curve between the given z scores.	\newline\\
+% (a)	\quad $z = -1$ and $z = 1$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.65]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -1:1] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% }
+% \end{minipage}
+% \hspace{0.25cm}
+% \begin{minipage}{0.4\textwidth}
+% \onslide<3->{\[P(-1 \leq z \leq 1) = 0.6827\]}
+% \end{minipage}
+% \end{frame}
+
+% \begin{frame}{Example 3}
+% (b)	\quad $z = -2$ and $z = 2$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.65]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -2:2] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% }
+% \end{minipage}
+% \hspace{0.25cm}
+% \begin{minipage}{0.4\textwidth}
+% \onslide<3->{\[P(-2 \leq z \leq 2) = 0.9545\]}
+% \end{minipage}
+% \end{frame}
+
+% \begin{frame}{Example 3}
+% (c)	\quad $z = -3$ and $z = 3$	\newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.65]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3:3] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% }
+% \end{minipage}
+% \hspace{0.25cm}
+% \begin{minipage}{0.4\textwidth}
+% \onslide<3->{\[P(-3 \leq z \leq 3) = 0.9973\]}
+% \end{minipage}
+% \end{frame}
+
+% \begin{frame}{Empirical Rule}
+% For normally distributed data, the Empirical (sometimes called 68-95-99.7 Rule) states that
+% \begin{itemize}
+% 	\item<2-> About 68\% of the data will lie within 1 standard deviation of the mean.
+% 	\item<3-> About 95\% of the data will lie within 2 standard deviations of the mean.
+% 	\item<4-> About 99.7\% of the data will lie within 3 standard deviations of the mean.
+% \end{itemize}
+% \end{frame}
+
+% \begin{frame}{Total Outside Two z Scores}
+% We can use the {\color{blue}\textbf{complement rule}} to find the total area under the normal curve \emph{not between} two z scores:
+% \newline\\
+% \begin{minipage}{0.5\textwidth}
+% \onslide<2->{
+% \begin{tikzpicture}[scale=0.65]
+% \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45,
+% xlabel = {z score}, ylabel = {Probability}
+% ]
+% \addplot [draw = none, fill = green, domain = -3.5:-2] {gauss(0,1)} \closedcycle;
+% \addplot [draw = none, fill = green, domain = 2:3.5] {gauss(0,1)} \closedcycle;
+% \addplot [very thick, color=blue] {gauss(0,1)};
+% \end{axis}
+% \end{tikzpicture}
+% }
+% \end{minipage}
+% \hspace{0.25cm}
+% \begin{minipage}{0.4\textwidth}
+% \begin{align*}
+% \onslide<3->{P(|z| \geq 2) &=}	\\[8pt]
+% \onslide<4->{&= 1 - P(|z| \leq 2)} \\[8pt]
+% \onslide<5->{&\approx 0.0455}
+% \end{align*}
+% \end{minipage}
+% \end{frame}
 
 \section{Find the z scores corresponding to a given area}
+
+\begin{frame}{Finding z Score for a Given Area}
+This is just working backwards from the our previous examples.	\newline\\	\pause
+
+Keep in mind that most (not all) technology will ask you for the area to the \emph{left} of the needed z score.
+\end{frame}
+
+\begin{frame}{Example 4}
+Find the z score which has the given area to the left of it. Round to 3 decimal places.	\newline\\
+(a) \quad 0.05	\newline\\
+\begin{minipage}{0.5\textwidth}
+\onslide<2->{
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1.645] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\draw [->, >=stealth, very thick] (axis cs:-2.5,0.2) -- (-2.05,0.015);
+\node at (axis cs:-2.5,0.2) [above] {0.05};
+\end{axis}
+\end{tikzpicture}
+}
+\end{minipage}
+\hspace{0.25cm}
+\onslide<3->{
+	\begin{minipage}{0.3\textwidth}
+	$z \approx -1.645$
+	\end{minipage}
+}
+\end{frame}
 %  - Finding z scores for a given area
 %    * Left/Right/Between/Outside
 
