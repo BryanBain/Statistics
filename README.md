@@ -17,4 +17,6 @@
   <li>Discrete Probability Distributions</li>
   <li>Binomial Distributions</li>
   <li>Other Distributions</li>
+  <li>Standard Normal Distribution</li>
+  <li>Applied Normal Distribution</li>
 </ol>
