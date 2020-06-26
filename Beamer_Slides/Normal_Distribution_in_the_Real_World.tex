@@ -1,0 +1,162 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Normal Distribution in the Real World}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\section{Find the area under a normal curve for an observed value}
+
+\begin{frame}{Normal Distribution Revisited}
+The equation for calculating area when working with z scores is
+\[f(z) = \frac{1}{\sqrt{2\pi}} e^{-z^2/2}\]
+with mean $\mu = 0$ and standard deviation $\sigma = 1$.	\newline\\	\pause
+
+Using observed values, and the z score formula $z = \frac{x-\mu}{\sigma}$, we get the following equation in terms of an observed value, $x$:	\pause
+\[f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\left(\frac{x-\mu}{\sigma}\right)^2/2\sigma^2}\]
+\end{frame}
+
+\begin{frame}[c]{Observed Value Graph}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.5,
+xlabel = {observed values}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {$\mu-3\sigma$,$\mu-2\sigma$,$\mu-\sigma$, $\mu$, $\mu+\sigma$, $\mu+2\sigma$, $\mu+3\sigma$} 
+]
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Which Method Should I Use?}
+You have the option to convert your observed value to a z score using the given mean and standard deviation.	\newline\\	\pause
+
+However, most technology allows you to enter the observed value, mean, and standard deviation without having to convert to a z score first.	\newline\\	\pause
+
+Go with what you feel most comfortable with.
+\end{frame}
+
+\begin{frame}{Example 1}
+(a) \quad An air conditioning manufacturer says their machines have a mean cooling capacity of 10,000 BTUs. Due to variations that arise in manufacturing, there is a standard deviation of 400 BTUs. 	\newline\\ What is the probability of selecting an air conditioning unit that is 11,000 BTUs or less?	\newline\\	\pause
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.5,
+xlabel = {observed values}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {$8800$, $9200$, $9600$, $10000$, $10400$, $10800$, $11200$} 
+]
+\addplot [draw = none, fill = green, domain = -3.5:2.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 1a}
+We have $x = 11,000, \, \mu = 10,000, \, \text{and } \sigma = 400$	\newline\\	\pause
+We are finding the area \emph{to the left of} $x = 11,000$:	\pause
+\[x \approx 0.9938\]	\pause
+There is about a 99.38\% chance of selecting an air conditioning unit that is 11,000 BTUs or less.
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad What is the probability that you select an air conditioning unit between 9,500 and 10,600 BTUs?	\newline\\	\pause
+
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.5,
+xlabel = {observed values}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {$8800$, $9200$, $9600$, $10000$, $10400$, $10800$, $11200$} 
+]
+\addplot [draw = none, fill = green, domain = -1.25:1.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 1b}
+We have $x_1 = 9,500, \, x_2 = 10,600, \, \mu = 10,000, \, \text{and } \sigma = 400$	\newline\\	\pause
+We are finding the area \emph{between} $x = 9,500$ and $x = 10,600$:	\pause
+\[x \approx 0.8275\]	\pause
+There is about an 82.75\% chance of selecting an air conditioning unit between 9,500 and 10,600 BTUs.
+\end{frame}
+
+\section{Find observed values given area under the normal curve}
+
+\begin{frame}{Finding Values as the Inverse}
+Once again, this is just the inverse of what we did in the last example.	\newline\\	\pause
+
+Fortunately, most statistical technology has the ability to solve problems like these without the need to convert back from z scores first.
+\end{frame}
+
+\begin{frame}{Example 2}
+(a) \quad An air conditioning manufacturer says their machines have a mean cooling capacity of 10,000 BTUs. Due to variations that arise in manufacturing, there is a standard deviation of 400 BTUs. 	\newline\\ How many BTUs must an air conditioning unit have to be in the 90th percentile?	\newline\\	\pause
+
+The 90th percentile means that 90\% of the other units have less BTUs than the value we are finding.	
+\end{frame}
+
+\begin{frame}{Example 2a}
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.5,
+xlabel = {observed values}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {$8800$, $9200$, $9600$, $10000$, $10400$, $10800$, $11200$} 
+]
+\addplot [draw = none, fill = green, domain = -3.5:1.282] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\node at (axis cs: 0,0.15) {$\bm{0.9}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\pause
+\[x \approx 10,512.62\]	\pause
+An air conditioning unit with about 10,512 BTUs is in the 90th percentile.
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad An air conditioning unit will not be shipped if it is in either the bottom 0.25\% or top 0.25\% of BTUs. What are those BTU cutoff values?	\newline\\	\pause
+
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.75, yscale=1.5,
+xlabel = {observed values}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {$8800$, $9200$, $9600$, $10000$, $10400$, $10800$, $11200$} 
+]
+\addplot [draw = none, fill = red, domain = -3.5:-2.807] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = red, domain = 2.807:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 2b}
+So, we are looking to find the BTU values that 99.5\% of the air conditioning units will fall between.	\newline\\	\pause
+\[x_1 \approx 8,877.19 \text{ and } x_2 \approx 11,122.81\]	\newline\\	\pause
+
+An air conditioning unit will not be shipped if it is between around 8,877 and 11,123 BTUs.
+\end{frame}
+
+\end{document}
