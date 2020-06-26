@@ -10,6 +10,8 @@
   <li>Measures of Center</li>
   <li>Measures of Spread</li>
   <li>Measures of Position</li>
+  <li>Scatterplots and Correlation</li>
+  <li>Linear Regression</li>
   <li>Intro to Probability</li>
   <li>Probability: AND</li>
   <li>Probability: OR</li>
