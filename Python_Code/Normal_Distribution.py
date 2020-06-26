@@ -157,8 +157,8 @@ while quit is not True:
                 print(f"The z scores are z = {z_scores[0]:0.3f} and "
                       f"z = {z_scores[1]:0.3f}")
             elif z_option == "4":
-                out_area = float(input("Please enter the total area "
-                                       "(as a decimal) outside the middle: "))
+                out_area = float(eval(input("Please enter the total area "
+                                       "(as a decimal) outside the middle: ")))
                 z_scores = norm.interval(1 - out_area)
                 print()
                 print(f"The z scores are z = {z_scores[0]:0.3f} and "
@@ -238,8 +238,8 @@ while quit is not True:
                 print(f"The observed values are x = {obs_values[0]:0.3f}"
                       f" and x = {obs_values[1]:0.3f}")
             elif x_option == "4":
-                out_area = float(input("Please enter the total area "
-                                        "(as a decimal) outside the middle: "))
+                out_area = float(eval(input("Please enter the total area "
+                                        "(as a decimal) outside the middle: ")))
                 obs_values = norm.interval(1 - out_area, mu, sigma)
                 print()
                 print(f"The observed values are x = {obs_values[0]:0.3f} "
