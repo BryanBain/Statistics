@@ -18,5 +18,5 @@
   <li>Binomial Distributions</li>
   <li>Other Distributions</li>
   <li>Standard Normal Distribution</li>
-  <li>Applied Normal Distribution</li>
+  <li>Normal Distribution in the Real World</li>
 </ol>
