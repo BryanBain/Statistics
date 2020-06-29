@@ -21,4 +21,5 @@
   <li>Other Distributions</li>
   <li>Standard Normal Distribution</li>
   <li>Normal Distribution in the Real World</li>
+  <li>Sampling Distributions</li>
 </ol>
