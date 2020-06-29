@@ -298,7 +298,7 @@ To do this, we can create the {\color{blue}\textbf{least squares regression equa
 \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Line of Best Fit}
+\begin{frame}{Least Squares Regression Equation}
 \begin{minipage}{0.6\textwidth}
 \begin{tikzpicture}[scale=0.8]
 \begin{axis}[
@@ -325,12 +325,13 @@ To do this, we can create the {\color{blue}\textbf{least squares regression equa
 \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-\onslide<2->{The black lines are {\color{blue}\textbf{residuals}}} \\[8pt]
-\onslide<3->{Like deviations from the mean, the sum of the residuals is 0} \\[8pt]
+\onslide<2->{The black lines are {\color{blue}\textbf{residuals}}.} \\[8pt]
+\onslide<3->{Like deviations from the mean, the sum of the residuals is 0.} \\[8pt]
+\onslide<4->{So we need to square the deviations so the negatives don't cancel the positives.}
 \end{minipage}
 \end{frame}
 
-\begin{frame}{Line of Best Fit}
+\begin{frame}{Least Squares Regression Equation}
 \begin{minipage}{0.6\textwidth}
 \begin{tikzpicture}[scale=0.8]
 \begin{axis}[
@@ -347,20 +348,131 @@ To do this, we can create the {\color{blue}\textbf{least squares regression equa
 (3.92,4.01)
 };
 \addplot [color=red, domain=0:10, very thick] {1.295*x + 1.25};
-\draw [very thick] (axis cs: 9.3,14.06) -- (axis cs: 9.3,13.3);
-\draw [very thick] (axis cs: 7.71,10.6) -- (axis cs: 7.71,11.2);
-\draw [very thick] (axis cs: 5.19,7.97) -- (axis cs: 5.19,8.68);
-\draw [very thick, fill=yellow!80] (axis cs: 3.92,4.01) rectangle +(axis cs: 6.24,6.33);
-\draw [very thick] (axis cs: 2,5.64) -- (axis cs: 2,3.84);
-\draw [very thick] (axis cs: 1.38,2.71) -- (axis cs: 1.38,3.04);
+\draw [very thick, fill=yellow!80] (axis cs: 9.3,14.06) rectangle +(axis cs: -0.38,-0.76);
+\draw [very thick, fill=yellow!80] (axis cs: 7.71,10.6) rectangle +(axis cs: 0.3,0.6);
+\draw [very thick, fill=yellow!80] (axis cs: 5.19,8.68) rectangle +(axis cs: -0.35,-0.71);
+\draw [very thick, fill=yellow!80] (axis cs: 3.92,4.01) rectangle +(axis cs: 1.16,2.32);
+\draw [very thick, fill=yellow!80] (axis cs: 2,5.64) rectangle +(axis cs: -0.96,-1.92);
+\draw [very thick, fill=yellow!80] (axis cs: 1.38,2.71) rectangle +(axis cs: 0.16,0.33);
 \end{axis}
 \end{tikzpicture}
 \end{minipage}
 \begin{minipage}{0.35\textwidth}
-\onslide<2->{The line of best fit minimizes the sum of the areas of the squares} \\[8pt]
+\onslide<2->{The line of best fit minimizes the sum of the areas of the squares.} \\[8pt]
 \end{minipage}
 \end{frame}
-% Residuals
+
+\begin{frame}{Slope and $y$-intercept}
+\textbf{We will be using technology to find the equation of the line of best fit.} \newline\\	\pause
+
+Below are the formulas for calculating the slope, $m$, and $y$-intercept, $b$:	\pause
+\[m = \frac{n(\sum xy) - (\sum x)(\sum y)}{n(\sum x^2) - (\sum x)^2}\]
+\center{and}
+\[b = \frac{(\sum y)(\sum x^2) - (\sum x)(\sum xy)}{n(\sum x^2) - (\sum x)^2}\]
+\end{frame}
+
+\begin{frame}{Example 2}
+Find the least squares regression equation for the following dataset.	\newline\\
+\begin{minipage}{0.3\textwidth}
+\scalebox{0.8}{
+\begin{tabular}{c|c}
+$x$ & $y$ \\ \hline
+7.6 & 19.1 \\
+9.2 & 22.9 \\
+3.3 & 10.3 \\
+1.1 & 6.6 \\
+3.7 & 10.6 \\
+3.9 & 11.3 \\
+4.6 & 12.9 \\
+2.3 & 8.6 \\
+5.1 & 15.2 \\
+5.3 & 15.1 \\
+2.5 & 13 \\
+3.4 & 11.2 \\
+3.1 & 10.6 \\
+1.7 & 6.8 \\
+3.7 & 13.7 \\
+\end{tabular} }
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\onslide<2->{$\hat{y} = 1.95x + 4.65$} \\[10pt]
+\onslide<3->{
+\begin{tikzpicture}[scale=0.6]
+	\begin{axis}[
+	axis lines = left, grid,
+	xmin = 0, xmax = 10.5,
+	ymin = 0, ymax = 24.5,
+	xtick = {0,1,...,10},
+	ytick = {0,3,...,24}
+	]
+\addplot [only marks] coordinates {
+(7.6, 19.1)
+(9.2, 22.9)
+(3.3, 10.3)
+(1.1, 6.6)
+(3.7, 10.6)
+(3.9, 11.3)
+(4.6, 12.9)
+(2.3, 8.6)
+(5.1, 15.2)
+(5.3, 15.1)
+(2.5, 13)
+(3.4, 11.2)
+(3.1, 10.6)
+(1.7, 6.8)
+(3.7, 13.7)
+};
+\addplot [color=red, thick, domain=0:10] {1.95*x+4.65};
+\end{axis}
+\end{tikzpicture}
+}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 3}
+Given the regression equation $\hat{y} = 1.95x + 4.65$, predict the values of the following response variables for each explanatory variable.	\newline\\
+(a) \quad $x = 6$	\newline\\	\pause
+
+Since 6 between the minimum and maximum values of $x$ in our dataset, finding its $y$-coordinate is called {\color{blue}\textbf{interpolation}}.	
+
+\begin{align*}
+\onslide<3->{\hat{y} &= 1.95x + 4.65} \\[6pt]
+\onslide<4->{&= 1.95(6) + 4.65}.\\[6pt]
+\onslide<5->{&= 16.35} 
+\end{align*}
+
+\onslide<6->{The predicted value when $x = 6$ is $y = 16.35$}
+\end{frame}
+
+\begin{frame}{Residuals}
+Suppose we actually obtain a datapoint and realize that the actual value of $y$ when $x = 6$ is 16, not the predicted 16.35.	\newline\\	\pause
+
+The residual, denoted $\epsilon$, would be 
+\begin{align*}
+\epsilon &= 16.35 - 16 \\[6pt]
+\epsilon &= 0.35
+\end{align*}
+\pause
+
+We could then add that observation to our dataset and use it to create a better linear regression equation.
+\end{frame}
+
+\begin{frame}{Example 3}
+(b) \quad $x = 11$	\newline\\
+\onslide<2->{Since 11 is outside of the $x$ values in our dataset, finding its $y$-coordinate is called {\color{blue}\textbf{extrapolation}}.}	
+
+\begin{align*}
+\onslide<3->{\hat{y} &= 1.95x + 4.65} \\[6pt]
+\onslide<4->{&= 1.95(11) + 4.65} \\[6pt]
+\onslide<5->{&= 26.1}
+\end{align*}
+
+\onslide<6->{The predicted value when $x = 11$ is $y = 26.1$.}
+\end{frame}
+
+\section{Determine and Interpret the Coefficient of Determination}
+
+
 % Calculate r^2
 
 \end{document}
