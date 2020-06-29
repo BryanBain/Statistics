@@ -472,7 +472,112 @@ We could then add that observation to our dataset and use it to create a better 
 
 \section{Determine and Interpret the Coefficient of Determination}
 
+\begin{frame}{Coefficient of Determination}
+We looked at how to calculate the value of the linear correlation coefficient $r$. \newline\\	\pause
 
-% Calculate r^2
+The value $r^2$ is called the {\color{blue}\textbf{coefficient of determination}} and it tells us what percentage of the variability in the response ($y$) variable is due to the variability in the explanatory variable ($x$). The rest may be due to such things as lurking variables.	\newline\\	\pause
+
+Since $-1 \leq r \leq 1$, $0 \leq r^2 \leq 1$ \newline\\ \pause
+
+\emph{Note:} If $r$ (and hence $r^2$) is close to 0, then the linear regression equation is not going to be a good predictor. In this case, use $\hat{y} = \bar{y}$ as the linear predictor equation.
+\end{frame}
+
+\begin{frame}{Example 4}
+Determine and interpret the value of $r^2$ given the paw width (in inches) and dog's weight (in pounds) below. \newline\\
+\begin{minipage}{0.3\textwidth}
+\scalebox{0.8}{
+\begin{tabular}{c|c}
+Paw & Weight \\ \hline
+1.32 & 10 \\
+1.67 & 13 \\
+2.76 & 25 \\
+3.98 & 65 \\
+2.97 & 39 \\
+2.49 & 19 \\
+3.84 & 85 \\
+4.04 & 104 \\
+4.52 & 158 \\
+3.18 & 65 \\
+3.29 & 58 \\
+3.63 & 101 \\
+0.85 & 8 \\
+4.62 & 157 \\
+1.53 & 13 \\
+\end{tabular} }
+\end{minipage}
+\onslide<2->{
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+	axis lines = left, grid,
+	xmin = 0, xmax = 5, xtick = {0.5,1,...,5}, ymin = 0, ymax = 160,
+	ytick = {10,20,...,160}
+]
+\addplot [color=blue, only marks] coordinates {
+	(1.32,10) (1.67,13) (2.76,25) (3.98,65) (2.97,39)
+	(2.49,19) (3.84,85) (4.04,104) (4.52,158) (3.18,65)
+	(3.29,58) (3.63,101) (0.85,8) (2.62,40) (1.53,13)
+};
+\end{axis}
+\end{tikzpicture}
+\end{minipage} }
+\end{frame}
+
+\begin{frame}{Example 4}
+\begin{minipage}{0.3\textwidth}
+\scalebox{0.8}{
+\begin{tabular}{c|c}
+Paw & Weight \\ \hline
+1.32 & 10 \\
+1.67 & 13 \\
+2.76 & 25 \\
+3.98 & 65 \\
+2.97 & 39 \\
+2.49 & 19 \\
+3.84 & 85 \\
+4.04 & 104 \\
+4.52 & 158 \\
+3.18 & 65 \\
+3.29 & 58 \\
+3.63 & 101 \\
+0.85 & 8 \\
+4.62 & 157 \\
+1.53 & 13 \\
+\end{tabular} }
+\end{minipage}
+\begin{minipage}{0.6\textwidth}
+\[r^2 \approx 0.8049\]
+\newline\\ \pause
+\parbox{6cm}{
+About 80.49\% of the variation in dog weights is explained by the size of the dog's paw.	\newline\\	\pause
+The remaining 19.5\% can be attributed to other factors such as diet, genetics, exercise, etc.}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Other Types of Regression}
+Since we only get values of $r$ for \emph{linear} regression, we will not calculate a linear correlation coefficient for a data set that does not appear linear. \newline\\		\pause
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+axis lines = left, grid, xmin = 0, xmax = 10, ymin = 0, ymax = 20,
+xtick = {1,2,...,10}, ytick = {0,2,...,20}
+]
+\addplot [color=blue, only marks] coordinates {
+	(1,3) (1.5,3.2) 
+	(2.7,5.2) (3.1,8.5) (4.4,10.6) (4.9,12.5)
+	(5.3,14.7) (5.5, 16.2) (5.8,18.9)
+	(6.3,15.1) (6.7,14.8) (7.2,12.9)
+	(7.4,12.1) (7.9,10) (8.2,8.7) (8.6,8.1)
+	(9.1,5.7) (9.5,4.1)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Other Types of Regression}
+We can still calculate $r^2$ using the more-traditional formula than was presented in this section; although you would likely want to let technology calculate it for you.
+\end{frame}
 
 \end{document}
