@@ -26,7 +26,6 @@
 \maketitle
 \end{frame}
 
-% Calculate r
 \section{Determine and interpret the linear correlation coefficient}
 
 \begin{frame}{Linear Correlation Coefficient}
@@ -125,8 +124,6 @@ $x$ & $y$ \\ \hline
 \begin{tikzpicture}[scale=0.6]
 	\begin{axis}[
 	axis lines = left, grid,
-	%xlabel = {Age (in years)},
-	%ylabel = {Value (in thousands of dollars)},
 	xmin = 0, xmax = 10.5,
 	ymin = 0, ymax = 24.5,
 	xtick = {0,1,...,10},
@@ -185,8 +182,6 @@ $x$ & $y$ \\ \hline
 \begin{tikzpicture}[scale=0.7]
 	\begin{axis}[
 	axis lines = left, grid,
-	%xlabel = {Age (in years)},
-	%ylabel = {Value (in thousands of dollars)},
 	xmin = 0, xmax = 10.5,
 	ymin = 0, ymax = 18.5,
 	xtick = {0,1,...,10},
@@ -245,8 +240,6 @@ $x$ & $y$ \\ \hline
 \begin{tikzpicture}[scale=0.7]
 	\begin{axis}[
 	axis lines = left, grid,
-	%xlabel = {Age (in years)},
-	%ylabel = {Value (in thousands of dollars)},
 	xmin = 0, xmax = 10.5,
 	ymin = 0, ymax = 10.5,
 	xtick = {0,1,...,10},
@@ -275,7 +268,98 @@ $x$ & $y$ \\ \hline
 \end{minipage}
 \end{frame}
 
-% Regression Equation
+\section{Determine the linear regression equation}
+
+\begin{frame}{Linear Regression Equation}
+While determining the linear correlation coefficient is valuable, it is also helpful to be able to predict data values not contained in the data set. \newline\\	\pause
+
+To do this, we can create the {\color{blue}\textbf{least squares regression equation}}, (also called the \emph{line of best fit}) which will \alert{\textbf{minimize}} the total squared distance each data point is from the line:	\pause
+
+\[\hat{y} = mx + b\]
+\end{frame}
+
+\begin{frame}{Line of Best Fit}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+	axis lines = left, grid,
+	xmin = 0, xmax = 10.5, ymin = 0, ymax = 16.5,
+	xtick = {0,1,...,10}, ytick = {0,2,...,16}
+]
+\addplot[color=blue, only marks] coordinates {
+(9.3,14.06)
+(5.19,8.68)
+(2,5.64)
+(7.71,10.6)
+(1.38,2.71)
+(3.92,4.01)
+};
+\addplot [color=red, domain=0:10, very thick] {1.295*x + 1.25};
+\end{axis}
+\end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Line of Best Fit}
+\begin{minipage}{0.6\textwidth}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+	axis lines = left, grid,
+	xmin = 0, xmax = 10.5, ymin = 0, ymax = 16.5,
+	xtick = {0,1,...,10}, ytick = {0,2,...,16}
+]
+\addplot[color=blue, only marks] coordinates {
+(9.3,14.06)
+(5.19,8.68)
+(2,5.64)
+(7.71,10.6)
+(1.38,2.71)
+(3.92,4.01)
+};
+\addplot [color=red, domain=0:10, very thick] {1.295*x + 1.25};
+\draw [very thick] (axis cs: 9.3,14.06) -- (axis cs: 9.3,13.3);
+\draw [very thick] (axis cs: 7.71,10.6) -- (axis cs: 7.71,11.2);
+\draw [very thick] (axis cs: 5.19,7.97) -- (axis cs: 5.19,8.68);
+\draw [very thick] (axis cs: 3.92,4.01) -- (axis cs: 3.92,6.33);
+\draw [very thick] (axis cs: 2,5.64) -- (axis cs: 2,3.84);
+\draw [very thick] (axis cs: 1.38,2.71) -- (axis cs: 1.38,3.04);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+\onslide<2->{The black lines are {\color{blue}\textbf{residuals}}} \\[8pt]
+\onslide<3->{Like deviations from the mean, the sum of the residuals is 0} \\[8pt]
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Line of Best Fit}
+\begin{minipage}{0.6\textwidth}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+	axis lines = left, grid,
+	xmin = 0, xmax = 10.5, ymin = 0, ymax = 16.5,
+	xtick = {0,1,...,10}, ytick = {0,2,...,16}
+]
+\addplot[color=blue, only marks] coordinates {
+(9.3,14.06)
+(5.19,8.68)
+(2,5.64)
+(7.71,10.6)
+(1.38,2.71)
+(3.92,4.01)
+};
+\addplot [color=red, domain=0:10, very thick] {1.295*x + 1.25};
+\draw [very thick] (axis cs: 9.3,14.06) -- (axis cs: 9.3,13.3);
+\draw [very thick] (axis cs: 7.71,10.6) -- (axis cs: 7.71,11.2);
+\draw [very thick] (axis cs: 5.19,7.97) -- (axis cs: 5.19,8.68);
+\draw [very thick, fill=yellow!80] (axis cs: 3.92,4.01) rectangle +(axis cs: 6.24,6.33);
+\draw [very thick] (axis cs: 2,5.64) -- (axis cs: 2,3.84);
+\draw [very thick] (axis cs: 1.38,2.71) -- (axis cs: 1.38,3.04);
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}{0.35\textwidth}
+\onslide<2->{The line of best fit minimizes the sum of the areas of the squares} \\[8pt]
+\end{minipage}
+\end{frame}
 % Residuals
 % Calculate r^2
 
