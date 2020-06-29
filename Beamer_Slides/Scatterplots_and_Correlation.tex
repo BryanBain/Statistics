@@ -349,58 +349,26 @@ Total: 8} \newline\\
 \onslide<5->{suggests almost no correlation}
 \end{minipage}
 \end{frame}
-% Examine mean(x) and mean(y) and correlation
-%\begin{frame}{Means of X and Y}
-%\begin{minipage}{0.3\textwidth}
-%\scalebox{0.9}{
-%\begin{tabular}{c|c}
-%\textbf{Age} & \textbf{Value} \\ \hline
-%2 & 15 	\\
-%3 & 12	\\
-%3 & 13	\\
-%2 & 14	\\
-%4 & 13	\\
-%5 & 10	\\
-%6 & 10.5	\\
-%1 & 16.5	\\
-%0 & 18		\\
-%4 & 14		\\
-%7 & 11		\\
-%\end{tabular}}
-%\end{minipage}
-%\hspace{0.25cm}
-%\begin{minipage}{0.6\textwidth}
-%\begin{tikzpicture}[scale=0.7]
-%	\begin{axis}[
-%	axis lines = left, grid,
-%	xlabel = {Age (in years)},
-%	ylabel = {Value (in thousands of dollars)},
-%	xmin = 0, xmax = 8.5,
-%	ymin = 0, ymax = 20.5,
-%	xtick = {0,1,...,8},
-%	ytick = {0,2,...,20}
-%	]
-%	\addplot [only marks, color=blue] coordinates {
-%		(2,15)
-%		(3,12)
-%		(3,13)
-%		(2,14)
-%		(4,13)
-%		(5,10)
-%		(6,10.5)
-%		(1,16.5)
-%		(0,18)
-%		(4,14)
-%		(7,11)
-%	};
-%	\draw [color=red] (axis cs: 3.36,0) -- (axis cs: 3.36,20.5);
-%	\draw [color=red] (axis cs: 0,13.4) -- (axis cs: 8.5,13.4);
-%	\end{axis}
-%\end{tikzpicture}
-%\end{minipage}
-%\end{frame}
+
 
 \begin{frame}{Correlation vs. Causation}
+It is important to note that just because there may be a strong correlation (an {\color{blue}\textbf{association}}) between two variables \textbf{\alert{it does not mean that one causes the other to happen.}}	\newline\\	\pause
 
+For instance, we can look at the association of a dog's paw size with the dog's weight. \newline\\	\pause
+
+We might notice that larger paws tend to have larger weights, but we can not conclude that large paws cause a large weight.	\newline\\	\pause
+
+If there is a strong correlation there may be lurking variables or confounding at play.	
+\end{frame}
+
+\begin{frame}{Lurking Variables and Confounding}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Lurking Varaible}]
+A \textbf{lurking variable} is an explanatory variable that is not considered in a study or experiment that has an influence on the response variable.
+\end{tcolorbox}
+\bigskip	\pause
+
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Confounding}]
+\textbf{Confounding} occurs when we can not distinguish the effect(s) one (or many) explanatory variables has (have) on a response variable.
+\end{tcolorbox}
 \end{frame}
 \end{document}
