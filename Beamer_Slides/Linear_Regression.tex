@@ -366,9 +366,9 @@ To do this, we can create the {\color{blue}\textbf{least squares regression equa
 \textbf{We will be using technology to find the equation of the line of best fit.} \newline\\	\pause
 
 Below are the formulas for calculating the slope, $m$, and $y$-intercept, $b$:	\pause
-\[m = \frac{n(\sum xy) - (\sum x)(\sum y)}{n(\sum x^2) - (\sum x)^2}\]
+\[m = r\left(\frac{\sigma_y}{\sigma_x}\right)\]
 \center{and}
-\[b = \frac{(\sum y)(\sum x^2) - (\sum x)(\sum xy)}{n(\sum x^2) - (\sum x)^2}\]
+\[b = \overline{y} - m\left(\overline{x}\right)\]
 \end{frame}
 
 \begin{frame}{Example 2}
@@ -475,9 +475,17 @@ We could then add that observation to our dataset and use it to create a better 
 \begin{frame}{Coefficient of Determination}
 We looked at how to calculate the value of the linear correlation coefficient $r$. \newline\\	\pause
 
-The value $r^2$ is called the {\color{blue}\textbf{coefficient of determination}} and it tells us what percentage of the variability in the response ($y$) variable is due to the variability in the explanatory variable ($x$). The rest may be due to such things as lurking variables.	\newline\\	\pause
+The value $r^2$ is called the {\color{blue}\textbf{coefficient of determination}} and it tells us what percentage of the variability in the response ($y$) variable is due to the linear relationship of $x$ and $y$. \newline\\ \pause
 
-Since $-1 \leq r \leq 1$, $0 \leq r^2 \leq 1$ \newline\\ \pause
+The rest may be due to such things as lurking variables.	\newline\\	\pause
+
+Since $-1 \leq r \leq 1$, $0 \leq r^2 \leq 1$
+\end{frame}
+
+\begin{frame}{But What Exactly Does $r^2$ Do?}
+Without our regression equation, the best predictor for response variables ($y$ values) would be $\overline{y}$. \newline\\	\pause
+
+However, the value of $r^2$ represents how much of a decrease in prediction error we get from using our regression equation rather than $\overline{y}$. \newline\\	\pause
 
 \emph{Note:} If $r$ (and hence $r^2$) is close to 0, then the linear regression equation is not going to be a good predictor. In this case, use $\hat{y} = \bar{y}$ as the linear predictor equation.
 \end{frame}
@@ -549,8 +557,7 @@ Paw & Weight \\ \hline
 \[r^2 \approx 0.8049\]
 \newline\\ \pause
 \parbox{6cm}{
-About 80.49\% of the variation in dog weights is explained by the size of the dog's paw.	\newline\\	\pause
-The remaining 19.5\% can be attributed to other factors such as diet, genetics, exercise, etc.}
+The prediction error used to predict $y$ is about 80.5\% smaller than using $\overline{y}$ as a predictor.}
 \end{minipage}
 \end{frame}
 
