@@ -22,6 +22,10 @@
 
 \begin{document}
 
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
 \begin{frame} 
 \maketitle
 \end{frame}
@@ -132,6 +136,81 @@ It turns out that the distributions of sample means for \underline{any} populati
 {\color{blue}\textbf{\Large Central Limit Theorem}}
 \end{center}
 As the sample size increases, the distribution of sample means becomes normal with a mean of $\overline{x}$ and standard deviation $\frac{\sigma}{\sqrt{n}}$ (the standard error).
+\end{frame}
+
+\begin{frame}{Example 5}
+IQ scores are normally distributed with a mean of 100 and standard deviation of 16. \newline\\
+
+(a) \quad What is the probability that an individual has an IQ greater than 102? \newline\\ \pause
+
+$P(x > 102) \approx 0.4503$	\newline\\	\pause
+
+There is about a 45.03\% chance that an individual has an IQ greater than 102.
+\end{frame}
+
+\begin{frame}{Example 5}
+(b)	\quad	What is the probability that in a sample of 50 people, the mean IQ is greater than 102?	\newline\\	\pause
+
+The standard error of the mean is $\frac{16}{\sqrt{50}}$.	\newline\\	\pause
+
+$P(\overline{x} > 102) \approx 0.1884$	\newline\\	\pause
+
+There is about an 18.84\% chance the mean IQ of a sample of 50 people is greater than 102.
+\end{frame}
+
+\begin{frame}{Example 5}
+(c)	\quad What is the probability that in a sample of 1000 people, the mean IQ is greater than 102?	\newline\\	\pause
+
+The standard error of the mean is $\frac{16}{\sqrt{1000}}$.	\newline\\	\pause
+
+$P(\overline{x} > 102) \approx 0.0000386$	\newline\\	\pause
+
+There is about a 0.00386\% chance that the mean IQ of a sample of 1000 people is greater than 102.
+\end{frame}
+
+\begin{frame}{Reflections on Example 5}
+By increasing the sample size, we decreased the probability. This is due to the original standard deviation now being divided by a larger number (which will decrease its overall value).	\newline\\	\pause
+
+Or, to put it another way, you are now examining a greater variety of people, so you should expect to have subjects in your samples that have IQs below 102.
+\begin{center}
+\begin{tikzpicture}[scale=0.45]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xscale=1.5,
+xlabel = {IQ}, ylabel = {Probability}, xtick = {-3,-2,...,3}, xticklabels = {52,68,84,100,116,132,148},
+title = {Individual IQ} 
+]
+\addplot [draw = none, fill = green, domain = 0.125:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+The area of the shaded region is about 0.4503
+\end{frame}
+
+\begin{frame}{Reflections on Example 5}
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}[scale=0.45]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -4.5, xmax = 4.5, ymax = 0.45, xscale=1.5,
+xlabel = {IQ}, ylabel = {Probability}, xtick = {-4,-3,...,4}, xticklabels = {90.8,93.1,95.4,97.7,100,102.3,104.6,106.9,109.2},
+title = {Sample Size 50} 
+]
+\addplot [draw = none, fill = green, domain = 0.884:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hspace{0.25cm}
+\begin{minipage}{0.45\textwidth}
+\begin{tikzpicture}[scale=0.45]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -4.5, xmax = 4.5, ymax = 0.45, xscale=1.5,
+xlabel = {IQ}, ylabel = {Probability}, xtick = {-4,-3,...,4}, xticklabels = {98,98.5,99,99.5,100,100.5,101,101.5,102},
+title = {Sample Size 1000} 
+]
+\addplot [draw = none, fill = red, domain = 3.95:4.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}	\smallskip
+The area of the first shaded region is about 0.1884. The (barely noticeable) shaded area of the second region is about 0.0000386.
 \end{frame}
 % Central Limit Theorem
 
