@@ -84,8 +84,10 @@ $\text{Mean} = \$1450$ \newline\\	\pause
 $\text{Std. Dev} \approx \$271.57$
 \end{frame}
 
+\section{Determine the mean and standard error of a sampling distribution}
+
 \begin{frame}{Larger Population and Sample Sizes}
-What happens if we have a much larger population and take a larger sample sizes, such as 100?	\newline\\	\pause
+What happens if we have a much larger population and take a larger sample size, such as 100?	\newline\\	\pause
 
 Notice that the mean of the sample means targets the population mean. 	\pause
 
@@ -99,11 +101,43 @@ where $\frac{\sigma}{\sqrt{n}}$ is called the {\color{blue}\textbf{standard erro
 \end{frame}
 
 \begin{frame}{Example 4}
-
+IQ scores are normally distributed with a mean of 100 and standard deviation of 16. A sample of 200 participants had their IQs measured.	\pause
+\begin{center}
+\includegraphics[scale=0.45]{../Images/sample_means_IQ.png}
+\end{center}
+\smallskip	\pause
+What are the approximate mean and standard error of the sample?
 \end{frame}
-% Obtain a sampling distribution of sample means
-% Mean and standard error
+
+\begin{frame}{Example 4}
+The mean of the sample will target the population mean of 100. \newline\\	\pause
+
+The standard error is 
+\begin{align*}
+\onslide<3->{\frac{\sigma}{\sqrt{n}} &= \frac{16}{\sqrt{200}}} \\[8pt]
+\onslide<4->{& \approx 1.13}
+\end{align*}
+\end{frame}
+
+\section{Understand the Central Limit Theorem}
+
+\begin{frame}{Sample Means of Any Distribution}
+We can create a histogram of a population, but how will our histograms of sample means look for various populations?	\newline\\	\pause
+
+It turns out that the distributions of sample means for \underline{any} population will be normal as our sample sizes increase.
+\end{frame}
+
+\begin{frame}{Central Limit Theorem}
+\begin{center}
+{\color{blue}\textbf{\Large Central Limit Theorem}}
+\end{center}
+As the sample size increases, the distribution of sample means becomes normal with a mean of $\overline{x}$ and standard deviation $\frac{\sigma}{\sqrt{n}}$ (the standard error).
+\end{frame}
 % Central Limit Theorem
+
+\section{Determine the mean and standard error for sampling distribution of proportions}
+
+\section{Determine the mean and standard error for sampling distribution of variances}
 % Sampling distribution of proportions
 % Sampling distribution of variances
 
