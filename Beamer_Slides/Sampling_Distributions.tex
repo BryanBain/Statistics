@@ -26,6 +26,81 @@
 \maketitle
 \end{frame}
 
+\section{Obtain a sampling distribution of sample means}
+
+\begin{frame}{Sampling Distributions}
+In statistics, we take samples in order to gather information regarding a population. \newline\\	\pause
+
+For instance, let's say we have the following population prices of laptops: \$1000, \$1200, \$1600, and \$2000.	\newline\\	\pause
+
+We can take a simple random sample of, say 2 computers, and create a frequency distribution of each sample.	\newline\\	\pause
+
+\emph{Note}: We will sample with replacement. Differences in sampling with and without replacement become negligent as sample sizes increase.
+\end{frame}
+
+\begin{frame}{Example 1}
+Obtain a sampling distribution, taking 2 at a time, of the laptop prices \$1000, \$1200, \$1600, and \$2000. Then find the mean of each sample.	\newline\\	\pause
+\begin{minipage}{0.4\textwidth}
+\begin{tabular}{c|c}
+Sample & Sample Mean \\ \hline
+1000, 1000 & 1000 \\
+1000, 1200 & 1100 \\
+1000, 1600 & 1300 \\
+1000, 2000 & 1500 \\
+1200, 1000 & 1100 \\
+1200, 1200 & 1200 \\
+1200, 1600 & 1400 \\
+1200, 2000 & 1600 \\
+\end{tabular}
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}{0.4\textwidth}
+\begin{tabular}{c|c}
+Sample & Sample Mean \\ \hline
+1600, 1000 & 1300 \\
+1600, 1200 & 1400 \\
+1600, 1600 & 1600 \\
+1600, 2000 & 1800 \\
+2000, 1000 & 1500 \\
+2000, 1200 & 1600 \\
+2000, 1600 & 1800 \\
+2000, 2000 & 2000 \\
+\end{tabular}
+\end{minipage}
+\end{frame}
+
+\begin{frame}{Example 2}
+Create a histogram of the sample means from Example 1.	\newline\\	\pause
+\begin{center}
+\includegraphics[scale=0.6]{../Images/sampling_hist_01.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 3}
+Determine the mean and standard deviation of the sample means.	\newline\\	\pause
+
+$\text{Mean} = \$1450$ \newline\\	\pause
+
+$\text{Std. Dev} \approx \$271.57$
+\end{frame}
+
+\begin{frame}{Larger Population and Sample Sizes}
+What happens if we have a much larger population and take a larger sample sizes, such as 100?	\newline\\	\pause
+
+Notice that the mean of the sample means targets the population mean. 	\pause
+
+\[\mu \approx \mu_{\overline{x}}\]		\pause
+
+Also, the standard deviation is around 1/10 the population standard deviation. 	\pause
+
+\[\sigma \approx \frac{\sigma_{\overline{x}}}{\sqrt{n}}\]
+
+where $\frac{\sigma}{\sqrt{n}}$ is called the {\color{blue}\textbf{standard error of the mean}}.
+\end{frame}
+
+\begin{frame}{Example 4}
+
+\end{frame}
 % Obtain a sampling distribution of sample means
 % Mean and standard error
 % Central Limit Theorem
