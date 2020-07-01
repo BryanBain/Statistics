@@ -212,12 +212,37 @@ title = {Sample Size 1000}
 \end{minipage}	\smallskip
 The area of the first shaded region is about 0.1884. The (barely noticeable) shaded area of the second region is about 0.0000386.
 \end{frame}
-% Central Limit Theorem
+
 
 \section{Determine the mean and standard error for sampling distribution of proportions}
 
-\section{Determine the mean and standard error for sampling distribution of variances}
-% Sampling distribution of proportions
-% Sampling distribution of variances
+\begin{frame}{Example 6}
+In an election, the incumbent received 62\% of votes cast. Obtain a sampling distribution using a sample size of 100 and comment on the mean and standard error of the distribution.	\newline\\	\pause
+
+The mean of the sample proportions ($\overline{p}$) targets the population proportion, $\rho = 0.62$.	\newline\\	\pause
+
+The standard error is about 1/10 of the population standard deviation, which again is due to dividing the population standard deviation by $\sqrt{n}$, or in this case $\sqrt{100}$.
+\end{frame}
+
+\begin{frame}{Mean and Standard Error of Sampling Distribution of Proportions}
+The mean of sample proportions targets the population proportion (just like the mean of sample means target the population mean).	\pause
+
+\[\overline{p} = \rho\]	\pause
+
+The standard error targets the population standard deviation divided by $\sqrt{\text{sample size}}$	\pause
+
+\[\sigma_{\overline{p}} = \sqrt{\frac{p(1-p)}{n}}\]
+\end{frame}
+
+
+\begin{frame}{Example 7}
+A headache medicine claims to be 80\% effective with a standard deviation of 10\%. What is the probability that in a sample of 10 people, the medicine is at least 90\% effective?	\newline\\	\pause
+
+$\overline{p} = 0.80$	\newline\\	\pause
+$\sigma_{\overline{p}} = 0.1/\sqrt{10}$	\newline\\	\pause
+$P(x \geq 90\%) \approx 0.9992$	\newline\\	\pause
+
+There is about a 99.92\% chance the medicine is at least 90\% effective on the sample.
+\end{frame}
 
 \end{document}
