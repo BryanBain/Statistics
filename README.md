@@ -22,4 +22,6 @@
   <li>Standard Normal Distribution</li>
   <li>Normal Distribution in the Real World</li>
   <li>Sampling Distributions</li>
+  <li>Confidence Intervals</li>
+  <li>Hypothesis Testing or: How I Learned to Stop Worrying and Love Inferential Statistics</li>
 </ol>
