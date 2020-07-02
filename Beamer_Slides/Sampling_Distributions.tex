@@ -135,7 +135,7 @@ It turns out that the distributions of sample means for \underline{any} populati
 \begin{center}
 {\color{blue}\textbf{\Large Central Limit Theorem}}
 \end{center}
-As the sample size increases, the distribution of sample means becomes normal with a mean of $\overline{x}$ and standard deviation $\frac{\sigma}{\sqrt{n}}$ (the standard error).
+As the sample size increases, the distribution of sample means becomes normal with a mean of $\mu$ and standard deviation $\frac{\sigma}{\sqrt{n}}$ (the standard error).
 \end{frame}
 
 \begin{frame}{Example 5}
@@ -148,13 +148,13 @@ $P(x > 102) \approx 0.4503$	\newline\\	\pause
 There is about a 45.03\% chance that an individual has an IQ greater than 102.	\newline\\	\pause
 
 We could also calculate the probability using the z score:
-\[z = \frac{x-\overline{x}}{\left(\frac{\sigma}{\sqrt{n}}\right)}\]
+\[z = \frac{x-\mu}{\left(\frac{\sigma}{\sqrt{n}}\right)}\]
 \end{frame}
 
 \begin{frame}{Example 5}
 (b)	\quad	What is the probability that in a sample of 50 people, the mean IQ is greater than 102?	\newline\\	\pause
 
-The standard error of the mean is $\frac{16}{\sqrt{50}}$.	\newline\\	\pause
+The standard error of the mean is $\frac{16}{\sqrt{50}} \approx 2.263$.	\newline\\	\pause
 
 $P(\overline{x} > 102) \approx 0.1884$	\newline\\	\pause
 
@@ -164,7 +164,7 @@ There is about an 18.84\% chance the mean IQ of a sample of 50 people is greater
 \begin{frame}{Example 5}
 (c)	\quad What is the probability that in a sample of 1000 people, the mean IQ is greater than 102?	\newline\\	\pause
 
-The standard error of the mean is $\frac{16}{\sqrt{1000}}$.	\newline\\	\pause
+The standard error of the mean is $\frac{16}{\sqrt{1000}} \approx 0.5051$.	\newline\\	\pause
 
 $P(\overline{x} > 102) \approx 0.0000386$	\newline\\	\pause
 
@@ -213,7 +213,7 @@ title = {Sample Size 1000}
 \end{axis}
 \end{tikzpicture}
 \end{minipage}	\smallskip
-The area of the first shaded region is about 0.1884. The (barely noticeable) shaded area of the second region is about 0.0000386.
+The area of the first shaded region is about 0.1884. The (non-noticeable) shaded area of the second region is about 0.0000386.
 \end{frame}
 
 
