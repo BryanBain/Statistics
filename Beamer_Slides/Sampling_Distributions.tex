@@ -228,24 +228,32 @@ The standard error is about 1/10 of the population standard deviation, which aga
 \end{frame}
 
 \begin{frame}{Mean and Standard Error of Sampling Distribution of Proportions}
-The mean of sample proportions targets the population proportion (just like the mean of sample means target the population mean).	\pause
 
-\[\hat{p} = p\]	\pause
+Recall that the mean and standard deviation of a binomial probability distribution are $\mu = np$ and $\sigma = \sqrt{np(1-p)}$, where $p$ is the probability of success and $n$ is the sample size. \newline\\	\pause
 
-The standard error targets the population standard deviation divided by $\sqrt{\text{sample size}}$	\pause
+To obtain the mean and standard error of a sampling distribution of proportions, divide the above mean and standard deviation by the sample size, $n$.		\pause
 
-\[\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}\]
+\[\mu_{\hat{p}} = \frac{np}{n} = p\]	\pause
+
+\[\sigma_{\hat{p}} = \frac{\sqrt{np(1-p)}}{n} = \sqrt{\frac{p(1-p)}{n}}\]
+%The mean of sample proportions targets the population proportion (just like the mean of sample means target the population mean).	\pause
+%
+%\[\hat{p} = p\]	\pause
+%
+%The standard error targets the population standard deviation divided by $\sqrt{\text{sample size}}$	\pause
+%
+%\[\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}\]
 \end{frame}
 
 
 \begin{frame}{Example 7}
-A headache medicine claims to be 80\% effective with a standard deviation of 10\%. What is the probability that in a sample of 15 people, the medicine is between 75 to 90\% effective?	\newline\\	\pause
+A headache medicine claims to be 80\% effective. What is the probability that in a sample of 400 people, the medicine is between 75 to 90\% effective?	\newline\\	\pause
 
 $p = 0.80$	\newline\\	\pause
-$\sigma_{\hat{p}} = \sqrt{\frac{(0.1)(0.9)}{15}} \approx 0.0775$	\newline\\	\pause
-$P(0.75 \leq x \leq 0.9) \approx 0.6421$	\newline\\	\pause
+$\sigma_{\hat{p}} = \sqrt{\frac{(0.8)(0.2)}{400}} = 0.02$	\newline\\	\pause
+$P(0.75 \leq x \leq 0.9) \approx 0.9938$	\newline\\	\pause
 
-In a sample of 15, there is about a 64.21\% chance the medicine is between 75 and 90\% effective.
+In a sample of 400, there is about a 99.38\% chance the medicine is between 75 and 90\% effective.
 \end{frame}
 
 \end{document}
