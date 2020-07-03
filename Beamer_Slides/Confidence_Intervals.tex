@@ -30,8 +30,67 @@
 \maketitle
 \end{frame}
 
-% Determine confidence intervals for mean
-% Determine confidence intervals for proportion
-% Determine necessary sample size
+\section{Determine confidence intervals for population mean}
+
+\begin{frame}{How Close Are We to the Population Mean?}
+In the last section, we looked at sampling distributions of the sample mean (and proportion too). Throughout the series, we've used computer simulations to examine statistical concepts. \newline\\	\pause
+
+However, in real life, there are factors that can limit the number of studies and samples we can take: time, cost, etc. \newline\\	\pause
+
+So, for our samples, how confident are we that they contain the population mean?	\newline\\	\pause
+
+That is where confidence intervals come into play.
+\end{frame}
+
+\begin{frame}{How Confident Are We?}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Confidence Interval}]
+A \textbf{confidence interval} for a population parameter is an estimate of possible values for the parameter with a \emph{given} certain level of confidence.
+\end{tcolorbox}
+\bigskip \pause
+
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Confidence Level}]
+The \textbf{confidence level}, or \textbf{level of confidence}, is the percentage of the number of times our confidence intervals will contain the population parameter.
+\end{tcolorbox}
+\bigskip \pause
+
+Typical confidence levels are 90\%, 95\%, 98\%, and 99\%.
+\end{frame}
+
+\begin{frame}{Confidence Interval Setup}
+A confidence interval for a population parameter is in the form
+\[\text{point estimate} \pm \text{margin of error}\]	\pause
+
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{Point Estimate}]
+A \textbf{point estimate} is a value based on our sample data that represents a reasonable value of the population parameter.
+\end{tcolorbox}
+\bigskip \pause
+
+The margin of error is in the form
+\begin{center}
+critical value $\times$ standard error
+\end{center}
+\end{frame}
+
+\begin{frame}{Critical Values}
+Critical values are typically in the form $z_{\alpha/2}$ where	
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45,
+xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1.5] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [<->,>=stealth, thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$\bm{1-\alpha}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+%  - Margin of Error and Error Bars
+\section{Determine confidence intervals for population proportion}
+
+\section{Determine the necessary sample size}
+
 
 \end{document}
