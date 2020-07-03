@@ -76,16 +76,44 @@ Critical values are typically in the form $z_{\alpha/2}$ where
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
 \begin{axis}[
-axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45,
-xlabel = {z Score}, ylabel = {Probability}
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
 ]
 \addplot [draw = none, fill = green, domain = -3.5:-1.5] {gauss(0,1)} \closedcycle;
 \addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
 \addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
-\draw [<->,>=stealth, thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$\bm{1-\alpha}$};
+\draw [<->,>=stealth,thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$\bm{1-\alpha}$};
+\draw [->,>=stealth,thick] (axis cs: -2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: -2.05,0.015);
+\draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: 2.05,0.015);
 \end{axis}
 \end{tikzpicture}
 \end{center}
+\end{frame}
+
+\begin{frame}{Common Critical Values of $z_{\alpha/2}$}
+\begin{center}
+\begin{tabular}{c|c}
+Confidence Level & Critical Value of $z_{\alpha/2}$ \\ \hline
+\onslide<2->{90\%} & \onslide<2->{$\pm 1.645$} \\[8pt]
+\onslide<3->{95\%} & \onslide<3->{$\pm 1.96$} \\[8pt]
+\onslide<4->{98\%} & \onslide<4->{$\pm 2.326$} \\[8pt]
+\onslide<5->{99\%} & \onslide<5->{$\pm 2.576$} \\[8pt]
+\end{tabular}
+\end{center}
+\onslide<6->{Notice the higher the confidence level, the further away from $z = 0$ the critical value is.}	\newline\\
+\onslide<7->{The standard error is still $\frac{\sigma}{\sqrt{n}}$}
+\end{frame}
+
+\begin{frame}{Example 1}
+The waiting time of a sample of 100 patients at a hospital is 3.5 minutes. Construct a 95\% confidence interval for the mean waiting time of all patients at the hospital. Assume $\sigma = 0.75$ minutes.	\newline\\	\pause
+\end{frame}
+
+\begin{frame}{Error Bars}
+Often times, margins of error are graphed as \textit{error bars} on a visual display. \newline\\	\pause
+\begin{center}
+% TODO: Draw a bar chart with error bars
+\end{center}
+However, be advised that some graphs use standard deviation for their error bars.
 \end{frame}
 %  - Margin of Error and Error Bars
 \section{Determine confidence intervals for population proportion}
