@@ -136,6 +136,32 @@ However, be advised that some graphs use standard deviation for their error bars
 
 \begin{frame}{Example 2}
 % Show how the increase in sample size affects the confidence intervals.
+Suppose we take a sample of 45 gas prices and find the mean price per gallon is \$2.45 with a standard deviation of \$0.12. \newline\\
+(a)	\quad Create a 98\% confidence interval for the population mean price per gallon.
+\begin{align*}
+\onslide<2->{& 2.45 \pm 2.326\left(\frac{0.12}{\sqrt{45}}\right)}	\\[8pt]
+\onslide<3->{&= 2.45 \pm 0.042} \\[8pt]
+\onslide<4->{&= 2.408 \text{ to } 2.492}
+\end{align*}
+\onslide<5->{A 98\% confidence interval for the mean population price per gallon is \$2.41 to \$2.49}
+\end{frame}
+
+\begin{frame}{Example 2}
+(b) \quad What would the confidence interval be if the sample size was 100?
+\begin{align*}
+\onslide<2->{& 2.45 \pm 2.326\left(\frac{0.12}{\sqrt{100}}\right)}	\\[8pt]
+\onslide<3->{&= 2.45 \pm 0.012} \\[8pt]
+\onslide<4->{&= 2.438 \text{ to } 2.462}
+\end{align*}
+\onslide<5->{A 98\% confidence interval for the mean population price per gallon is \$2.44 to \$2.46}
+\end{frame}
+
+\begin{frame}{Example 2}
+(c) \quad Keeping the confidence interval the same, what happens as we increase the sample size?	\newline\\	\pause
+
+Increasing the sample size decreases the standard error. \newline\\	\pause
+
+By doing so, we decrease the width of our confidence interval, while still keeping the confidence level the same. \newline\\	\pause
 \end{frame}
 
 
@@ -146,6 +172,8 @@ The following are incorrect interpretations of a confidence interval:	\newline\\
 	\item<3-> There is a \makebox[0.65cm]{\hrulefill}\, \% chance that the population mean is (\textit{whatever the sample mean is}).
 \end{itemize}
 \end{frame}
+
+\section{Determine the confidence interval for Student's t-Distribution}
 
 \section{Determine confidence intervals for population proportion}
 
