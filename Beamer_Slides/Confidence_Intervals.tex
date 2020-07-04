@@ -101,21 +101,52 @@ Confidence Level & Critical Value of $z_{\alpha/2}$ \\ \hline
 \end{tabular}
 \end{center}
 \onslide<6->{Notice the higher the confidence level, the further away from $z = 0$ the critical value is.}	\newline\\
-\onslide<7->{The standard error is still $\frac{\sigma}{\sqrt{n}}$}
+\onslide<7->{The standard error is still $\frac{\sigma}{\sqrt{n}}$}	\newline\\
+\onslide<8->{\emph{Note:} If $\sigma$ is unknown, you can use the sample standard deviation, $s$, when the sample size is large enough ($n \geq 30$).}
 \end{frame}
 
 \begin{frame}{Example 1}
-The waiting time of a sample of 100 patients at a hospital is 3.5 minutes. Construct a 95\% confidence interval for the mean waiting time of all patients at the hospital. Assume $\sigma = 0.75$ minutes.	\newline\\	\pause
+The waiting time of a sample of 100 patients at a hospital is 3.5 minutes. Construct a 95\% confidence interval for the mean waiting time of all patients at the hospital. Assume $\sigma = 0.75$ minutes.	
+\begin{align*}
+	\onslide<2->{& \overline{x} \pm \frac{s}{\sqrt{n}}} \\[6pt]
+	\onslide<3->{& 3.5 \pm 1.96\left(\frac{0.75}{\sqrt{100}}\right)}	\\[6pt]
+	\onslide<4->{& 3.5 \pm 0.147} \\[6pt]
+	\onslide<5->{& = 3.353 \text{ to } 3.647}	
+\end{align*}
+\onslide<6->{A 95\% confidence interval for the population mean waiting time is 3.353 to 3.647 minutes.}
 \end{frame}
 
 \begin{frame}{Error Bars}
-Often times, margins of error are graphed as \textit{error bars} on a visual display. \newline\\	\pause
+Often times, margins of error are graphed as \textit{error bars} on a visual display. 	\pause
 \begin{center}
-% TODO: Draw a bar chart with error bars
+\begin{tikzpicture}[scale=0.65]
+\begin{axis}[
+ybar, axis on top, title={Mean Waiting Time}, bar width = 0.75cm,
+ymin = 0, ymax = 5, ylabel = {Wait Time},
+symbolic x coords = {Example 1}, xtick=data
+]
+\addplot [draw=none, fill=green!70, error bars/.cd, y dir=both, y explicit] coordinates{
+	(Example 1, 3.5) -= (0,0.147) += (0,0.147)
+};
+\end{axis}
+\end{tikzpicture}
 \end{center}
 However, be advised that some graphs use standard deviation for their error bars.
 \end{frame}
-%  - Margin of Error and Error Bars
+
+\begin{frame}{Example 2}
+% Show how the increase in sample size affects the confidence intervals.
+\end{frame}
+
+
+\begin{frame}{What the Confidence Interval Is Not}
+The following are incorrect interpretations of a confidence interval:	\newline\\
+\begin{itemize}
+	\item<2-> We are \makebox[0.65cm]{\hrulefill}\, \% confident that the population mean is in this interval.	\newline\\
+	\item<3-> There is a \makebox[0.65cm]{\hrulefill}\, \% chance that the population mean is (\textit{whatever the sample mean is}).
+\end{itemize}
+\end{frame}
+
 \section{Determine confidence intervals for population proportion}
 
 \section{Determine the necessary sample size}
