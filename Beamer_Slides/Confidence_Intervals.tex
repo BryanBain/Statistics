@@ -86,6 +86,8 @@ xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
 \draw [->,>=stealth,thick] (axis cs: -2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: -2.05,0.015);
 \draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: 2.05,0.015);
 \end{axis}
+\node at (1.75,0) [below] {\small $-z_{\alpha/2}$};
+\node at (4.95,0) [below] {\small $z_{\alpha/2}$};
 \end{tikzpicture}
 \end{center}
 \end{frame}
@@ -160,14 +162,14 @@ Suppose we take a sample of 45 gas prices and find the mean price per gallon is 
 
 Increasing the sample size decreases the standard error. \newline\\	\pause
 
-By doing so, we decrease the width of our confidence interval, while still keeping the confidence level the same. \newline\\	\pause
+By doing so, we decrease the width of our confidence interval, while still keeping the confidence level the same. 
 \end{frame}
 
 
 \begin{frame}{What the Confidence Interval Is Not}
 The following are \alert{incorrect} interpretations of a confidence interval:	\newline\\
 \begin{itemize}
-	\item<2-> We are \makebox[0.65cm]{\hrulefill}\, \% confident that the population mean is in this interval.	\newline\\
+	\item<2-> There is a \makebox[0.65cm]{\hrulefill}\, \% chance that the population mean is in this interval.	\newline\\
 	\item<3-> There is a \makebox[0.65cm]{\hrulefill}\, \% chance that the population mean is (\textit{whatever the sample mean is}).
 \end{itemize}
 \end{frame}
