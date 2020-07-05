@@ -135,7 +135,6 @@ However, be advised that some graphs use standard deviation for their error bars
 \end{frame}
 
 \begin{frame}{Example 2}
-% Show how the increase in sample size affects the confidence intervals.
 Suppose we take a sample of 45 gas prices and find the mean price per gallon is \$2.45 with a standard deviation of \$0.12. \newline\\
 (a)	\quad Create a 98\% confidence interval for the population mean price per gallon.
 \begin{align*}
@@ -166,16 +165,54 @@ By doing so, we decrease the width of our confidence interval, while still keepi
 
 
 \begin{frame}{What the Confidence Interval Is Not}
-The following are incorrect interpretations of a confidence interval:	\newline\\
+The following are \alert{incorrect} interpretations of a confidence interval:	\newline\\
 \begin{itemize}
 	\item<2-> We are \makebox[0.65cm]{\hrulefill}\, \% confident that the population mean is in this interval.	\newline\\
 	\item<3-> There is a \makebox[0.65cm]{\hrulefill}\, \% chance that the population mean is (\textit{whatever the sample mean is}).
 \end{itemize}
 \end{frame}
 
-\section{Determine the confidence interval for Student's t-Distribution}
-
 \section{Determine confidence intervals for population proportion}
+
+\begin{frame}{Mean and Standard Error}
+Our point estimate for a population proportion is $\mu_{\hat{p}} = p$ and the standard error is $\sigma_{\hat{p}} = \sqrt{\frac{p(1-p)}{n}}$	\newline\\	\pause
+
+Our confidence interval for the population proportion is
+\[p \pm z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\]
+\end{frame}
+
+\begin{frame}{Example 3}
+In a recent sample of 578 voters, 301 of them favored a proposal to renovate a local park. Construct a 90\% confidence interval for the population proportion of voters who favor the renovation.	\newline\\
+\onslide<2->{$\hat{p} = \frac{301}{578} \approx 0.521$}
+\begin{align*}
+\onslide<3->{& 0.521 \pm 1.645 \sqrt{\frac{0.521(0.479)}{578}}}	\\[6pt]
+\onslide<4->{&= 0.521 \pm 1.645(0.0208)}	\\[6pt]
+\onslide<5->{&= 0.521 \pm 0.034}	\\[6pt]
+\onslide<6->{&= (0.487, \, 0.555)}
+\end{align*}
+\onslide<7->{A 90\% confidence interval for the population proportion of voters who favor the renovation is 48.7 to 55.5\%}
+\end{frame}
+
+\begin{frame}{Example 4}
+The results of a sample of 40 students who took a pass/fail statistics exam are shown below. Construct a 98\% confidence interval for the population proportion of students who passed the exam.	\newline\\
+\begin{tabular}{cccccccc}
+Pass & Pass & Fail & Pass & Pass & Pass & Fail & Pass \\
+Fail & Pass & Pass & Pass & Fail & Pass & Pass & Pass \\
+Pass & Fail & Fail & Pass & Pass & Fail & Pass & Pass \\
+Pass & Pass & Fail & Fail & Pass & Pass & Pass & Fail \\
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Example 4}
+\[p = 0.75\]
+\begin{align*}
+\onslide<2->{& 0.75 \pm 2.326\sqrt{\frac{0.75(0.25)}{40}}}	\\[6pt]
+\onslide<3->{&= 0.75 \pm 2.326(0.030)}	\\[6pt]
+\onslide<4->{&= 0.75 \pm 0.070}	\\[6pt]
+\onslide<5->{&= (0.68, \, 0.82)}
+\end{align*}
+\onslide<6->{A 98\% confidence interval for the population proportion of students who passed the exam is 68 to 82\%.}
+\end{frame}
 
 \section{Determine the necessary sample size}
 
