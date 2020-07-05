@@ -216,5 +216,46 @@ Pass & Pass & Fail & Fail & Pass & Pass & Pass & Fail \\
 
 \section{Determine the necessary sample size}
 
+\begin{frame}{Margin of Error for Population Mean}
+Our margin of error, $E$, for a population mean has been given as 
+\[E = z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\]
+\onslide<2->{Solving for $n$:}
+\begin{align*}
+\onslide<3->{\frac{E}{z_{\alpha/2}} &= \frac{\sigma}{\sqrt{n}}} \\[6pt]
+\onslide<4->{E\sqrt{n} &= \sigma \cdot z_{\alpha/2}} \\[6pt]
+\onslide<5->{\sqrt{n} &= \frac{\sigma \cdot z_{\alpha/2}}{E}}	\\[6pt]
+\onslide<6->{n &= \left(\frac{\sigma \cdot z_{\alpha/2}}{E}\right)^2}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 5}
+How large of a sample size should we take if we want to create a 95\% confidence interval that is within \$0.02 per gallon of the mean cost of gasoline? Assume the standard deviation is \$0.12.
+\begin{align*}
+\onslide<2->{n &= \left(\frac{\sigma \cdot z_{\alpha/2}}{E}\right)^2}	\\[6pt]
+\onslide<3->{n &= \left(\frac{0.12 \cdot 1.96}{0.02}\right)^2}			\\[6pt]
+\onslide<4->{n &= 138.2976 \onslide<5->{\rightarrow 139}}
+\end{align*}
+
+\onslide<6->{We would need a sample of at least 139.}
+\end{frame}
+
+\begin{frame}{Sample Size for Population Proportion}
+If we solve	\bigskip
+\[E = z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}}\] \bigskip
+for $n$, we get	\bigskip
+\[n = p(1-p)\left(\frac{z_{\alpha/2}}{E}\right)^2\]
+
+\end{frame}
+
+\begin{frame}{Example 6}
+A recent poll shows that 301 out of 578 voters favor renovating a local park. How large of a sample must we take to create a 95\% confidence interval that is within 4\% of the population proportion?	\newline\\	\pause
+$p \approx 0.521$
+\begin{align*}
+\onslide<3->{n &= 0.521(0.479)\left(\frac{1.96}{0.04}\right)^2}	\\[8pt]
+\onslide<4->{n &= 599.191159 \onslide<5->{\rightarrow 600}}
+\end{align*}
+
+\onslide<5->{We would need a sample size of at least 600.}
+\end{frame}
 
 \end{document}
