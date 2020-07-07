@@ -65,11 +65,116 @@ The \textbf{alternative hypothesis}, denoted $H_A$, is the new claim that is mad
 
 \begin{frame}{Example 1}
 Determine the null and alternative hypotheses for each.	\newline\\
-(a) \quad 
+(a) \quad A new car's mpg is listed as 33. You want to know if the mpg is not 33.	\newline\\	\pause
+
+$H_0: \, \mu = 33\text{ mpg}$	\newline\\	\pause
+$H_A: \, \mu \neq 33\text{mpg}$ 
+\end{frame}
+
+\begin{frame}{Example 1}
+(b) \quad A hospital says the mean wait time for patients to see a doctor is 3.5 minutes. You want to know if the mean wait time is more than 3.5 minutes.	\newline\\	\pause
+
+$H_0: \, \mu = 3.5\text{ minutes}$ \newline\\	\pause
+$H_A: \, \mu > 3.5\text{ minutes}$
+\end{frame}
+
+\begin{frame}{Example 1}
+(c) \quad A company claims their program will increase your grade in statistics class by 10\%. You think it might not be that much.	\newline\\	\pause
+
+$H_0: \, \mu = 0.10$ \newline\\	\pause
+$H_A: \, \mu < 0.10$
+\end{frame}
+
+\section{Understand errors and interpret \textit{p}-value}
+
+\begin{frame}{What Do Our Sample Results Mean?}
+Our sample results will allow us to do one of two things:	\newline\\
+\begin{itemize}
+	\item<2->{Reject the null hypothesis} \newline\\
+	\item<3->{Fail to reject the null hypothesis}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rejecting the Null Hypothesis}
+If our sample statistics give us reason to believe that the null hypothesis may not in fact be true, then we will state our rejection of it.	\newline\\	\pause
+
+\begin{quote}
+... we have sufficient evidence to reject [the null hypothesis].
+\end{quote}	\bigskip		\pause
+
+Rejecting the null hypothesis is like a jury declaring a defendant guilty. \newline\\	\pause
+
+\emph{Note:} There is still a chance that the defendant is innocent, but the evidence is strong enough to bring a guilty verdict.
+\end{frame}
+
+\begin{frame}{Failing to Reject the Null Hypothesis}
+However, our sample statistics might not give us reason to believe the null hypothesis is false. \newline\\	\pause
+
+\begin{quote}
+... we do not have sufficient evidence to reject [the null hypothesis].
+\end{quote}	\bigskip \pause
+
+Failing to reject the null hypothesis is like a jury declaring a defendant not guilty.	\newline\\	\pause
+
+\emph{Note:} A declaration of not guilty \underline{is not the same as} a declaration of innocence. There just is not sufficient evidence to declare guilt, and the defendant \emph{could still actually be guilty}.
+\end{frame}
+
+\begin{frame}{Errors}
+Just like in courts of law, sometimes innocent people are declared guilty and guilty people are declared not guilty. The same can happen in statistics.	\newline\\	\pause
+
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title={\textbf{Type I Error}}]
+A \textbf{Type I error} in statistics occurs when we reject a null hypothesis that is actually true.
+\end{tcolorbox}
+\bigskip \pause
+
+The probability of making a Type I error is $\alpha$, which we saw earlier with our confidence intervals in the form $1-\alpha$.	\newline\\	\pause
+
+In hypothesis testing, $\alpha$ is called the \textbf{level of significance}.
+\end{frame}
+
+\begin{frame}{Errors}
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title={\textbf{Type II Error}}]
+A \textbf{Type II error} in statistics occurs when we fail to reject a null hypothesis that is actually false.
+\end{tcolorbox}
+\bigskip	\pause
+
+The probability of making a Type II error is $\beta$.	\newline\\ \pause
+
+\emph{Note:} As we decrease the chances of making a Type I error, we increase the chances of making a Type II error. \newline\\	\pause
+
+If we make it harder to put an innocent person in jail, we make it tougher to return a guilty verdict. This will also have the affect of increasing the number of actual guilty defendants who are let go.	\newline\\	\pause
+
+The \textbf{power} of a test is given as $1 - P(\beta)$
+\end{frame}
+
+\begin{frame}{Errors Summary}
+\begin{center}
+\begin{tabular}{c|cc}
+$\bm{H_0}$ & Reject $H_0$ & Fail to reject $H_0$ \\ \hline
+$H_0$ True & Type I error & Correct decision \\
+$H_0$ False & Correct decision & Type II error \\
+\end{tabular} 
+\\[1cm]
+\begin{tabular}{c|cc}
+\textbf{Defendant} & Declare Guilty & Declare Not Guilty \\ \hline
+Actually Innocent & Type I error & Correct decision \\
+Actually Guilty & Correct decision & Type II error \\
+\end{tabular}
+\end{center}
 \end{frame}
 
 \begin{frame}{$p$-Value}
 Recall that {\color{blue}\textbf{statistically significant}} means that something is not likely to occur by chance. \newline\\	\pause
+
+\begin{tcolorbox}[colframe=green!20!black, colback = green!30!white,title=\textbf{\textit{p}-Value}]
+The \textbf{\textit{p}-value} is the probability of obtaining a sample as extreme as the one obtained \textbf{under the assumption that the null hypothesis is true.}
+\end{tcolorbox}
+\bigskip \pause
+
+If our $p$-value is less than a given acceptable value ($\alpha$), then our sample was not likely to occur by chance \emph{assuming the null hypothesis is true}, \pause so we have sufficient evidence to reject the null hypothesis.
+\end{frame}
+
+\begin{frame}{Example 2}
 
 \end{frame}
 
