@@ -116,7 +116,7 @@ However, our sample statistics might not give us reason to believe the null hypo
 
 Failing to reject the null hypothesis is like a jury declaring a defendant not guilty.	\newline\\	\pause
 
-\emph{Note:} A declaration of not guilty \underline{is not the same as} a declaration of innocence. There just is not sufficient evidence to declare guilt, and the defendant \emph{could still actually be guilty}.
+\emph{Note:} A declaration of not guilty \underline{is not the same as} a declaration of innocence (which is never handed down in a court of law). It just means that there is not sufficient evidence to declare guilt, \emph{but the defendant could still actually be guilty}.
 \end{frame}
 
 \begin{frame}{Errors}
@@ -290,17 +290,14 @@ z &= \frac{\overline{x} - \mu}{\sigma/\sqrt{n}}	\\[10pt]
 
 \begin{frame}{Example 3 -- Test Statistic and Critical Value}
 \begin{center}
-\begin{tikzpicture}[scale=0.75]
+\begin{tikzpicture}[scale=0.95]
 \begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={$\alpha = 0.05$ Significance Level}, xtick = {-1.96,0,1.96}
 ]
 \addplot [draw = none, fill = red, domain = -3.5:-1.96] {gauss(0,1)} \closedcycle;
 \addplot [draw = none, fill = red, domain = 1.96:3.5] {gauss(0,1)} \closedcycle;
 \addplot [very thick, color=blue] {gauss(0,1)};
-%\draw [->, >=stealth, very thick] (axis cs:-2.5,0.2) -- (-2.15,0.015);
-%\node at (axis cs:-2.5,0.2) [above] {Reject};
-\draw [->, >=stealth, very thick] (axis cs:2.02,-0.1) -- (2.02,-0.005);
-\node at (axis cs:2.02,-0.1) [below] {$z=2.02$};
 \end{axis}
+\draw [->,>=stealth,thick] (6.75,1) node [above] {$z = 2.02$} -- (5.5,0);
 \end{tikzpicture}
 \end{center}
 \end{frame}
@@ -338,6 +335,34 @@ At the 5\% level of significance, we have sufficient evidence to reject the null
 \end{quote}
 \end{frame}
 
+\begin{frame}{$p$-value Visual Interpretation}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, xtick = {0}
+]
+\addplot [draw = none, fill = red, domain = -3.5:-1.96] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = red, domain = 1.96:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{$p$-value Visual Interpretation}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, xtick = {0}
+]
+\addplot [draw = none, fill = red, domain = -3.5:-1.96] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = red, domain = 1.96:3.5] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill=yellow, domain = -3.5:-2.02] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = yellow, domain = 2.02:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 \begin{frame}{Example 3 -- Confidence Interval}
 Recall that confidence intervals for a population mean are in the form
 \[\overline{x} \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\]
@@ -362,8 +387,52 @@ At the 5\% level of significance, we have sufficient evidence to reject the null
 }
 \end{frame}
 
+\begin{frame}{Example 3 -- Confidence Interval Visual Interpretation}
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\draw [fill=yellow] (4.15,0) circle [radius=0.57cm];
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={Population Distribution}, xtick = {0,0.75}, xticklabels = {$3$,$3.1$}
+]
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
 \begin{frame}{Example 4}
-% Do either a left-tailed or right-tailed test for this.
+A company claims their program will increase your grade in statistics class by at least 10\%. You think it might not be that much, so you obtain a sample of 40 students and find that the sample mean increase in grades for the class is 9\%.	\newline\\
+
+Assuming $\sigma = 3.75\%$ and the population data is normally distributed, test the claim that the mean percent increase in score is less than 10\% at the $\alpha = 0.02$ significance level.		\newline\\	\pause
+
+$H_0: \, \mu = 0.10$ increase \newline\\
+$H_A: \, \mu < 0.10$ increase
+\end{frame}
+
+\begin{frame}{Example 4}
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={$\alpha = 0.02$ Significance Level}, xtick = {-2.054,0}
+]
+\addplot [draw = none, fill = red, domain = -3.5:-2.054] {gauss(0,1)} \closedcycle;
+%\addplot [draw = none, fill = red, domain = 2.326:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\draw [->, >=stealth, very thick] (axis cs:-2.5,0.2) -- (-2.4,0.0175);
+\node at (axis cs:-2.5,0.2) [above] {Reject};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 4}
+Test statistic: $z = -1.687 > -2.054$ (outside rejection region)	\newline\\
+$p$-value: $0.046 > 0.02$	\newline\\
+Confidence Interval: $(0.099, 0.101)$, which contains $\mu = 0.10$	\newline\\	\pause
+
+All 3 lead to same conclusion: Fail to reject the null hypothesis.	\newline\\	\pause
+
+\begin{quote}
+At the 2\% significance level, we do not have sufficient evidence to reject the claim that the mean increase in score is 10\%, and thus there is not enough evidence to conclude that the mean increase in score is less than 10\%.
+\end{quote}
 \end{frame}
 
 \end{document}
