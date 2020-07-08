@@ -230,16 +230,140 @@ At the 1\% significance level, we have sufficient evidence to reject the claim t
 	\item Check the assumptions
 	\item<2-> State the null and alternative hypotheses
 	\item<3-> Determine the significance level
-	\item<4-> Calculate the $p$-value, test statistics, or confidence interval
+	\begin{itemize}
+	\item<3-> \emph{Note}: Once you determine the significance level, you can not change it after you obtain the results of your sample. Doing so is unethical.
+	\end{itemize}
+	\item<4-> Calculate the $p$-value, test statistic, or confidence interval
 	\item<5-> State your conclusion
 \end{enumerate}
 \end{frame}
 
-% p-value
-% errors
-% hypothesis testing of the population mean with known population st. dev.
-  % critical value method
-  % confidence interval method
-  % p-value method
+\begin{frame}{Hypothesis Testing Methods}
+We will examine 3 methods of hypothesis testing:	\newline\\
+\begin{itemize}
+	\item<2-> Test statistic and critical value
+	\item<3-> $p$-value
+	\item<4-> Confidence interval
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Hypothesis Test for Population Mean}
+We will look at some examples of hypothesis testing of the population mean when the population standard deviation is known.	\newline\\	\pause
+
+We will also assume that a simple random sample (or $n \geq 30$) is obtained and the population is normally distributed.
+\end{frame}
+
+\begin{frame}{Example 3}
+A pharmaceutical company claims that the mean time for relief from its headache medicine is 3 minutes. A sample of 50 pills is obtained and the sample's mean is 3.1 minutes. Assuming $\sigma = 0.35\text{ minutes}$, test the claim that the mean remedy time is different than 3 minutes at the $\alpha = 0.05$ significance level.	\newline\\	\pause
+
+$H_0: \, \mu = 3\text{ minutes}$ \newline\\
+$H_A: \, \mu \neq 3\text{ minutes}$ \newline\\	\pause
+
+We will first examine the test statistic and critical value approach.
+\end{frame}
+
+\begin{frame}{Example 3 -- Test Statistic and Critical Value}
+In this approach, we will compute the $z$ test statistic and see if it falls in the acceptance or rejection region:	\newline\\
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={$\alpha = 0.05$ Significance Level}, xtick = {-1.96,0,1.96}
+]
+\addplot [draw = none, fill = red, domain = -3.5:-1.96] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = red, domain = 1.96:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\draw [->, >=stealth, very thick] (axis cs:-2.5,0.2) -- (-2.15,0.015);
+\node at (axis cs:-2.5,0.2) [above] {Reject};
+\draw [->, >=stealth, very thick] (axis cs:2.5,0.2) -- (2.15,0.015);
+\node at (axis cs:2.5,0.2) [above] {Reject};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 3 -- Test Statistic and Critical Value}
+\begin{align*}
+z &= \frac{\overline{x} - \mu}{\sigma/\sqrt{n}}	\\[10pt]
+\onslide<2->{&= \frac{3.1-3}{0.35/\sqrt{50}}}	\\[10pt]
+\onslide<3->{z &\approx 2.02 }
+\end{align*}
+\end{frame}
+
+\begin{frame}{Example 3 -- Test Statistic and Critical Value}
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={$\alpha = 0.05$ Significance Level}, xtick = {-1.96,0,1.96}
+]
+\addplot [draw = none, fill = red, domain = -3.5:-1.96] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = red, domain = 1.96:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+%\draw [->, >=stealth, very thick] (axis cs:-2.5,0.2) -- (-2.15,0.015);
+%\node at (axis cs:-2.5,0.2) [above] {Reject};
+\draw [->, >=stealth, very thick] (axis cs:2.02,-0.1) -- (2.02,-0.005);
+\node at (axis cs:2.02,-0.1) [below] {$z=2.02$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example 3 -- Test Statistic and Critical Value}
+Since our test statistic of $z = 2.02$ is in the rejection region, we reject the null hypothesis.	\newline\\  \pause
+
+\begin{quote}
+At the 5\% level of significance, we have sufficient evidence to reject the null hypothesis that the mean remedy time is 3 minutes and conclude that there is evidence to prove the mean remedy time is different.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Example 3 -- $p$-value}
+We can obtain the $p$-value for our sample by computing the total area associated with our $z$ test statistic.	\newline\\	\pause
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[no marks, samples=200, axis lines = left, xmin = -3.5, xmax = 3.5, ymax = 0.45, xlabel = {z score}, ylabel = {Probability}, title={$\alpha = 0.05$ Significance Level}, xtick = {-2.02,0,2.02}
+]
+\addplot [draw = none, fill = orange!70, domain = -3.5:-2.02] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = orange!70, domain = 2.02:3.5] {gauss(0,1)} \closedcycle;
+\addplot [very thick, color=blue] {gauss(0,1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\onslide<2->{The $p$-value is approximately 0.0434}
+\end{frame}
+
+\begin{frame}{Example 3 -- $p$-value}
+Our $p$-value of 0.0434, or 4.34\%, means that assuming the mean remedy time of 3 minutes is true, we would get results as extreme (or more) as ours about 4.34\% of the time. 	\newline\\	\pause
+
+Since this value is less than the $\alpha = 0.05$ significance level, our results are statistically significant, and we thus reject the null hypothesis.	\newline\\	\pause
+
+\begin{quote}
+At the 5\% level of significance, we have sufficient evidence to reject the null hypothesis that the mean remedy time is 3 minutes and conclude that there is evidence to prove the mean remedy time is different.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Example 3 -- Confidence Interval}
+Recall that confidence intervals for a population mean are in the form
+\[\overline{x} \pm z_{\alpha/2}\left(\frac{\sigma}{\sqrt{n}}\right)\]
+\pause
+
+Example 3's $\alpha = 0.05$ significance level means that if we took many samples, we would expect about 95\% of them to contain the population mean.	\newline\\	\pause
+
+As such, if our confidence interval contains the (alleged) population mean of 3 minutes, then we will not reject the null hypothesis.
+\end{frame}
+
+\begin{frame}{Example 3 -- Confidence Interval}
+Our sample's 95\% confidence interval is
+\begin{align*}
+& 3.1 \pm 1.96\left(0.35/\sqrt{50}\right) \\[8pt]
+\onslide<2->{& 3.003 \text{ to 3.197}}	\\ 
+\end{align*}
+\onslide<3->{Since our confidence interval does not contain the population mean of 3, we reject the null hypothesis.}	\newline\\
+\onslide<4->{
+\begin{quote}
+At the 5\% level of significance, we have sufficient evidence to reject the null hypothesis that the mean remedy time is 3 minutes and conclude that there is evidence to prove the mean remedy time is different.
+\end{quote}
+}
+\end{frame}
+
+\begin{frame}{Example 4}
+% Do either a left-tailed or right-tailed test for this.
+\end{frame}
 
 \end{document}
