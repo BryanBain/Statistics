@@ -1,7 +1,7 @@
 """
 Purpose: Calculate cumulative and inverse cumulative normal probability
 distributions.
-Date: Jun 24, 2020
+Date: Jun 24, 2020; Last Modified: July 9, 2020
 Author: Bryan Bain
 File Name: Normal_Distribution.py
 """
@@ -47,6 +47,11 @@ def getLowerZ():
     """
     return float(input("Please enter the lower z score: "))
 
+def getSampleSize():
+    """Gets the sample size."""
+    sample_size = int(input("What is the sample size? "))
+    return sample_size
+
 def getUpperZ():
     """
     Gets the higher of two z scores from the user.
@@ -73,6 +78,21 @@ def obsToZ(x, mu, sigma):
     """
     return (x - mu) / sigma
 
+def sampleOrPopulation():
+    """Determines if sample or population data is being used."""
+    print("\nAre you given a sample or a population?")
+    print("1. Sample")
+    print("2. Population")
+        
+
+def toStdError(sigma, sample_size):
+    """
+    Converts standard deviation to standard error for a sample.
+    sigma: the standard deviation
+    sample_size: the sample size
+    """
+    return sigma/math.sqrt(sample_size)
+
 def quitProgram():
     """
     Quits the program.
@@ -91,7 +111,7 @@ def whatGiven():
     print("2. Observed value")
     print("Press 'q' to quit")
 
-quit = False
+quit = False  
 
 while quit is not True:
     
@@ -168,6 +188,8 @@ while quit is not True:
         areaOrValue()
         aOrV = input()
         print()
+        sampleOrPopulation()
+        sOrP = input()
         if aOrV == "1":  # Trying to find area
             areaPrintout()
             x_option = input().lower()
@@ -176,6 +198,9 @@ while quit is not True:
                 ob_val = float(input("Please enter the observed value: "))
                 mu = float(input("Please enter the mean: "))
                 sigma = float(input("Please enter the standard deviation: "))
+                if sOrP == "1":
+                    sampleSize = getSampleSize()
+                    sigma = toStdError(sigma, sampleSize)
                 z_score = obsToZ(ob_val, mu, sigma)
                 area = norm.cdf(z_score)
                 print()
@@ -184,6 +209,9 @@ while quit is not True:
                 ob_val = float(input("Please enter the observed value: "))
                 mu = float(input("Please enter the mean: "))
                 sigma = float(input("Please enter the standard deviation: "))
+                if sOrP == "1":
+                    sampleSize = getSampleSize()
+                    sigma = toStdError(sigma, sampleSize)
                 z_score = obsToZ(ob_val, mu, sigma)
                 area = norm.sf(z_score)
                 print()
@@ -193,6 +221,9 @@ while quit is not True:
                 ob_val2 = float(input("Please enter the larger observed value: "))
                 mu = float(input("Please enter the mean: "))
                 sigma = float(input("Please enter the standard deviation: "))
+                if sOrP == "1":
+                    sampleSize = getSampleSize()
+                    sigma = toStdError(sigma, sampleSize)
                 z1 = obsToZ(ob_val1, mu, sigma)
                 z2 = obsToZ(ob_val2, mu, sigma)
                 area = norm.cdf(z2) - norm.cdf(z1)
@@ -204,6 +235,9 @@ while quit is not True:
                 ob_val2 = float(input("Please enter the larger observed value: "))
                 mu = float(input("Please enter the mean: "))
                 sigma = float(input("Please enter the standard deviation: "))
+                if sOrP == "1":
+                    sampleSize = getSampleSize()
+                    sigma = toStdError(sigma, sampleSize)
                 z1 = obsToZ(ob_val1, mu, sigma)
                 z2 = obsToZ(ob_val2, mu, sigma)
                 area = 1 - (norm.cdf(z2) - norm.cdf(z1))
