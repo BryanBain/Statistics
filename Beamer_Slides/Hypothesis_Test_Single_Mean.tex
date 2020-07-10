@@ -31,13 +31,6 @@
 \maketitle
 \end{frame}
 
-\begin{frame}
-Student's $t$ distribution
-Degrees of Freedom: $n-1$ --> As deg. of freedom grow, t distribution becomes more normal.
-$t = \frac{\overline{x}-\mu}{\sigma/\sqrt{n}}$
-
-\end{frame}
-
 \begin{frame}{Student's $t$ Test}
 While the $z$ test for a population mean may be a good introduction to hypothesis testing, it doesn't hold much use in the real world. \newline\\	\pause
 
@@ -86,12 +79,53 @@ In the grand scheme of things, it's more valuable to be able to \emph{interpret 
 \end{frame}
 
 \begin{frame}{Example 1}
-% Given summary stats n >= 30
+A car company claims one model of their SUV gets 40 mpg. You want to test the claim that the mean mpg of this model of SUV is less than 40 mpg, so you obtain a random sample of 65 of these cars and find the sample mean is 39 mpg with a standard deviation of 5.1 mpg. Test your claim at the $\alpha = 0.05$ significance level.	\newline\\	\pause
 
+$H_0: \, \mu = 40$ mpg	\newline
+$H_A: \, \mu < 40$ mpg
+\end{frame}
+
+\begin{frame}{Example 1}
+The critical value corresponding to $\alpha=0.05$ of a left-tailed test is $-1.669$. \newline\\	\pause
+
+$t = -1.581$ \newline
+$p$-value = 0.0594	\newline
+95\% confidence interval: (37.7363, 40.2637)	\newline\\	\pause
+
+Do not reject the null hypothesis.	\newline\\ \pause
+\begin{quote}
+At the 95\% confidence level, we do not have sufficient evidence to reject the claim that the mean mpg of this model SUV is 40 mpg, and conclude that our sample did not give us reason to believe the mean mpg might be less than 40.
+\end{quote}
 \end{frame}
 
 \begin{frame}{Example 2}
-% Raw Data n < 30
+A company claims it can boost your statistics grade by 10\%. You want to test the claim that the mean grade increase is not 10\%, so you randomly sample 20 statistics students who used the program and recorded their percent grade increase from one test to the next. Test your claim at the $\alpha = 0.1$ level of significance. \newline\\
+
+\begin{center}
+\begin{tabular}{ccccc}
+8 & 5 & 7 & 9 & 10 \\
+12 & 7 & 8 & 11 & 15 \\
+4 & 13 & 9 & 8 & 11 \\
+9 & 3 & 5 & 8 & 12 \\
+\end{tabular}
+\end{center}
+\pause
+
+$H_0: \, \mu = 10$ \\
+$H_A: \, \mu \neq 10$
+\end{frame}
+
+\begin{frame}{Example 2}
+The critical values corresponding to $\alpha = 0.1$ of a left-tailed test are $-1.729$ and 1.729.	\newline\\	\pause
+
+$t = -1.877$	\newline
+$p$-value = 0.0759 \newline
+90\% confidence interval: (7.5027, 9.8973)	\newline\\	\pause
+
+Reject the null hypothesis	\newline\\	\pause
+\begin{quote}
+At the 90\% confidence level, we have sufficient evidence to reject the claim that the mean increase in score is 10\% and conclude that our sample gives us reason to believe the mean increase in score is not 10\%.
+\end{quote}
 \end{frame}
 
 \end{document}
