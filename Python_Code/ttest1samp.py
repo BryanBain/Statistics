@@ -87,6 +87,6 @@ while not quit:
     print(f"Test statistic: {test_statistic:0.3f}")
     print(f"Ha < H0 critical value: {stats.t.ppf(significance,df):0.3f} p-value: {area:0.4f}")
     print(f"Ha > H0 critical value: {stats.t.ppf(1-significance,df):0.3f} p-value: {1-area:0.4f}")
-    print(f"Ha != H0 critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.3f} p-value: {2*area:0.4f}")
+    print(f"Ha != H0 critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.3f} p-value: {2*min(area,1-area):0.4f}")
     print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
     print()
