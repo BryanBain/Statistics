@@ -34,6 +34,16 @@
 \begin{frame}{Testing a Population Proportion}
 In this section, we will test a claim regarding a population proportion. \newline\\ \pause
 
+\textbf{Assumptions}
+\begin{itemize}
+\item<3->{A random sample is selected from a binomial population (\textit{success or failure})}	\newline\\
+\item<4->{The sample size $n$ is large}
+\begin{itemize}
+	\item<5->{Will be met if $np$ and $n(1-p)$ are each at least 15}
+\end{itemize}
+\end{itemize}
+\end{frame}
+\begin{frame}{Test Statistic and Standard Error}
 The sample proportion, $\hat{p}$ is given by	\bigskip
 \[\hat{p} = \frac{x}{n} = \frac{\text{number of observed successes}}{\text{sample size}}\]		\newline\\	\pause
 with sample standard error	
@@ -142,11 +152,19 @@ Reminder, if the $p\text{-value} < \alpha$, we reject the null hypothesis.
 \end{frame}
 
 \begin{frame}{Confidence Interval Method}
+Our confidence interval for a population proportion is given by 
+
+\[\text{point estimate} \pm \text{margin of error}\] 
+\onslide<2->{\[\hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]}	\newline\\
+\onslide<3->{If our confidence interval contains the (claimed) population proportion, we do not reject the null hypothesis.}
+\end{frame}
+
+\begin{frame}{Confidence Interval Method}
 \begin{center}
 \begin{tikzpicture}[>=stealth]
 \node at (-6.5,0) {\textbf{Reject Null}};
 \draw[<->] (-4,0) -- (3.75,0);
-\draw [very thick] (-1,0.15) -- (-1,-0.15) node [below, color=blue] {\textbf{Pop. Proportion}};
+\draw [very thick] (-1,0.15) -- (-1,-0.15) node [below, color=blue] {$\bm{p}$};
 \draw [very thick] (2,0.15) -- (2,-0.15) node [below] {$\hat{p}$};
 \draw [fill=yellow, opacity = 0.4] (2,0) circle [radius = 1cm];
 \end{tikzpicture}
@@ -155,12 +173,55 @@ Reminder, if the $p\text{-value} < \alpha$, we reject the null hypothesis.
 \begin{tikzpicture}[>=stealth]
 \node at (-6.5,0) {\textbf{Do Not Reject Null}};
 \draw[<->] (-4,0) -- (3,0);
-\draw [very thick] (-1,0.15) -- (-1,-0.15) node [below, color=blue] {\textbf{Pop. Proportion}};
+\draw [very thick] (-1,0.15) -- (-1,-0.15) node [below, color=blue] {$\bm{p}$};
 \draw [very thick] (-0.25,0.15) -- (-0.25,-0.15) node [above, yshift=0.25cm] {$\hat{p}$};
 \draw [fill=yellow, opacity = 0.4] (-0.25,0) circle [radius = 1cm];
 \end{tikzpicture}
 }
 \end{center}
+\end{frame}
+
+\begin{frame}{Example 1}
+According to a recent study, 72\% of Americans favor starting school after Labor Day. You believe the percentage is greater than 72\%, so you obtain a sample of 400 Americans and find that 75\% of them favor starting school after Labor Day. \newline\\
+
+At the $\alpha = 0.05$ significance level, test your claim.	\newline\\	\pause
+
+$H_0: \, p = 0.72$ \newline
+$H_A: \, p > 0.72$
+\end{frame}
+
+\begin{frame}{Example 1}
+Test statistic: $z = 1.336$ (Critical Value = 1.645) \newline
+$p$-value = 0.0907 $> 0.05$	\newline
+Confidence Interval = (0.7076, 0.7924); contains $p = 0.72$	\newline\\	\pause
+
+Do not reject null hypothesis	\newline\\	\pause
+
+\begin{quote}
+At the 5\% significance level, we do not have sufficient evidence to reject the null hypothesis and conclude that our sample does not support the claim that the mean percentage of Americans who favor starting school after Labor Day is greater than 72\%.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Example 2}
+According to a recent poll, 40\% of people would vote for Bryan Bain to be President of the United States (never going to happen). You want to test the claim (at the $\alpha = 0.05$ significance level) that the percent of people who would vote for Bryan Bain is not 40\%, so you obtain a random sample of 700 voters and find that 45\% would vote for Bryan Bain.	\newline\\
+
+\onslide<2->{$H_0: \, p = 0.40$} \newline
+\onslide<2->{$H_A: \, p \neq 0.40$}
+\end{frame}
+
+\begin{frame}{Example 2}
+Test statistic: $z = 2.700 > 1.96$	\newline
+$p$-value = 0.0069 $< 0.05$	\newline
+Confidence Interval = (0.4131, 0.4869); does not contain $p = 0.40$	\newline\\	\pause
+
+Reject the null hypothesis.	\newline\\	\pause
+
+\begin{quote}
+At the 5\% significance level, we have sufficient evidence to reject the null hypothesis that the percentage of voters that would vote for Bryan Bain is 40\% and conclude that our sample supports the claim that the percentage may be different than 40.
+\end{quote}
+\pause
+
+*On a personal note, take a look at any US President when they begin their first term and then see what they look like when they leave office. \emph{That} is why I don't want to be President.
 \end{frame}
 
 \end{document}
