@@ -26,4 +26,10 @@
   <li>Hypothesis Testing or: How I Learned to Stop Worrying and Love Inferential Statistics</li>
   <li>Hypothesis Testing of Population Mean</li>
   <li>Hypothesis Testing of Population Proportion</li>
+  <li>Hypothesis Testing of Two Means</li>
+  <li>Hypothesis Testing of Two Proportions</li>
+  <li>Analysis of Variance (ANOVA)</li>
+  <li>One-Way and Two-Way (Contingency) Tables</li>
+  <li>Hypothesis Testing of Regression</li>
+  <li>Multiple Regression</li>
 </ol>
