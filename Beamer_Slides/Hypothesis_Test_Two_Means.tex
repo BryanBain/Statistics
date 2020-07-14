@@ -1,0 +1,110 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Hypothesis Testing}
+\subtitle{Two Sample Means}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\begin{frame}{Moving from One Sample to Two}
+In this section, we are going to analyze the difference of means between two samples of data. \newline\\	\pause
+
+In particular, we will examine whether there is a difference in means that is statistically significant, assuming there is no difference in means of each sample's population. \newline\\	\pause
+
+To put it mathematically, if we denote our first sample as $X$, and our second sample as $Y$, then we will want to know if
+\[\mu_X - \mu_Y = 0 \pause \quad \text{or} \quad \mu_X = \mu_Y\]
+\pause
+Thus, our null hypotheses will be $\mu_X = \mu_Y$.
+\end{frame}
+
+\section{Perform hypothesis test on the mean for two dependent samples}
+
+\begin{frame}{Dependent Samples}
+Recall from probability that two events are {\color{blue}\textbf{dependent}} if the chance of the second event happening is affected by the first event happening.	\newline\\	\pause
+
+For this part of the section, we will look at examples with a ``before-and-after" theme; much like with experiments.	\newline\\	\pause
+
+This part is known as a {\color{blue}\textbf{paired $\bm{t}$ test}}.
+\end{frame}
+
+\begin{frame}{Nuts and Bolts of a Paired $t$ Test}
+We will assume the distribution in the differences of sample $X$ and sample $Y$ are normal.	\newline\\	\pause
+
+The test statistic is
+\[t = \frac{\overline{d} - 0}{s_d / \sqrt{n}} \pause = 	\frac{\overline{d}}{s_d / \sqrt{n}} \]		\pause
+
+$\overline{d}$ represents the mean differences between the samples. \[\overline{d} = \overline{X-Y}\]		\pause
+
+The population difference, $\mu_d$ will be 0 for hypothesis testing.	\newline\\	\pause
+
+$s$ represents the sample standard deviation of the differences, and there are $n-1$ degrees of freedom.
+\end{frame}
+
+\begin{frame}{Example 1}
+A medication is given to patients in an attempt to lower their LDL cholesterol. The tables below list the levels. At the 5\% significance level, test the claim that the medicine is effective in lowering LDL cholesterol.	\newline\\
+\begin{tabular}{c|c}
+\textbf{Before} & \textbf{After} \\ \hline
+95 & 91 \\
+109 & 107 \\
+127 & 129 \\
+131 & 125 \\
+117 & 110 \\
+135 & 120 \\
+103 & 97 \\
+98 & 101 \\
+111 & 107 \\
+\end{tabular}
+\end{frame}
+
+\begin{frame}{Example 1}
+$H_0: \, \mu_{\text{Before}} = \mu_{\text{After}}$	\newline\\
+$H_A: \, \mu_{\text{Before}} < \mu_{\text{After}}$	\newline\\	\pause
+\begin{itemize}
+	\item $t = 2.446$ \quad \pause (critical value = 1.96)	\newline\\	\pause
+	\item $p = 0.0201$ \quad \pause ($\alpha = 0.05$) \newline\\	\pause
+	\item 95\% confidence interval: (0.2478, 8.4189) \quad \pause does not contain $\mu_d = 0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example 1}
+Reject the null hypothesis.		\newline\\	\pause
+\begin{quote}
+At the 5\% significance level we reject the null hypothesis that there is no difference in LDL cholesterol levels and conclude that our sample suggests the medication may be effective in lowering LDL cholesterol levels.
+\end{quote}
+\end{frame}
+
+\section{Perform hypothesis test on the mean for two independent samples}
+
+\begin{frame}{Independent Samples}
+For this part, our samples will be \emph{independent} of one another.	\newline\\	\pause
+
+In other words, there is no ``before-and-after" relationship between our samples, and our samples don't even have to be the same sizes.
+\end{frame}
+
+% Pooled vs. Non-pooled
+\end{document}
