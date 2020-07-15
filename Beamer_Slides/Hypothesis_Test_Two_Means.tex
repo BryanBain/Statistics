@@ -47,9 +47,9 @@ Thus, our null hypotheses will be $\mu_X = \mu_Y$.
 \begin{frame}{Dependent Samples}
 Recall from probability that two events are {\color{blue}\textbf{dependent}} if the chance of the second event happening is affected by the first event happening.	\newline\\	\pause
 
-For this part of the section, we will look at examples with a ``before-and-after" theme; much like with experiments.	\newline\\	\pause
+For this part of the section, we will look at examples with data that is paired together, often times having somewhat of a ``before-and-after" theme; much like with experiments.	\newline\\	\pause
 
-This part is known as a {\color{blue}\textbf{paired $\bm{t}$ test}}.
+This part is sometimes known as a {\color{blue}\textbf{paired $\bm{t}$ test}} or a {\color{blue}\textbf{matched pairs test}}.
 \end{frame}
 
 \begin{frame}{Nuts and Bolts of a Paired $t$ Test}
@@ -106,5 +106,45 @@ For this part, our samples will be \emph{independent} of one another.	\newline\\
 In other words, there is no ``before-and-after" relationship between our samples, and our samples don't even have to be the same sizes.
 \end{frame}
 
+\begin{frame}{To Pool or Not To Pool}
+Since our independent samples don't even have to have the same sample size, we will have to know about assumptions we can make about their \emph{variances}. \newline\\	\pause
+
+If we operate under the assumption that the two populations have equal variances, $\sigma_X = \sigma_Y$, then we use a \textbf{pooled} (i.e. \textit{weighted}) estimate of the common variance. \newline\\	\pause
+
+However, $p$-values obtained through pooled tests can be significantly off if the population variances are, in fact, \emph{not} equal. \newline\\	\pause
+
+As such, the examples in this section will assume that the population variances are \emph{not equal}.
+\end{frame}
+
+\begin{frame}{Nuts and Bolts}
+\textbf{Assumptions}
+\begin{itemize}
+\item<2-> Two samples are randomly chosen and independent of each other.
+\item<3-> Population distributions are approximately normal, OR
+\item<4-> Sample size are large enough ($n_1 \geq 30$ and $n_2 \geq 30$)
+\end{itemize}
+\bigskip
+\onslide<5->{Test statistic is given as}
+\onslide<6->{\[t = \frac{\overline{d}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]}
+\end{frame}
+
+\begin{frame}{Degrees of Freedom}
+The degrees of freedom is found by calculating
+\[\text{df} = \dfrac{\left(V_1+V_2\right)^2}{\dfrac{V_1^2}{n_1-1} + \dfrac{V_2^2}{n_2-1}}\]
+\newline\\
+where
+\[V_1 = \frac{s_1^2}{n_1} \text{ and } V_2 = \frac{s_2^2}{n_2}\]
+\newline\\
+\emph{Note}: Round the degrees of freedom down to the nearest integer.
+\end{frame}
+
+\begin{frame}{For Pools and Giggles}
+If working with pooled variances,
+\[t = \frac{\overline{d}}{\sqrt{s_p^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}\]
+\bigskip
+\[s_p^2 = \frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}\]
+\bigskip
+\[\text{df} = n_1+n_2-2\]
+\end{frame}
 % Pooled vs. Non-pooled
 \end{document}
