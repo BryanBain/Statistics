@@ -83,11 +83,11 @@ A medication is given to patients in an attempt to lower their LDL cholesterol. 
 
 \begin{frame}{Example 1}
 $H_0: \, \mu_{\text{Before}} = \mu_{\text{After}}$	\newline\\
-$H_A: \, \mu_{\text{Before}} < \mu_{\text{After}}$	\newline\\	\pause
+$H_A: \, \mu_{\text{Before}} > \mu_{\text{After}}$	\newline\\	\pause
 \begin{itemize}
-	\item $t = 2.446$ \quad \pause (critical value = 1.96)	\newline\\	\pause
+	\item $t = 2.446$ \quad \pause (critical value = 1.86)	\newline\\	\pause
 	\item $p = 0.0201$ \quad \pause ($\alpha = 0.05$) \newline\\	\pause
-	\item 95\% confidence interval: (0.2478, 8.4189) \quad \pause does not contain $\mu_d = 0$
+	\item 95\% Lower Bound: 1.0388 \quad \pause (will not contain $\mu_d = 0$)
 \end{itemize}
 \end{frame}
 
@@ -125,7 +125,7 @@ As such, the examples in this section will assume that the population variances 
 \end{itemize}
 \bigskip
 \onslide<5->{Test statistic is given as}
-\onslide<6->{\[t = \frac{\overline{X}-\overline{Y}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]}
+\onslide<6->{\[t = \frac{\overline{d}}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}\]}
 \end{frame}
 
 \begin{frame}{Degrees of Freedom}
@@ -140,11 +140,36 @@ where
 
 \begin{frame}{For Pools and Giggles}
 If working with pooled variances,
-\[t = \frac{\overline{X}-\overline{Y}}{\sqrt{s_p^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}\]
+\[t = \frac{(\overline{X}-\overline{Y}) - (\mu_X - \mu_Y)}{\sqrt{s_p^2\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}\]
 \bigskip
 \[s_p^2 = \frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}\]
 \bigskip
 \[\text{df} = n_1+n_2-2\]
 \end{frame}
-% Pooled vs. Non-pooled
+
+\begin{frame}{Example 2}
+A local store claims that the waiting time for its customers to be served is the lowest in the area. A competitor's store checks the waiting times at both. The sample statistics are listed below. At the $\alpha = 0.05$ significance level, test the local store's hypothesis.	\newline\\
+\begin{center}
+\begin{tabular}{c|c}
+Local & Competitor \\ \hline
+$n_x = 15$ & $n_y = 12$	\\
+$\overline{x} = 4.7$ minutes & $\overline{y} = 5.2$ minutes \\
+$s_x = 0.8$ minutes & $s_y = 0.7$ minutes
+\end{tabular}
+\end{center}
+\onslide<2->{
+$H_0: \, \mu_x = \mu_y \onslide<3->{\longrightarrow \mu_x - \mu_y = 0}$ \newline\\
+$H_A: \, \mu_x < \mu_y \onslide<3->{\longrightarrow \mu_x - \mu_y < 0}$
+}
+\end{frame}
+
+\begin{frame}{Example 2}
+Test statistic: $t = -1.730$ \quad Critical value: $-1.711$\newline
+$p$-value = 0.0482 \newline
+Confidence interval: $(-1.0964, 0.0964)$	\newline\\	\pause
+Do not reject null hypothesis	\newline\\	\pause
+\begin{quote}
+
+\end{quote}
+\end{frame}
 \end{document}
