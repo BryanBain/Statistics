@@ -19,7 +19,7 @@ quit = False
 
 while not quit:
     
-    mu = input("Please enter the original (claimed) mean: ")
+    mu = input("Please enter the given population mean: ")
     if mu == 'q':  # quit the program
         quit = True
         break
@@ -30,6 +30,12 @@ while not quit:
     mu = float(mu)
     significance = float(significance)
     print()
+    
+    print("Is this a left-tailed, right-tailed, or two-tailed test?")
+    print("1. Left-tailed (Population Mean < Claimed Mean)")
+    print("2. Right-tailed (Population Mean > Claimed Mean)")
+    print("3. Two-tailed (Population Mean < Claimed Mean)")
+    left_right_two = input()
 
     print("Are you given data or summary statitiscs? ")
     print("1. Data set")
@@ -82,11 +88,20 @@ while not quit:
     test_statistic = obsToT(xbar, mu, std_dev, sample_size)  # calculate test statistic t
     df = sample_size - 1  # degrees of freedom
     area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)  # area under curve
-    ci_min = stats.t.interval(1-significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
-    ci_max = stats.t.interval(1-significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
-    print(f"Test statistic: {test_statistic:0.3f}")
-    print(f"Ha < H0 critical value: {stats.t.ppf(significance,df):0.3f} p-value: {area:0.4f}")
-    print(f"Ha > H0 critical value: {stats.t.ppf(1-significance,df):0.3f} p-value: {1-area:0.4f}")
-    print(f"Ha != H0 critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.3f} p-value: {2*min(area,1-area):0.4f}")
-    print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
+    ci_min = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
+    ci_max = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
+    print(f"Test statistic: {test_statistic:0.4f}")
+    if left_right_two == '1':
+        print(f"Population Mean < Claimed Mean critical value: {stats.t.ppf(significance,df):0.4f}")
+        print(f"p-value: {area:0.4f}")
+        print(f"{100*(1-significance):.0f}% Upper Bound: {ci_max:0.4f}")
+    elif left_right_two == '2':
+        print(f"Population Mean > Claimed Mean critical value: {stats.t.ppf(1-significance,df):0.4f}")
+        print(f"p-value: {1-area:0.4f}")
+        print(f"{100*(1-significance):.0f}% Lower Bound: {ci_min:0.4f}")
+    elif left_right_two == '3':   
+        ci_min = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
+        ci_max = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
+        print(f"Population Mean != Claimed Mean critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.4f} p-value: {2*min(area,1-area):0.4f}")
+        print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
     print()
