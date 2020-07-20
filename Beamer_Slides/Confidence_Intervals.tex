@@ -259,4 +259,121 @@ $p \approx 0.521$
 \onslide<5->{We would need a sample size of at least 600.}
 \end{frame}
 
+\section{Determine a one-sided confidence interval}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+With a two-sided confidence interval (what we've discussed so far), the total area outside of our interval is $alpha$:	\newline\\
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1.5] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [<->,>=stealth,thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$\bm{1-\alpha}$};
+\draw [->,>=stealth,thick] (axis cs: -2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: -2.05,0.015);
+\draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{\alpha/2}$} -- (axis cs: 2.05,0.015);
+\end{axis}
+\node at (1.75,0) [below] {\small $-z_{\alpha/2}$};
+\node at (4.95,0) [below] {\small $z_{\alpha/2}$};
+\end{tikzpicture}
+\end{center}
+Notice the endpoints of our interval are $\pm z_{\alpha/2}$.
+\end{frame}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+For example, constructing a 95\% confidence interval will mean that a total of 5\% will be outside of our interval:	\newline\\
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1.5] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [<->,>=stealth,thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$95\%$};
+\draw [->,>=stealth,thick] (axis cs: -2.65,0.1) node [above] {$\bm{2.5\%}$} -- (axis cs: -2.05,0.015);
+\draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{2.5\%}$} -- (axis cs: 2.05,0.015);
+\end{axis}
+\node at (1.75,0) [below] {\small $-1.96$};
+\node at (4.95,0) [below] {\small $1.96$};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+For a one-sided interval, in order to have the same area outside of our interval, our critical values will need to change:	\newline\\
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [->,>=stealth,very thick] (axis cs: -1,0.05) -- (axis cs: 3.5,0.05) node [above, midway] {$\bm{95\%}$};
+\draw [->,>=stealth,thick] (axis cs: -2.35,0.1) node [above] {$\bm{5\%}$} -- (axis cs: -1.75,0.015);
+\end{axis}
+\node at (2.25,0) [below,yshift=0.1cm] {\small $-1.645$};
+%\node at (4.95,0) [below] {\small $1.96$};
+\end{tikzpicture}
+\end{center}
+The value $z=-1.645$ is a {\color{blue}\textbf{lower bound}} on the one-sided 95\% confidence interval.
+\end{frame}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+The value $z = 1.645$ is an {\color{blue}\textbf{upper bound}} on the one-sided 95\% confidence interval going the other way (to the left). \newline\\
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [->,>=stealth,very thick] (axis cs: 1.5,0.05) -- (axis cs: -3.5,0.05) node [above, midway] {$\bm{95\%}$};
+\draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{5\%}$} -- (axis cs: 2.05,0.015);
+\end{axis}
+\node at (4.75,0) [below,yshift=0.1cm] {\small $1.645$};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+We can also get those values of $z=-1.645$ and $z=1.645$ by constructing a 90\% confidence interval:	\newline\\
+
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\begin{axis}[
+axis lines = left, xmin = -3.5, xmax = 3.5, ymin = 0, ymax = 0.45, xticklabels = {},
+xtick style={draw=none}, xlabel = {z Score}, ylabel = {Probability}
+]
+\addplot [draw = none, fill = green, domain = -3.5:-1.5] {gauss(0,1)} \closedcycle;
+\addplot [draw = none, fill = green, domain = 1.5:3.5] {gauss(0,1)} \closedcycle;
+\addplot [color=blue, samples=200,thick, domain=-3.5:3.5] {gauss(0,1)};
+\draw [<->,>=stealth,thick] (axis cs: -1.5,0.05) -- (axis cs: 1.5,0.05) node [above, midway] {$\bm{90\%}$};
+\draw [->,>=stealth,thick] (axis cs: -2.65,0.1) node [above] {$\bm{5\%}$} -- (axis cs: -2.05,0.015);
+\draw [->,>=stealth,thick] (axis cs: 2.65,0.1) node [above] {$\bm{5\%}$} -- (axis cs: 2.05,0.015);
+\end{axis}
+\node at (1.75,0) [below] {\small $-1.645$};
+\node at (4.95,0) [below] {\small $1.645$};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+\begin{frame}{Two-Sided vs. One-Sided}
+For left- or right-tailed hypothesis testing, some statistical software will report the one-sided interval, others will only report the usual two-sided interval with an adjusted value of $alpha$:	\newline\\
+
+\begin{center}
+\textbf{Critical Values} \newline\\
+\begin{tabular}{c|c}
+Two-Tailed & One-Tailed \\ \hline
+$z_{\alpha/2}$ & $z_{\alpha}$ \\
+\end{tabular}
+\end{center}
+\end{frame}
 \end{document}
