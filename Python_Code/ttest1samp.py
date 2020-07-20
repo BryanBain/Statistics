@@ -34,7 +34,7 @@ while not quit:
     print("Is this a left-tailed, right-tailed, or two-tailed test?")
     print("1. Left-tailed (Population Mean < Claimed Mean)")
     print("2. Right-tailed (Population Mean > Claimed Mean)")
-    print("3. Two-tailed (Population Mean < Claimed Mean)")
+    print("3. Two-tailed (Population Mean != Claimed Mean)")
     left_right_two = input()
 
     print("Are you given data or summary statitiscs? ")
@@ -54,6 +54,7 @@ while not quit:
                 break
             elif element == 'u':  # undo the last data entry
                 dataset.pop()
+                print(dataset)
                 continue
             elif element == 'q':  # quit the program
                 quit = True
@@ -84,7 +85,7 @@ while not quit:
             break
         sample_size = int(sample_size)
     print()
-
+    
     test_statistic = obsToT(xbar, mu, std_dev, sample_size)  # calculate test statistic t
     df = sample_size - 1  # degrees of freedom
     area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)  # area under curve
@@ -100,8 +101,9 @@ while not quit:
         print(f"p-value: {1-area:0.4f}")
         print(f"{100*(1-significance):.0f}% Lower Bound: {ci_min:0.4f}")
     elif left_right_two == '3':   
-        ci_min = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
-        ci_max = stats.t.interval(1-2*significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
-        print(f"Population Mean != Claimed Mean critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.4f} p-value: {2*min(area,1-area):0.4f}")
+        ci_min = stats.t.interval(1-significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
+        ci_max = stats.t.interval(1-significance, df=df, loc=xbar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
+        print(f"Population Mean != Claimed Mean critical value: +/-{math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
+        print(f"p-value: {2*min(area,1-area):0.4f}")
         print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
     print()
