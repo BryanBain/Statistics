@@ -156,7 +156,9 @@ Our confidence interval for a population proportion is given by
 
 \[\text{point estimate} \pm \text{margin of error}\] 
 \onslide<2->{\[\hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]}	\newline\\
-\onslide<3->{If our confidence interval contains the (claimed) population proportion, we do not reject the null hypothesis.}
+\onslide<3->{If our confidence interval contains the (claimed) population proportion, we do not reject the null hypothesis.}	\newline\\
+
+\onslide<4->{For one-sided testing, use the critical value $z_{\alpha}$.}
 \end{frame}
 
 \begin{frame}{Confidence Interval Method}
@@ -184,7 +186,7 @@ Our confidence interval for a population proportion is given by
 \begin{frame}{Example 1}
 According to a recent study, 72\% of Americans favor starting school after Labor Day. You believe the percentage is greater than 72\%, so you obtain a sample of 400 Americans and find that 75\% of them favor starting school after Labor Day. \newline\\
 
-At the $\alpha = 0.05$ significance level, test your claim.	\newline\\	\pause
+At the $\alpha = 0.05$ significance level, test the claim.	\newline\\	\pause
 
 $H_0: \, p = 0.72$ \newline
 $H_A: \, p > 0.72$
@@ -192,8 +194,9 @@ $H_A: \, p > 0.72$
 
 \begin{frame}{Example 1}
 Test statistic: $z = 1.336$ (Critical Value = 1.645) \newline
-$p$-value = 0.0907 $> 0.05$	\newline
-Confidence Interval = (0.7076, 0.7924); contains $p = 0.72$	\newline\\	\pause
+$p$-value = 0.0907\newline
+95\% lower bound: 0.7144	 \newline
+(we are 95\% confident the population proportion is 71.44\% or higher)	\newline\\	\pause
 
 Do not reject null hypothesis	\newline\\	\pause
 
@@ -210,9 +213,9 @@ According to a recent poll, 40\% of people would vote for Bryan Bain to be Presi
 \end{frame}
 
 \begin{frame}{Example 2}
-Test statistic: $z = 2.700 > 1.96$	\newline
-$p$-value = 0.0069 $< 0.05$	\newline
-Confidence Interval = (0.4131, 0.4869); does not contain $p = 0.40$	\newline\\	\pause
+Test statistic: $z = 2.700$ (Critical value = 1.96)	\newline
+$p$-value = 0.0069	\newline
+Confidence Interval = (0.4131, 0.4869) \newline\\	\pause
 
 Reject the null hypothesis.	\newline\\	\pause
 
