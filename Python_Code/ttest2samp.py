@@ -52,6 +52,12 @@ while not quit:
         break
     significance = float(significance)
     
+    pop_mean_diff = input("Please enter the difference in population means: ")
+    if pop_mean_diff == 'a':  # quit the program
+        quit = True
+        break
+    pop_mean_diff = float(pop_mean_diff)
+    
     print("Are the samples dependent or independent?")
     print("1. Dependent")
     print("2. Independent")
@@ -77,7 +83,7 @@ while not quit:
         sample_size = len(diffs)
         df = sample_size - 1
 
-        test_statistic = d_bar/(std_dev/math.sqrt(sample_size))
+        test_statistic = (d_bar - pop_mean_diff)/(std_dev/math.sqrt(sample_size))
         area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)
         ci_min = stats.t.interval(1-2*significance, df=df, loc=d_bar, scale=std_dev/math.sqrt(sample_size))[0]  # minimum of confidence interval
         ci_max = stats.t.interval(1-2*significance, df=df, loc=d_bar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
@@ -99,7 +105,7 @@ while not quit:
             ci_max = stats.t.interval(1-significance, df=df, loc=d_bar, scale=std_dev/math.sqrt(sample_size))[1]  # maximum of confidence interval
             print(f"Mean sample 1 != Mean sample 2 critical values: {-1*math.fabs(stats.t.ppf(significance/2,df)):0.4f} and {math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
             print(f"p-value: {2*min(area,1-area):0.4f}")
-            print(f"{100*(1-significance):.0f}% Confidence Interval: {ci_min:0.4f}, {ci_max:0.4f}")
+            print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
         print()
         
 #####################################################################################################
@@ -132,7 +138,7 @@ while not quit:
                 df = df1 + df2
                 var_p = ((df1 * np.var(dataset1, ddof=1)) + (df2 * np.var(dataset2, ddof=1)))/(df)
                 sum_recips = (1/len(dataset1)) + (1/len(dataset2))
-                test_statistic = diff/(math.sqrt(var_p) * math.sqrt(sum_recips))
+                test_statistic = (diff - pop_mean_diff)/(math.sqrt(var_p) * math.sqrt(sum_recips))
                 area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)
                 ci_min = stats.t.interval(1-2*significance, df=df, loc=diff, scale=math.sqrt(np.var(dataset1, ddof=1)/len(dataset1) + np.var(dataset2, ddof=1)/len(dataset2)))[0]  # minimum of confidence interval
                 ci_max = stats.t.interval(1-2*significance, df=df, loc=diff, scale=math.sqrt(np.var(dataset1, ddof=1)/len(dataset1) + np.var(dataset2, ddof=1)/len(dataset2)))[1]  # maximum of confidence interval
@@ -155,13 +161,13 @@ while not quit:
                     ci_max = stats.t.interval(1-significance, df=df, loc=diff, scale=math.sqrt(np.var(dataset1, ddof=1)/len(dataset1) + np.var(dataset2, ddof=1)/len(dataset2)))[1]  # maximum of confidence interval
                     print(f"Mean sample 1 != Mean sample 2 critical values: {-1*math.fabs(stats.t.ppf(significance/2,df)):0.4f} and {math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
                     print(f"p-value: {2*min(area,1-area):0.4f}")
-                    print(f"{100*(1-significance):.0f}% Confidence Interval: {ci_min:0.4f}, {ci_max:0.4f}")
+                    print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
                 print()
             
             if pool_or_no == '2':  # non-pooled samples
                 v1 = np.var(dataset1, ddof=1)/len(dataset1)
                 v2 = np.var(dataset2, ddof=1)/len(dataset2)
-                test_statistic = diff/math.sqrt(v1+v2)
+                test_statistic = (diff - pop_mean_diff)/math.sqrt(v1+v2)
                 df = (v1 + v2)**2 / (v1**2/df1 + v2**2/df2)
                 area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)
                 ci_min = stats.t.interval(1-2*significance, df=df, loc=diff, scale=math.sqrt(np.var(dataset1, ddof=1)/len(dataset1) + np.var(dataset2, ddof=1)/len(dataset2)))[0]  # minimum of confidence interval
@@ -185,7 +191,7 @@ while not quit:
                     ci_max = stats.t.interval(1-significance, df=df, loc=diff, scale=math.sqrt(np.var(dataset1, ddof=1)/len(dataset1) + np.var(dataset2, ddof=1)/len(dataset2)))[1]  # maximum of confidence interval
                     print(f"Mean sample 1 != Mean sample 2 critical values: {-1*math.fabs(stats.t.ppf(significance/2,df)):0.4f} and {math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
                     print(f"p-value: {2*min(area,1-area):0.4f}")
-                    print(f"{100*(1-significance):.0f}% Confidence Interval: {ci_min:0.4f}, {ci_max:0.4f}")
+                    print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
                 print()
         
         elif data_or_summary == '2':  # user will enter summary statistics
@@ -197,7 +203,7 @@ while not quit:
             if pool_or_no == '1':  # pooled samples
                 df = df1 + df2
                 s_p = math.sqrt(((df1 * sd1**2) + (df2 * sd2**2))/(df1 + df2))
-                test_statistic = diff / (s_p * math.sqrt(1/n1 + 1/n2))
+                test_statistic = (diff - pop_mean_diff)/(s_p * math.sqrt(1/n1 + 1/n2))
                 area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)
                 ci_min = stats.t.interval(1-2*significance, df=df, loc=diff, scale=s_p * math.sqrt(1/n1 + 1/n2))[0]  # minimum of confidence interval
                 ci_max = stats.t.interval(1-2*significance, df=df, loc=diff, scale=s_p * math.sqrt(1/n1 + 1/n2))[1]  # maximum of confidence interval
@@ -215,7 +221,7 @@ while not quit:
                     ci_max = stats.t.interval(1-significance, df=df, loc=diff, scale=s_p * math.sqrt(1/n1 + 1/n2))[1]  # maximum of confidence interval
                     print(f"Mean sample 1 != Mean sample 2 critical values: {-1*math.fabs(stats.t.ppf(significance/2,df)):0.4f} and {math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
                     print(f"p-value: {2*min(area,1-area):0.4f}")
-                    print(f"{100*(1-significance):.0f}% Confidence Interval: {ci_min:0.4f}, {ci_max:0.4f}")
+                    print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
                 print()
                 
             elif pool_or_no == '2':  # non-pooled samples
@@ -223,7 +229,7 @@ while not quit:
                 v2 = sd2**2/n2
                 df = (v1 + v2)**2 / (v1**2/df1 + v2**2/df2)
                 se = math.sqrt(sd1**2/n1 + sd2**2/n2)
-                test_statistic = diff / se
+                test_statistic = (diff-pop_mean_diff) / se
                 area = stats.t.cdf(test_statistic, df=df, loc=0, scale=1)
                 ci_min = stats.t.interval(1-2*significance, df=df, loc=diff, scale=se)[0]  # minimum of confidence interval
                 ci_max = stats.t.interval(1-2*significance, df=df, loc=diff, scale=se)[1]  # maximum of confidence interval
@@ -246,5 +252,5 @@ while not quit:
                     ci_max = stats.t.interval(1-significance, df=df, loc=diff, scale=se)[1]  # maximum of confidence interval
                     print(f"Mean sample 1 != Mean sample 2 critical values: {-1*math.fabs(stats.t.ppf(significance/2,df)):0.4f} and {math.fabs(stats.t.ppf(significance/2,df)):0.4f}")
                     print(f"p-value: {2*min(area,1-area):0.4f}")
-                    print(f"{100*(1-significance):.0f}% Confidence Interval: {ci_min:0.4f}, {ci_max:0.4f}")
+                    print(f"{100*(1-significance):.0f}% Confidence Interval: ({ci_min:0.4f}, {ci_max:0.4f})")
                 print()
