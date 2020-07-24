@@ -1,0 +1,73 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Hypothesis Testing}
+\subtitle{Two Sample Proportions}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\begin{frame}{Second Verse Same(?) as the First}
+In this section we will be testing the differences between two proportions, much like we did with testing two means. \newline\\	\pause
+
+Much of the material will be the two-sample version of hypothesis testing of a single proportion.
+\end{frame}
+
+\begin{frame}{Test Statistic and $p$-Value}
+The test statistic for two sample proportions is given by
+\[
+t = \frac{(\hat{p}_1-\hat{p}_2) - (p_1 - p_2)}{\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}}
+\]
+where 	\pause
+\begin{itemize}
+	\item $\hat{p}_1 \text{ and } \hat{p}_2$ represent the sample proportions	\pause
+	\item $p_1 \text{ and } p_2$ represent the population proportions	\pause
+	\item $n_1 \text{ and } n_2$ represent the sample sizes	\pause
+\end{itemize}
+
+The $p$-value is found in the same manner as other sections.
+\end{frame}
+
+\begin{frame}{Confidence Intervals}
+The $1-\alpha$ confidence interval is calculated as
+\[
+(\hat{p}_1 - \hat{p}_2) \pm z_{\alpha/2}\sqrt{\frac{\hat{p}_1(1-\hat{p}_1)}{n_1}+\frac{\hat{p}_2(1-\hat{p}_2)}{n_2}}
+\]	\pause
+Remember, if our confidence interval contains the claimed difference in population proportions, we do not reject the null hypothesis.
+\end{frame}
+
+\begin{frame}{Example 1}
+A poll of 450 registered voters is taken and 43\% of them would vote for the incumbent candidate. A week later a poll of 300 registered voters is taken and 41\% of them would vote for the incumbent candidate. \newline\\
+
+At the $\alpha = 0.05$ significance level, test the claim that the proportions of all registered voters would vote for the incumbent candidate.	\newline\\	\pause
+
+$H_0: \, p_1 = p_2$ \newline	\pause
+$H_A: \, p_1 \neq p_2$
+
+\end{frame}
+
+\end{document}
