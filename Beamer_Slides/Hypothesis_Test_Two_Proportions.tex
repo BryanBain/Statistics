@@ -52,6 +52,18 @@ where 	\pause
 The $p$-value is found in the same manner as other sections.
 \end{frame}
 
+\begin{frame}{Just For Pools and Giggles}
+If using pooled variances, use
+\[
+\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}
+\]
+\pause	\newline\\
+The test statistic then becomes
+\[
+t = \frac{(\hat{p}_1-\hat{p}_2) - (p_1 - p_2)}{\sqrt{\hat{p}(1-\hat{p})\left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}
+\]
+\end{frame}
+
 \begin{frame}{Confidence Intervals}
 The $1-\alpha$ confidence interval is calculated as
 \[
@@ -60,14 +72,31 @@ The $1-\alpha$ confidence interval is calculated as
 Remember, if our confidence interval contains the claimed difference in population proportions, we do not reject the null hypothesis.
 \end{frame}
 
-\begin{frame}{Example 1}
-A poll of 450 registered voters is taken and 43\% of them would vote for the incumbent candidate. A week later a poll of 300 registered voters is taken and 41\% of them would vote for the incumbent candidate. \newline\\
+\begin{frame}{You Know What Happens When You Assume, Don't You?}
+\textbf{Assumptions for this section}:
+\begin{itemize}
+	\item<2-> Samples are randomly selected
+	\item<3-> Samples are independent
+	\item<4-> Each sample size is large enough so that the differences in sampling proportions is approximately normal
+	\begin{itemize}
+	\item<5-> Good to go if $n_1\hat{p}_1$, $n_1(1-\hat{p}_1)$, $n_2\hat{p}_2$, and $n_2(1-\hat{p}_2)$ are each greater than 5.
+	\end{itemize}
+\end{itemize}
+\end{frame}
 
-At the $\alpha = 0.05$ significance level, test the claim that the proportions of all registered voters would vote for the incumbent candidate.	\newline\\	\pause
+\begin{frame}{Example 1}
+A poll of 450 registered voters is taken and 43\% of them would vote for the incumbent candidate. A week later a poll of 300 different registered voters is taken and 41\% of them would vote for the incumbent candidate. \newline\\
+
+At the $\alpha = 0.05$ significance level, test the claim that the proportions of all registered voters would vote for the incumbent candidate is now different.	\newline\\	\pause
 
 $H_0: \, p_1 = p_2$ \newline	\pause
 $H_A: \, p_1 \neq p_2$
-
 \end{frame}
 
+\begin{frame}{Example 2}
+According to recent hospital data, 44 out of 175 recent men were hospitalized for heart conditions, while 21 out of 107 women were. At the $\alpha = 0.05$ level of significance, test the claim that the proportion of men admitted for heart conditions is higher than that of women.	\newline\\	\pause
+
+$H_0: \, p_{\text{men}} = p_{\text{women}}$ \newline \pause
+$H_A: \, p_{\text{men}} > p_{\text{women}}$
+\end{frame}
 \end{document}
