@@ -1,0 +1,139 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Hypothesis Testing}
+\subtitle{Regression}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+\begin{frame}{Slope of a Line}
+Recall that the slope of a line tells us how much the $y$-coordinates change by increasing each $x$-coordinate by 1.	\newline\\	\pause
+
+Previously, we looked at calculating regression equations in the form
+\[
+\hat {y} = mx + b
+\]
+\newline
+which we can use to predict data values both inside and outside our dataset.	\newline\\	\pause
+
+Also, recall that the coefficient of determination, $r^2$, tells us the prediction error decrease we get by using the linear regression equation, as opposed to the mean of the $y$-coordinates.
+\end{frame}
+
+\begin{frame}{Using the $y$-Intercept}
+However, we might also be able to use the $y$-intercept of our linear regression equation as a predictor:
+\[ y = b\]	\pause
+
+In this case, the slope of the equation, $m$, is 0. \newline\\	\pause
+
+We can then test whether or not the linear regression model we obtained contributes to predicting values of $y$.
+\end{frame}
+
+\begin{frame}{Hypotheses Regarding Slope}
+For this hypothesis, testing, we are operating under the assumption that the following null hypothesis is true:
+\begin{center}
+The slope of the regression equation does not help in predicting values of $y$.
+\end{center}	\pause
+To put it mathematically:
+\[
+H_0: m = 0
+\]
+\pause
+Our alternative hypothesis will be one of the forms
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Left-Tailed} & \textbf{Right-Tailed} & \textbf{Two-Tailed}  \\ \hline 
+$m < 0$ & $m > 0$ & $m \neq 0$ \\ \hline
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Test Statistic}
+Since the population standard deviation of our regression slope is likely not to be known, we can estimate it by using the {\color{blue}\textbf{estimated standard error of the least squares slope}}.	\pause
+\[
+\frac{s}{\sqrt{SS_{xx}}}
+\]
+where 
+\[
+SS_{xx} = \sum x^2 - \frac{1}{n}\left(\sum x\right)^2
+\]
+\pause
+
+Our test statistic, $t$, is thus
+\[
+t = \frac{\hat{m}}{s/\sqrt{SS_{xx}}}
+\]
+where $\hat{m}$ is the slope of our regression equation.
+\end{frame}
+
+\begin{frame}{$p$-Value}
+The area under the curve either to the left, right, or outside of our test statistic(s), i.e. the $p$-value, can be found by taking $n-2$ degrees of freedom with that test statistic.
+\end{frame}
+
+\begin{frame}{Confidence Intervals}
+We can construct confidence intervals as
+\[
+\hat{m} \pm t_{\alpha/2}\left(s/\sqrt{SS_{xx}}\right)
+\]
+\pause
+
+Remember, for one-sided confidence intervals, use $t_{\alpha}$ instead of $t_{\alpha/2}$.
+\end{frame}
+
+\begin{frame}{Residuals Review}
+Recall that the {\color{blue}\textbf{residual}} of a data point is the distance the $y$-coordinate of that data point is from the corresponding $y$-coordinate on the regression equation. \newline\\	\pause
+
+We usually denote the residual of data point $(x_i, \, y_i)$ as $\epsilon_i$, and it can be found by 
+\[
+\epsilon_i = y_{\text{observed}} - y_{\text{predicted}}
+\]
+\pause
+
+When performing hypothesis testing regarding the slope of the regression equation, we operate under the following assumptions:
+\end{frame}
+
+\begin{frame}{You Know What Happens When You Assume, Right?}
+\textbf{Assumptions:}
+\begin{itemize}
+	\item<2-> The mean of all values of $\epsilon$ is 0.
+	\item<3-> The variance of all values of $\epsilon$ is constant for all values of $x$.
+	\item<4-> The distribution of $\epsilon$ is normal.
+	\item<5-> Values of $\epsilon$ associated with any two values of $y$ are independent.
+\end{itemize}
+\end{frame}
+
+% Slope:
+% Claim about the slope
+% Test statistic & p-value of slope
+% Confidence interval of slope
+
+
+% Prediction interval for new values given regression equation
+% Graph of prediction interval
+
+\end{document}
