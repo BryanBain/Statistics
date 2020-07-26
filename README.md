@@ -30,4 +30,5 @@
   <li>Linear Regression</li>
   <li>Hypothesis Testing of Regression</li>
   <li>One-Way and Two-Way (Contingency) Tables</li>
+  <li>Bootstrapping</li>
 </ol>
