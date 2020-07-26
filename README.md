@@ -10,8 +10,6 @@
   <li>Measures of Center</li>
   <li>Measures of Spread</li>
   <li>Measures of Position</li>
-  <li>Scatterplots and Correlation</li>
-  <li>Linear Regression</li>
   <li>Intro to Probability</li>
   <li>Probability: AND</li>
   <li>Probability: OR</li>
@@ -28,6 +26,8 @@
   <li>Hypothesis Testing of Population Proportion</li>
   <li>Hypothesis Testing of Two Means</li>
   <li>Hypothesis Testing of Two Proportions</li>
+  <li>Scatterplots and Correlation</li>
+  <li>Linear Regression</li>
   <li>Hypothesis Testing of Regression</li>
   <li>One-Way and Two-Way (Contingency) Tables</li>
 </ol>
