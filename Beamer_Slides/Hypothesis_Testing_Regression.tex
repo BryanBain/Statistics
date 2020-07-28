@@ -31,6 +31,8 @@
 \maketitle
 \end{frame}
 
+\section{Perform a hypothesis test on the slope of the regression equation}
+
 \begin{frame}{Slope of a Line}
 Recall that the slope of a line tells us how much the $y$-coordinates change by increasing each $x$-coordinate by 1.	\newline\\	\pause
 
@@ -69,7 +71,8 @@ Our alternative hypothesis will be one of the forms
 \hline
 \textbf{Left-Tailed} & \textbf{Right-Tailed} & \textbf{Two-Tailed}  \\ \hline 
 $m < 0$ & $m > 0$ & $m \neq 0$ \\ \hline
-\end{tabular}
+\end{tabular}	\pause	\newline\\
+$H_A$ states that $x$ is not helpful in predicting $y$.
 \end{center}
 \end{frame}
 
@@ -80,7 +83,7 @@ Since the population standard deviation of our regression slope is likely not to
 \]
 where 
 \[
-SS_{xx} = \sum x^2 - \frac{1}{n}\left(\sum x\right)^2
+SS_{xx} = \text{total sum of squares} = \sum x^2 - \frac{1}{n}\left(\sum x\right)^2
 \]
 \pause
 
@@ -127,13 +130,43 @@ When performing hypothesis testing regarding the slope of the regression equatio
 \end{itemize}
 \end{frame}
 
-% Slope:
-% Claim about the slope
-% Test statistic & p-value of slope
-% Confidence interval of slope
+\begin{frame}{Example 1}
+The table below lists the total study times $x$, in hours, and the score on a statistics exam $y$ for 12 students. \newline\\
+(a) \quad Find the least squares regression equation for the data and interpret the slope.	\newline\\
 
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Time} & 1.9 & 1.3 & 1.7 & 1.2 & 1.2 & 2.7 & 1.7 & 2.7 & 2.0 & 1.8 & 1.4 & 2.4 \\ \hline
+\textbf{Score} & 84 & 81 & 86 & 82 & 77 & 97 & 93 & 96 & 89 & 89 & 88 & 95 \\ \hline
+\end{tabular}
+}
+\onslide<2->{\[\hat{y} = 10.3158x + 69.1711\]}
+\onslide<3->{\[\text{Score} = 10.3158\left(\text{Time}\right)+69.1711\]}
+\onslide<4->{For every increased hour in study time, the predicted score increases by about 10.3}
+\end{frame}
 
+\begin{frame}{Example 1}
+(b) \quad At the 5\% significance level, test the claim whether study time is useful as a predictor of test score.	\newline\\	\pause
+$H_0: \, m = 0$ (study time is not useful) \newline \pause
+$H_A: \, m \neq 0$ (study time is useful) \newline\\	\pause
+
+t = 5.5365 (critical values: $\pm 2.2281$)	\newline
+p-value: 0.0002 ($\alpha = 0.05$) \newline
+95.0\% confidence interval for population slope: (6.1643, 14.4673)	\newline\\	\pause
+\textbf{Reject the null hypothesis} \pause
+\begin{quote}
+At the 5\% significance level, we have sufficient evidence to reject the claim that study time is not useful in predicting the score on this statistics exam.
+\end{quote}
+\end{frame}
+
+\section{Perform hypothesis tests on the linear correlation coefficient}
+% Inferences on correlation
+
+\section{Create a prediction interval for a regression equation}
 % Prediction interval for new values given regression equation
 % Graph of prediction interval
+
+
 
 \end{document}

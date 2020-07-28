@@ -1,0 +1,37 @@
+\documentclass[t]{beamer}
+\usetheme{Copenhagen}
+\setbeamertemplate{headline}{} % remove toc from headers
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{amsmath, array, tikz, bm, pgfplots, tcolorbox, graphicx, venndiagram, color, colortbl, xfrac}
+\pgfplotsset{compat = 1.16}
+\usepgfplotslibrary{statistics}
+\usetikzlibrary{calc}
+
+\title{Hypothesis Testing}
+\subtitle{Regression}
+\author{}
+\date{}
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Objectives}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\begin{document}
+
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+\begin{frame} 
+\maketitle
+\end{frame}
+
+% Testing regarding slope
+% Prediction Intervals
+
+\end{document}
