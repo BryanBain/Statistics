@@ -7,6 +7,7 @@ File Name: Normal_Distribution.py
 """
 
 from scipy.stats import norm
+import math
 
 def areaBetween(z_2, z_1):
     """
